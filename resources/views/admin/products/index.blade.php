@@ -112,13 +112,7 @@
                                         <td>
                                             {{ $product->notes ?? '' }}
                                         </td>
-                                        <td>
-                                            @can('product_show')
-                                                <a class="btn btn-xs btn-primary" href="{{ route('admin.products.show', $product->id) }}">
-                                                    {{ trans('global.view') }}
-                                                </a>
-                                            @endcan
-
+                                    <td>
                                             @can('product_edit')
                                                 <a class="btn btn-xs btn-info" href="{{ route('admin.products.edit', $product->id) }}">
                                                     {{ trans('global.edit') }}
