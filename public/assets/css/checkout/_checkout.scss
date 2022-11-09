@@ -1,0 +1,92 @@
+.hero {
+  margin-bottom: 60px;
+  @media (min-width: 1005px) {
+    margin-bottom:50px;
+    margin-top: 0;
+  }
+}
+.confirm {
+  padding-top:12px;
+  padding-bottom:12px;
+}
+.checkoutstep {
+  font-family: Takeaway Sans,Avant Garde,Century Gothic,Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 35px;
+  border-bottom: 1px dotted #ccc;
+
+  @media (min-width: 1005px) {
+    margin-top: 0.7rem;
+    font-size:24px;
+    font-weight: 400;
+    padding-bottom: 15px;
+  }
+}
+
+.checkoutstep .step1 {
+  margin-top: 0px;
+}
+
+.checkoutstep span {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  font-weight: 600;
+}
+.checkout .errormsg {
+  text-transform: lowercase;
+}
+.checkout .errormsg:first-letter{
+  text-transform: capitalize;
+}
+.checkout .items .payments label{
+  min-height: 145px;
+}
+.checkout .privacystatement{
+  margin-bottom:16px;
+}
+
+.checkoutform {
+  .title {
+    @include font-takeaway-sans-bold;
+    padding: 10px 0;
+    margin: 0;
+    color: #0a3847;
+    line-height: 1.5;
+    text-align: left;
+    text-transform: capitalize;
+    font-size: 20pt;
+
+    @include media('>810px') {
+      font-size: 3em;
+    }
+  }
+
+  .btn_order {
+    font-family: Takeaway Sans,Avant Garde,Century Gothic,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    position: relative;
+    padding: 0 16px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    appearance: none;
+    color: #fff;
+    background-color: #125fca;
+    line-height: 50px;
+    width: 100%;
+    user-select: none;
+    font-size: 18px;
+    margin-bottom:32px;
+    @media (min-width: 1005px) {
+    max-width: 400px;
+    }
+  }
+  .error{
+    border:1px solid #f54830
+  }
+}
+

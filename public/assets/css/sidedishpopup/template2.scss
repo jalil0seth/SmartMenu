@@ -1,0 +1,298 @@
+/* Own Code */
+$takeawayFont: "Takeaway Sans", "Avant Garde", "Century Gothic", Helvetica, Arial, sans-serif;
+$takeawayFontColor: #0a3847;
+$takeawayOrange: #fb6100;
+
+
+#ageRestriction.popup .popupheader,
+.templaterevamped.popup .popupheader,
+.templaterevamped-popupheader {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f1f1f1;
+  color: $takeawayFontColor;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: $takeawayFont;
+}
+
+.templaterevamped.popup .popupheader {
+  text-transform: lowercase;
+}
+.templaterevamped.popup .popupheader::first-letter{
+  text-transform: uppercase;
+}
+
+.templaterevamped.popup p{
+  font-family: $takeawayFont;
+
+}
+
+.templaterevamped-sidedishpopup {
+  max-height: 90%;
+  overflow-y: auto;
+  border-radius: 0px !important; // Blame popup class
+  padding: 15px !important; // Yet again, blame popup class
+}
+
+.templaterevamped-allergenspopup {
+  border-radius: 0px !important; // Blame popup class
+  padding: 15px !important; // Yet again, blame popup class
+
+  .popupheader {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f1f1f1;
+    color: $takeawayFontColor;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: $takeawayFont;
+  }
+
+  .lightbox-contents {
+    font-family: $takeawayFont;
+  }
+}
+
+.templaterevamped-productinfo {
+  .templaterevamped-productprice {
+    font-family: $takeawayFont;
+    color: $takeawayOrange;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  .templaterevamped-productdescription {
+    margin-bottom: 8px;
+    font-family: $takeawayFont;
+  }
+}
+
+.templaterevamped-sidedish-content {
+  font-family: $takeawayFont;
+}
+
+.templaterevamped-sidedishes {
+  background-color: #f8f5f2;
+  padding-top: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+
+  .templaterevamped-sidedish {
+    h3 {
+      margin-bottom: 5px;
+    }
+  }
+
+  .templaterevamped-sidedish-checkboxgroup {
+    padding-top: 20px;
+
+    h3 {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+
+
+/* Copied */
+//.hidden {
+//  display: none;
+//}
+
+.additivesinline {
+  height: 0%;
+  background: #efefef;
+  position: absolute;
+  border-radius: 4px;
+  right: 0;
+  top: 0;
+  width: 100%;
+  border-bottom: 3px solid #3096ce;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  overflow-y: hidden;
+}
+
+.sidedish-footer {
+  display: flex;
+  justify-content: space-between;
+
+  .templaterevamped-quantity-plus,
+  .templaterevamped-quantity-minus {
+    background: 0 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+  }
+
+  .templaterevamped-meal-price,
+  .sidedish-add-button {
+    height: 40px;
+  }
+
+  .templaterevamped-meal-price {
+    font-weight: 400;
+    width: 112px;
+    min-width: 112px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1px;
+    border: solid 1px $color-grey-light;
+    background-color: $color-back-primary;
+    line-height: 20px;
+
+    &__block {
+      text-align: center;
+      height: 100%;
+      line-height: 40px;
+
+      &--display {
+        font-weight: 600;
+        color: $color-action;
+        font-size: 16px;
+      }
+
+      &--add {
+        padding-right: 10px;
+      }
+
+      &--substract {
+        padding-left: 10px;
+      }
+
+      &--add,
+      &--substract {
+        color: $color-grey-medium;
+        cursor: pointer;
+
+        .button-remove-sidedish,
+        .button-add-sidedish {
+          width: 100%;
+          height: 100%;
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  .sidedish-add-button {
+    margin-left: 20px;
+
+    h3 {
+      font-weight: 600;
+      margin: 0;
+      font-size: 14px;
+    }
+  }
+}
+
+.sidedish-footer .meal-add-btn-wrapper {
+  width: 100%;
+
+  .add-btn-icon {
+    @include font-takeaway-sans-bold;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: center;
+    color: $color-primary-contrast;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+  }
+}
+
+.templaterevamped-sidedish-checkboxgroup {
+  margin-bottom: 10px;
+}
+
+.templaterevamped-sidedish.templaterevamped-sidedish-checkboxgroup h3,
+.templaterevamped-sidedish.sidedish-select h3{
+  //font-weight:600;
+  margin-bottom:5px;
+}
+.templaterevamped-sidedish.templaterevamped-sidedish-checkboxgroup::after {
+  content:'';
+  clear:both;
+  display: table;
+}
+.templaterevamped-sidedish .sidedish-checkbox {
+  width:100%;
+  margin-bottom:12px;
+  @media (min-width: 1005px) {
+    width: 50%;
+    float: left;
+    margin-bottom: 12px;
+  }
+}
+
+//
+#ageRestriction.popup  .cartbutton-button,
+.templaterevamped.popup input[type=submit] {
+  height: 35px;
+  background: #125fca;
+  color: #fff;
+  border: 0;
+  float: right;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+  font-size: 15px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  .wai_screenreader {
+    font-family: $takeawayFont;
+  }
+}
+
+.templaterevamped-sidedishpopup .cartbutton-button {
+  @include respond-to('>=tablet-landscape') {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+  }
+  @include font-takeaway-sans-bold;
+
+  border: 0;
+  position: relative;
+  padding: 0 16px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: $color-primary-contrast;
+  background-color: $color-btn-primary;
+  line-height: 50px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 18px;
+
+  &:hover {
+    background-color: $color-btn-primary-hover;
+    color: $color-primary-contrast;
+  }
+}
+
+//
+//.sidedishpopup {
+//  max-height: 90%;
+//  overflow-y: auto;
+//}
+//
+//.sidedishpopup .closepopup {
+//  float: right;
+//  cursor: pointer;
+//}

@@ -1,0 +1,75 @@
+.hidden {
+    display: none;
+}
+
+.additivesinline {
+    height: 0%;
+    background: #efefef;
+    position: absolute;
+    border-radius: 4px;
+    right: 0;
+    top: 0;
+    width: 100%;
+    border-bottom: 3px solid #3096ce;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    overflow-y: hidden;
+}
+
+.sidedishpopup .meal-price,
+.sidedishpopup .meal-price a,
+.sidedishpopup .meal-price .basketproductnr {
+    float: left;
+}
+
+.sidedishpopup .meal-price .basketproductnr {
+    border: 1px grey;
+    border-radius: 3px;
+    height: 25px;
+    width: 25px;
+    padding: 10px;
+}
+.sidedish-checkboxgroup {
+    margin-bottom: 10px;
+}
+
+.sidedish.sidedish-checkboxgroup h3,
+.sidedish.sidedish-select h3{
+    font-weight:600;
+    margin-bottom:5px;
+}
+.sidedish.sidedish-checkboxgroup::after {
+    content:'';
+    clear:both;
+    display: table;
+}
+.sidedish .sidedish-checkbox {
+    width: 50%;
+    float: left;
+    margin-bottom: 5px;
+}
+
+.sidedishpopup .cartbutton-button {
+    height: 35px;
+    background: #2f96ce;
+    color: #fff;
+    border: 0;
+    float: right;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+.sidedishpopup {
+    max-height: 90%;
+    overflow-y: auto;
+}
+
+.sidedishpopup .closepopup {
+    float: right;
+    cursor: pointer;
+}

@@ -1,0 +1,2935 @@
+{
+    "excluded_from_minimum_amount": 0,
+    "user_latitude": false,
+    "user_longitude": false,
+    "allautoaddproductscosts": 0,
+    "deliverytype": 1,
+    "paymentMethod": null,
+    "dynamicDeliveryCosts": "0.00",
+    "Times": {
+        "deliveryopentimes": [
+            [
+                {
+                    "starttime": "13:45:00",
+                    "endtime": "22:00:00"
+                }
+            ],
+            [
+                {
+                    "starttime": "13:00:00",
+                    "endtime": "22:00:00"
+                }
+            ],
+            [
+                {
+                    "starttime": "13:00:00",
+                    "endtime": "21:30:00"
+                }
+            ],
+            [
+                {
+                    "starttime": "15:45:00",
+                    "endtime": "20:00:00"
+                }
+            ],
+            [
+                {
+                    "starttime": "15:45:00",
+                    "endtime": "20:00:00"
+                }
+            ],
+            [
+                {
+                    "starttime": "15:45:00",
+                    "endtime": "20:00:00"
+                }
+            ],
+            [
+                {
+                    "starttime": "14:45:00",
+                    "endtime": "20:30:00"
+                }
+            ]
+        ],
+        "pickupopentimes": [
+            [
+                {
+                    "starttime": "13:00:00",
+                    "endtime": "22:00:00"
+                }
+            ],
+            [
+                {
+                    "starttime": "13:00:00",
+                    "endtime": "22:00:00"
+                }
+            ],
+            [
+                {
+                    "starttime": "13:00:00",
+                    "endtime": "21:30:00"
+                }
+            ],
+            [
+                {
+                    "starttime": "13:00:00",
+                    "endtime": "20:00:00"
+                }
+            ],
+            [
+                {
+                    "starttime": "13:00:00",
+                    "endtime": "20:00:00"
+                }
+            ],
+            [
+                {
+                    "starttime": "13:00:00",
+                    "endtime": "20:00:00"
+                }
+            ],
+            [
+                {
+                    "starttime": "13:00:00",
+                    "endtime": "20:30:00"
+                }
+            ]
+        ],
+        "exceptionsdelivery": []
+    },
+    "Id": "OR0037R1",
+    "Name": "TopTop Donuts",
+    "Open": 0,
+    "Pickup": 1,
+    "Settings": {
+        "PostcodeSupport": true,
+        "Discounts": [],
+        "PaymentMethods": [
+            {
+                "id": "0",
+                "name": "",
+                "fixed": 0,
+                "percentage": 0
+            },
+            {
+                "id": "15",
+                "name": "",
+                "fixed": 0,
+                "percentage": 0
+            },
+            {
+                "id": "21",
+                "name": "",
+                "fixed": 0,
+                "percentage": 0
+            },
+            {
+                "id": "18",
+                "name": "PayPal",
+                "fixed": 0,
+                "percentage": 0
+            },
+            {
+                "id": "13",
+                "name": "",
+                "fixed": 0,
+                "percentage": 0
+            },
+            {
+                "id": "24",
+                "name": "",
+                "fixed": 0,
+                "percentage": 0
+            }
+        ],
+        "Deliverycosts": false,
+        "AutoAddedProducts": []
+    },
+    "Urls": {
+        "Cart": "\/Cart",
+        "OrderUrl": "https:\/\/checkout.takeaway.com\/",
+        "Domain": "lieferando.de",
+        "Restaurant": "toptopdonuts-koeln.de"
+    },
+    "Translations": {
+        "error": "Fehler",
+        "emptyBasket": "W\u00e4hle leckere Gerichte aus der Karte und bestelle dein Men\u00fc.",
+        "free": "kostenlos",
+        "transactionCosts": "Transaktionskosten",
+        "minimumReached": "Du hast den Mindestbestellwert von <span class=\"amount\">{costs}<\/span> erreicht und kannst jetzt fortfahren.",
+        "minimumNotReached": "Leider kannst du noch nicht bestellen. {restaurant} liefert erst ab einem Mindestbestellwert von <span class=\"amount\">{costs}<\/span> (exkl. Lieferkosten).",
+        "switchedToDelivery": "Zu Lieferung gewechselt",
+        "switchedToPickup": "Zu Abholung gewechselt",
+        "deliveryRestaurantUnavailableTitle": "{restaurant} liefert leider nicht zu dieser Postleitzahl. M\u00f6chtest du zur\u00fcck zur \u00dcbersicht, um zu sehen welche Restaurants liefern?",
+        "deliveryProductUnavailableTitle": "Nicht zur Lieferung erh\u00e4ltlich",
+        "deliveryProductUnavailableText": "Einige deiner ausgew\u00e4hlten Gerichte stehen leider nicht zur Lieferung bereit. Sie werden nun aus dem Warenkorb entfernt. M\u00f6chtest du trotzdem fortfahren?",
+        "deliveryPriceMismatchedTitle": "Preisaktualisierung",
+        "deliveryPriceMismatchedText": "Du hast LIEFERUNG gew\u00e4hlt, damit hat sich der Preis ge\u00e4ndert. Bist du damit einverstanden?",
+        "pickupRestaurantUnavailableTitle": "Es tut uns leid, bei {restaurant} kannst du dein Essen leider nicht abholen. M\u00f6chtest du zur\u00fcck zur \u00dcbersicht, um zu sehen welche Restaurants zur Verf\u00fcgung stehen?",
+        "pickupProductUnavailableTitle": "Nicht zur Abholung erh\u00e4ltlich",
+        "pickupProductUnavailableText": "Es tut uns leid, manche der ausgew\u00e4hlten Gerichte stehen nicht zur Abholung bereit. Sie werden nun aus dem Warenkorb entfernt. M\u00f6chtest du trotzdem fortfahren?",
+        "pickupPriceMismatchedTitle": "Preisaktualisierung",
+        "pickupPriceMismatchedText": "Du hast ABHOLUNG gew\u00e4hlt, damit hat sich der Preis ge\u00e4ndert. Bist du damit einverstanden?",
+        "minimumExclusionProducts": "Nicht im Mindestbestellwert",
+        "exactCash": "Passend",
+        "restaurantClosed2": "ist momentan geschlossen. Bitte versuche es morgen wieder oder",
+        "restaurantClosed3": "w\u00e4hle ein anderes Restaurant",
+        "categoryClosed1": "Dieses Produkt kann nur von:",
+        "categoryClosed2": "Uhr bestellt werden.",
+        "timedProduct1": "Die folgenden Produkte:",
+        "timedProduct2": "k\u00f6nnen nur zu den folgenden Lieferzeiten zwischen:",
+        "timedProduct3": "und",
+        "timedProduct4": "geliefert werden. Bitte kehre zur Men\u00fckarte zur\u00fcck, um das Produkt zu ersetzen oder zu l\u00f6schen, indem du",
+        "timedProduct5": "hier",
+        "timedProduct6": "klickst oder \u00e4ndere deinen gew\u00fcnschten Lieferzeitpunkt.",
+        "voucherAdded": "Gutschein erfolgreich hinzugef\u00fcgt",
+        "voucherRemove": "Gutschein entfernen",
+        "voucherSummary1": "Es wurde ein Gutschein \u00fcber",
+        "voucherSummary2": "zu deiner Bestellung hinzugef\u00fcgt.",
+        "voucherSummary3": "Es wird",
+        "voucherSummary4": "Guthaben f\u00fcr diese Bestellung verwendet.",
+        "voucherSummary5": "Der \u00fcbrige Betrag von",
+        "voucherSummary6": "muss online bezahlt werden. W\u00e4hle eine der aufgef\u00fchrten Onlinebezahlmethoden aus.",
+        "voucherSummary7": "Es ist noch",
+        "voucherSummary8": "an Guthaben f\u00fcr diesen Gutschein \u00fcber.",
+        "voucherSummaryDiscount": "um zur\u00fcck zur Bestellseite zu gelangen, damit Sie weitere Produkte bestellen k\u00f6nnen.",
+        "voucherMinimumError1": "Der Mindestbestellwert f\u00fcr diesen Gutscheincode ist noch nicht erreicht. Bestelle mindestens f\u00fcr:",
+        "voucherMinimumError2": ". Klicke",
+        "voucherMinimumError3": "hier",
+        "voucherMinimumError4": "um zur\u00fcck zur Bestellseite zu gelangen, damit Sie weitere Produkte bestellen k\u00f6nnen.",
+        "voucherProductError1": "Der Gutschein ist nur f\u00fcr das folgende Produkt g\u00fcltig:",
+        "voucherProductError2": ". Klicke",
+        "voucherProductError3": "hier",
+        "voucherProductError4": "um zur\u00fcck zur Bestellseite zu gelangen, damit du das Produkt deiner  Bestellung zuf\u00fcgen kannst.",
+        "productMissingBasketPlural": "Die folgenden Produkte sind derzeit nicht verf\u00fcgbar und wurden aus Deinem Warenkorb entfernt.",
+        "productMismatchPlural": "Einige Produkte wurden ver\u00e4ndert. Wir haben diese f\u00fcr dich aktualisiert.",
+        "productMissingPlural": "Du hast Produkte ausgew\u00e4hlt die nicht mehr erh\u00e4ltlich sind. Diese wurden aus deinem Warenkorb entfernt.",
+        "productMissingBasketSingular": "Das folgende Produkt ist zur Zeit nicht verf\u00fcgbar und wurde aus deinem Warenkorb entfernt.",
+        "productMismatchSingular": "Eines der Produkte wurde ver\u00e4ndert. Wir haben dieses f\u00fcr dich aktualisiert.",
+        "productMissingSingular": "Du hast ein Produkt ausgew\u00e4hlt, das nicht mehr erh\u00e4ltlich ist. Dieses wurde aus deinem Warenkorb entfernt.",
+        "BASKET_IS_EMPTY": "W\u00e4hle leckere Gerichte aus der Karte und bestelle dein Men\u00fc.",
+        "DELIVERY_COSTS": "Lieferkosten:",
+        "FREE_DELIVERY_FROM": "Kostenfreie Lieferung ab {costs}",
+        "ONLY_EXCLUDED_PRODUCTS_WARNING": "Du kannst leider noch nicht bestellen, da Deine ausgew\u00e4hlten Produkte nur in Kombination mit anderen Produkten geliefert werden k\u00f6nnen.",
+        "ORDER": "Bestellen",
+        "REACH_MINIMUM_ORDER_AMOUNT": "Ben\u00f6tigter Betrag, um den Mindestbestellwert zu erreichen",
+        "REMARK_ADD": "hinzuf\u00fcgen",
+        "REMARK_BOX_TITLE": "Anmerkungen",
+        "REMARK_CANCEL": "Abbrechen",
+        "REMARK_DELETE": "L\u00f6schen",
+        "REMARK_EDIT": "Bearbeiten",
+        "REMARK_EXAMPLE": "Z.B. \"F\u00fcr Thomas\" oder \"Ohne Zwiebeln\"",
+        "SUB_TOTAL_COSTS": "Zwischensumme",
+        "TOTAL_COSTS": "Gesamt",
+        "VOUCHER": "Gutschein",
+        "AGE_VERIFICATION_HEADER": "Ben je oud genoeg om dit artikel te kopen?",
+        "AGE_VERIFICATION_BODY_MAIN": "Om je bestelling af te ronden, moet je bevestigen dat je oud genoeg bent om dit item te kopen in het land van aanschaf.",
+        "AGE_VERIFICATION_BODY_AGE": "Je moet je leeftijd kunnen aantonen (+{max_age_restriction_in_basket}) met een geldige ID-kaart om je bestelling te ontvangen.",
+        "AGE_VERIFICATION_YES": "Ja, ga verder",
+        "AGE_VERIFICATION_NO": "Nee, annuleren"
+    },
+    "Locations": [
+        {
+            "deliveryareaid": 50667,
+            "locationid": "1212973",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "14.99",
+                    "costs": "0.99"
+                }
+            ],
+            "minimumcosts": 11.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50668,
+            "locationid": "1212974",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "14.99",
+                    "costs": "0.99"
+                }
+            ],
+            "minimumcosts": 11.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50670,
+            "locationid": "1212975",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": 14.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50672,
+            "locationid": "1212976",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": 14.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50674,
+            "locationid": "1212977",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": 14.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50676,
+            "locationid": "1212978",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "14.99",
+                    "costs": "0.99"
+                }
+            ],
+            "minimumcosts": 11.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50677,
+            "locationid": "1212979",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "14.99",
+                    "costs": "0.99"
+                }
+            ],
+            "minimumcosts": 11.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50678,
+            "locationid": "1212980",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "14.99",
+                    "costs": "0.99"
+                }
+            ],
+            "minimumcosts": 11.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50679,
+            "locationid": "1212981",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "14.99",
+                    "costs": "0.99"
+                }
+            ],
+            "minimumcosts": 11.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50733,
+            "locationid": "1212982",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "24.99",
+                    "costs": "1.99"
+                }
+            ],
+            "minimumcosts": 19.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50735,
+            "locationid": "1212983",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "24.99",
+                    "costs": "1.99"
+                }
+            ],
+            "minimumcosts": 19.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50737,
+            "locationid": "1212984",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "34.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": 29.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50739,
+            "locationid": "1212985",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "34.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": 29.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50767,
+            "locationid": "1212987",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "34.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": 29.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50769,
+            "locationid": "1212988",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "89.99",
+                    "costs": "9.99"
+                }
+            ],
+            "minimumcosts": 69.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50823,
+            "locationid": "1212989",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "24.99",
+                    "costs": "1.99"
+                }
+            ],
+            "minimumcosts": 19.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50825,
+            "locationid": "1212990",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "34.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": 29.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50827,
+            "locationid": "1212991",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "34.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": 29.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50829,
+            "locationid": "1212992",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "49.99",
+                    "costs": "2.99"
+                }
+            ],
+            "minimumcosts": 34.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50931,
+            "locationid": "1212995",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": 14.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50933,
+            "locationid": "1212996",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "34.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": 29.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50935,
+            "locationid": "1212997",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "29.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": 24.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50937,
+            "locationid": "1212998",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "29.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": 24.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50939,
+            "locationid": "1212999",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": 14.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50969,
+            "locationid": "1213001",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": 14.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50996,
+            "locationid": "1213002",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": 14.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50997,
+            "locationid": "1213003",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "24.99",
+                    "costs": "1.99"
+                }
+            ],
+            "minimumcosts": 19.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50999,
+            "locationid": "1213004",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "29.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": 24.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 51061,
+            "locationid": "1213005",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "49.99",
+                    "costs": "2.99"
+                }
+            ],
+            "minimumcosts": 34.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 51063,
+            "locationid": "1213006",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "49.99",
+                    "costs": "2.99"
+                }
+            ],
+            "minimumcosts": 34.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 51065,
+            "locationid": "1213007",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "49.99",
+                    "costs": "2.99"
+                }
+            ],
+            "minimumcosts": 34.99,
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 51069,
+            "locationid": "1213009",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "89.99",
+                    "costs": "9.99"
+                }
+            ],
+            "minimumcosts": 69.99,
+            "city": "K\u00f6ln"
+        }
+    ],
+    "Polygons": [
+        {
+            "deliveryareaid": "51069",
+            "costs": [
+                {
+                    "from": 0,
+                    "till": 89.99,
+                    "costs": 9.99
+                }
+            ],
+            "minimumcosts": 69.99,
+            "coordinates": "POLYGON((7.047199372047075 50.99229655645993,7.056454002616803 50.99717150098644,7.059200584648053 50.99971029140828,7.056598871819677 51.00218135208706,7.05127736913413 51.00255943778671,7.048202817822866 51.006191976518515,7.0427525691046045 51.00705609316589,7.039231180332268 51.01102505195499,7.032278894565667 51.0113490638205,7.019490121982659 51.009134937624104,7.013653635166253 51.00773080282939,7.010821222446526 50.99487559344756,7.023352502964104 50.996226097995404,7.027987360141839 50.992012393820424,7.047199372047075 50.99229655645993))"
+        }
+    ],
+    "Currency": {
+        "ISO4217": "EUR",
+        "symbol": "\u20ac",
+        "entity": "&euro;",
+        "decimalsepparator": ",",
+        "thousandsepparator": ".",
+        "nrofdecimals": 2,
+        "symbolposition": "end"
+    },
+    "RestaurantLocations": [
+        {
+            "deliveryareaid": 50667,
+            "id": "1212973",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "14.99",
+                    "costs": "0.99"
+                }
+            ],
+            "minimumcosts": "11.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50668,
+            "id": "1212974",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "14.99",
+                    "costs": "0.99"
+                }
+            ],
+            "minimumcosts": "11.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50670,
+            "id": "1212975",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": "14.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50672,
+            "id": "1212976",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": "14.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50674,
+            "id": "1212977",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": "14.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50676,
+            "id": "1212978",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "14.99",
+                    "costs": "0.99"
+                }
+            ],
+            "minimumcosts": "11.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50677,
+            "id": "1212979",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "14.99",
+                    "costs": "0.99"
+                }
+            ],
+            "minimumcosts": "11.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50678,
+            "id": "1212980",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "14.99",
+                    "costs": "0.99"
+                }
+            ],
+            "minimumcosts": "11.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50679,
+            "id": "1212981",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "14.99",
+                    "costs": "0.99"
+                }
+            ],
+            "minimumcosts": "11.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50733,
+            "id": "1212982",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "24.99",
+                    "costs": "1.99"
+                }
+            ],
+            "minimumcosts": "19.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50735,
+            "id": "1212983",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "24.99",
+                    "costs": "1.99"
+                }
+            ],
+            "minimumcosts": "19.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50737,
+            "id": "1212984",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "34.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": "29.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50739,
+            "id": "1212985",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "34.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": "29.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50767,
+            "id": "1212987",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "34.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": "29.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50769,
+            "id": "1212988",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "89.99",
+                    "costs": "9.99"
+                }
+            ],
+            "minimumcosts": "69.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50823,
+            "id": "1212989",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "24.99",
+                    "costs": "1.99"
+                }
+            ],
+            "minimumcosts": "19.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50825,
+            "id": "1212990",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "34.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": "29.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50827,
+            "id": "1212991",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "34.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": "29.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50829,
+            "id": "1212992",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "49.99",
+                    "costs": "2.99"
+                }
+            ],
+            "minimumcosts": "34.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50931,
+            "id": "1212995",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": "14.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50933,
+            "id": "1212996",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "34.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": "29.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50935,
+            "id": "1212997",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "29.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": "24.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50937,
+            "id": "1212998",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "29.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": "24.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50939,
+            "id": "1212999",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": "14.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50969,
+            "id": "1213001",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": "14.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50996,
+            "id": "1213002",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "19.99",
+                    "costs": "1.49"
+                }
+            ],
+            "minimumcosts": "14.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50997,
+            "id": "1213003",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "24.99",
+                    "costs": "1.99"
+                }
+            ],
+            "minimumcosts": "19.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 50999,
+            "id": "1213004",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "29.99",
+                    "costs": "2.49"
+                }
+            ],
+            "minimumcosts": "24.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 51061,
+            "id": "1213005",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "49.99",
+                    "costs": "2.99"
+                }
+            ],
+            "minimumcosts": "34.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 51063,
+            "id": "1213006",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "49.99",
+                    "costs": "2.99"
+                }
+            ],
+            "minimumcosts": "34.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 51065,
+            "id": "1213007",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "49.99",
+                    "costs": "2.99"
+                }
+            ],
+            "minimumcosts": "34.99",
+            "city": "K\u00f6ln"
+        },
+        {
+            "deliveryareaid": 51069,
+            "id": "1213009",
+            "costs": [
+                {
+                    "from": "0",
+                    "till": "89.99",
+                    "costs": "9.99"
+                }
+            ],
+            "minimumcosts": "69.99",
+            "city": "K\u00f6ln"
+        }
+    ],
+    "MenucardJson": {
+        "products": [
+            {
+                "productId": "R7ON571571",
+                "categoryId": "R7RRN0351",
+                "name": "Schaurige Halloween-6er Box",
+                "price": 21.9,
+                "price_pickup": 21.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ORQ3O710N1",
+                "categoryId": "OPP7N7R01",
+                "name": "New York Boom",
+                "price": 5.5,
+                "price_pickup": 5.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O70OO710N1",
+                "categoryId": "OPP7N7R01",
+                "name": "Lissabon Boom",
+                "price": 5.5,
+                "price_pickup": 5.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R7ON571571",
+                "categoryId": "R7RRN0351",
+                "name": "Schaurige Halloween-6er Box",
+                "price": 21.9,
+                "price_pickup": 21.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OPO1O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Naomi Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ORO1O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Sarah Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ON51O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Lesley Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OQ51O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Emma Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O1P1O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Olivia Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OOP1O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Isabella Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O7P1O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Mia Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O071O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Nadine Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O371O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Scarlett Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OP71O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Charlotte Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OR71O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Ella Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ONQ1O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Evelyn Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O5Q1O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Chloe Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O1R1O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Sophie Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OOR1O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Ruby Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O7R1O710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Alice Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O00NO710N1",
+                "categoryId": "OO57N7R01",
+                "name": "Annalise Donut",
+                "price": 2.1,
+                "price_pickup": 2.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OQ1NO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Naomi Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O1NNO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Sarah Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OONNO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Lesley Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O03NO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Emma Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O33NO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Olivia Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OP3NO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Isabella Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OR3NO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Mia Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ONONO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Nadine Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O5ONO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Scarlett Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OQONO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Charlotte Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O15NO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Ella Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OO5NO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Evelyn Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O75NO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Chloe Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O3PNO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Sophie Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OPPNO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Ruby Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ORPNO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Alice Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ON7NO710N1",
+                "categoryId": "O757N7R01",
+                "name": "Annalise Donut gef\u00fcllt",
+                "price": 2.3,
+                "price_pickup": 2.3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O0RNO710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Helena Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O3RNO710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Lorena Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OPRNO710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Manuela Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ORRNO710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Cecilla Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OQ03O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Bianca Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O113O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Nicole Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OO13O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Camilla Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O713O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Adele Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O0N3O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Miriam Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O3N3O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Nancy Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ORN3O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Luna Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ON33O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Amira Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O533O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Rihanna Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OQ33O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Ekram Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O1O3O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Pauline Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OOO3O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Estelle Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O053O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Alicia Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O353O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Elif Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OP53O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Lisa Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OR53O710N1",
+                "categoryId": "O0P7N7R01",
+                "name": "Salma Donut",
+                "price": 3.6,
+                "price_pickup": 3.6,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ONP3O710N1",
+                "categoryId": "O3P7N7R01",
+                "name": "Berlin Donut",
+                "price": 4.1,
+                "price_pickup": 4.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O5P3O710N1",
+                "categoryId": "O3P7N7R01",
+                "name": "Marrakesch Donut",
+                "price": 4.1,
+                "price_pickup": 4.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OQP3O710N1",
+                "categoryId": "O3P7N7R01",
+                "name": "Monaco Donut",
+                "price": 4.1,
+                "price_pickup": 4.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O173O710N1",
+                "categoryId": "O3P7N7R01",
+                "name": "San Francisco Donut",
+                "price": 4.1,
+                "price_pickup": 4.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OO73O710N1",
+                "categoryId": "O3P7N7R01",
+                "name": "Istanbul Donut",
+                "price": 4.1,
+                "price_pickup": 4.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O0Q3O710N1",
+                "categoryId": "O3P7N7R01",
+                "name": "Dubai Donut",
+                "price": 4.1,
+                "price_pickup": 4.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O3Q3O710N1",
+                "categoryId": "O3P7N7R01",
+                "name": "Miami Donut",
+                "price": 4.1,
+                "price_pickup": 4.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OPQ3O710N1",
+                "categoryId": "O3P7N7R01",
+                "name": "Monte Carlo Donut",
+                "price": 4.1,
+                "price_pickup": 4.1,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ORQ3O710N1",
+                "categoryId": "OPP7N7R01",
+                "name": "New York Boom",
+                "price": 5.5,
+                "price_pickup": 5.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O5R3O710N1",
+                "categoryId": "OPP7N7R01",
+                "name": "Sydney Boom",
+                "price": 5.5,
+                "price_pickup": 5.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OQR3O710N1",
+                "categoryId": "OPP7N7R01",
+                "name": "London Boom",
+                "price": 5.5,
+                "price_pickup": 5.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O10OO710N1",
+                "categoryId": "OPP7N7R01",
+                "name": "Mailand Boom",
+                "price": 5.5,
+                "price_pickup": 5.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OO0OO710N1",
+                "categoryId": "OPP7N7R01",
+                "name": "Los Angeles Boom",
+                "price": 5.5,
+                "price_pickup": 5.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O70OO710N1",
+                "categoryId": "OPP7N7R01",
+                "name": "Lissabon Boom",
+                "price": 5.5,
+                "price_pickup": 5.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OP1OO710N1",
+                "categoryId": "OPP7N7R01",
+                "name": "Madrid Boom",
+                "price": 5.5,
+                "price_pickup": 5.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OO557OO1O1",
+                "categoryId": "OO3R57ON1",
+                "name": "CroTop Biarritz",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O7557OO1O1",
+                "categoryId": "OO3R57ON1",
+                "name": "CroTop Lille",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O0P57OO1O1",
+                "categoryId": "OO3R57ON1",
+                "name": "CroTop Montpellier",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O3P57OO1O1",
+                "categoryId": "OO3R57ON1",
+                "name": "CroTop Orleans",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OPP57OO1O1",
+                "categoryId": "OO3R57ON1",
+                "name": "CroTop Lyon",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ORP57OO1O1",
+                "categoryId": "OO3R57ON1",
+                "name": "CroTop Cannes",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ON757OO1O1",
+                "categoryId": "OO3R57ON1",
+                "name": "CroTop Nizza",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O5757OO1O1",
+                "categoryId": "OO3R57ON1",
+                "name": "CroTop Rouen",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OQ757OO1O1",
+                "categoryId": "OO3R57ON1",
+                "name": "CroTop La Rochelle",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O1Q57OO1O1",
+                "categoryId": "OO3R57ON1",
+                "name": "CroTop Marseille",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OR7OO710N1",
+                "categoryId": "ON77N7R01",
+                "name": "Top Top Box Special",
+                "price": 20.5,
+                "price_pickup": 20.5,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O7POO710N1",
+                "categoryId": "ON77N7R01",
+                "name": "Top Top Box Classic, gef\u00fcllt",
+                "price": 12.9,
+                "price_pickup": 12.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O305O710N1",
+                "categoryId": "ON77N7R01",
+                "name": "Top Top Box Classic, ungef\u00fcllt",
+                "price": 11.5,
+                "price_pickup": 11.5,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O3OP037N31",
+                "categoryId": "ON77N7R01",
+                "name": "Top Top Box Boom",
+                "price": 30.9,
+                "price_pickup": 30.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ON5Q0O7N31",
+                "categoryId": "ON77N7R01",
+                "name": "Top Top Box Vegan Classic",
+                "price": 12.9,
+                "price_pickup": 12.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O55Q0O7N31",
+                "categoryId": "ON77N7R01",
+                "name": "Top Top Box Vegan Special",
+                "price": 21.5,
+                "price_pickup": 21.5,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RRPP7N77P1",
+                "categoryId": "ON77N7R01",
+                "name": "Top Top Box Special Plus",
+                "price": 22.9,
+                "price_pickup": 22.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R155QN77P1",
+                "categoryId": "ON77N7R01",
+                "name": "Top Top Box CroTops",
+                "price": 27.5,
+                "price_pickup": 27.5,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O5O7P37N31",
+                "categoryId": "ON77N7R01",
+                "name": "Party Surprise",
+                "price": 74.9,
+                "price_pickup": 74.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O073R37N31",
+                "categoryId": "ON77N7R01",
+                "name": "Mischbox mit 36 Donuts",
+                "price": 119.9,
+                "price_pickup": 119.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O373R37N31",
+                "categoryId": "ON77N7R01",
+                "name": "Mischbox mit 54 Donuts",
+                "price": 144.9,
+                "price_pickup": 144.9,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O515O710N1",
+                "categoryId": "O577N7R01",
+                "name": "Donut-Torte-Classic (mit ungef\u00fcllten Donuts)",
+                "price": 44.9,
+                "price_pickup": 44.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O1N7R37N31",
+                "categoryId": "O577N7R01",
+                "name": "Donut-Torte-Classic (mit gef\u00fcllten Donuts)",
+                "price": 49.9,
+                "price_pickup": 49.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ON15O710N1",
+                "categoryId": "O577N7R01",
+                "name": "Donut-Torte-Special (mit gef\u00fcllten Donuts)",
+                "price": 55.9,
+                "price_pickup": 55.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OQ15O710N1",
+                "categoryId": "O577N7R01",
+                "name": "Donut-Torte-Vegan (mit ungef\u00fcllten Donuts)",
+                "price": 49.9,
+                "price_pickup": 49.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O57RRO7N31",
+                "categoryId": "O577N7R01",
+                "name": "Donut-Torte-Vegan Special (mit gef\u00fcllten Donuts)",
+                "price": 55.9,
+                "price_pickup": 55.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O5NOO710N1",
+                "categoryId": "ORP7N7R01",
+                "name": "Bangkok Vegan",
+                "price": 2.4,
+                "price_pickup": 2.4,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OQNOO710N1",
+                "categoryId": "ORP7N7R01",
+                "name": "Jakarta Vegan",
+                "price": 2.4,
+                "price_pickup": 2.4,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O13OO710N1",
+                "categoryId": "ORP7N7R01",
+                "name": "Seoul Vegan",
+                "price": 2.4,
+                "price_pickup": 2.4,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OO3OO710N1",
+                "categoryId": "ORP7N7R01",
+                "name": "Delhi Vegan",
+                "price": 2.4,
+                "price_pickup": 2.4,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O73OO710N1",
+                "categoryId": "ORP7N7R01",
+                "name": "Singapur Vegan",
+                "price": 2.4,
+                "price_pickup": 2.4,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O0OOO710N1",
+                "categoryId": "ORP7N7R01",
+                "name": "Mumbai Vegan",
+                "price": 2.4,
+                "price_pickup": 2.4,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O3OOO710N1",
+                "categoryId": "OOO1N3711",
+                "name": "Tokyo Vegan",
+                "price": 3.8,
+                "price_pickup": 3.8,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OPOOO710N1",
+                "categoryId": "OOO1N3711",
+                "name": "Hongkong Vegan",
+                "price": 3.8,
+                "price_pickup": 3.8,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ON5OO710N1",
+                "categoryId": "OOO1N3711",
+                "name": "Peking Vegan",
+                "price": 3.8,
+                "price_pickup": 3.8,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O55OO710N1",
+                "categoryId": "OOO1N3711",
+                "name": "Shanghai Vegan",
+                "price": 3.8,
+                "price_pickup": 3.8,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OQ5OO710N1",
+                "categoryId": "OOO1N3711",
+                "name": "Nara Vegan",
+                "price": 3.8,
+                "price_pickup": 3.8,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ROPPRP73P1",
+                "categoryId": "RP1NN35O1",
+                "name": "Tropical Smoothie 0,5l",
+                "price": 4.5,
+                "price_pickup": 4.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R7PPRP73P1",
+                "categoryId": "RP1NN35O1",
+                "name": "Energy Smoothie 0,5l",
+                "price": 4.5,
+                "price_pickup": 4.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R07PRP73P1",
+                "categoryId": "RP1NN35O1",
+                "name": "Superfood Smoothie 0,5l",
+                "price": 4.5,
+                "price_pickup": 4.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R37PRP73P1",
+                "categoryId": "RP1NN35O1",
+                "name": "Detox Smoothie 0,5l",
+                "price": 4.5,
+                "price_pickup": 4.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RP7PRP73P1",
+                "categoryId": "RP1NN35O1",
+                "name": "Powerfruit Smoothie 0,5l",
+                "price": 4.5,
+                "price_pickup": 4.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RR17RNROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Green Apple Tea 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R13513ROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Green Apple Tea 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RNN7RNROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Blueberry Tea 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RO3513ROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Blueberry Tea 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R5N7RNROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Passionsfruit Tea 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R73513ROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Passionsfruit Tea 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RQN7RNROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Kiwi Tea 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R0O513ROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Kiwi Tea 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RO37RNROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Strawberry Tea 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RPO513ROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Strawberry Tea 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R737RNROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Red Guava Tea 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RRO513ROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Red Guava Tea 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R0O7RNROP1",
+                "categoryId": "R13PONPO1",
+                "name": "White Peach Tea 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RN5513ROP1",
+                "categoryId": "R13PONPO1",
+                "name": "White Peach Tea 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R3O7RNROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Kumquat Lemon Tea 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R55513ROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Kumquat Lemon Tea 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RPO7RNROP1",
+                "categoryId": "R13PONPO1",
+                "name": "HoneyDew Melon Tea 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RQ5513ROP1",
+                "categoryId": "R13PONPO1",
+                "name": "HoneyDew Melon Tea 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RRO7RNROP1",
+                "categoryId": "R13PONPO1",
+                "name": "WaterMelon Tea 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R1P513ROP1",
+                "categoryId": "R13PONPO1",
+                "name": "WaterMelon Tea 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RN57RNROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Lychee Tea 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ROP513ROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Lychee Tea 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RQ57RNROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Peach Tea 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R07513ROP1",
+                "categoryId": "R13PONPO1",
+                "name": "Peach Tea 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RRPN53ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Green Apple Milk 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R1O3Q3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Green Apple Milk 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RN7N53ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Blueberry Milk 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ROO3Q3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Blueberry Milk 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R57N53ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Passionsfruit Milk 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R7O3Q3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Passionsfruit Milk 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RQ7N53ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Kiwi Milk 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R053Q3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Kiwi Milk 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "ROQN53ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Strawberry Milk 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RP53Q3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Strawberry Milk 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R7QN53ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Red Guava Milk 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RR53Q3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Red Guava Milk 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R0RN53ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "White Peach Milk 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RNP3Q3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "White Peach Milk 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R3RN53ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Kumquat Lemon Milk 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R5P3Q3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Kumquat Lemon Milk 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RPRN53ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "HoneyDew Melon Milk 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RQP3Q3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "HoneyDew Melon Milk 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RRRN53ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Watermelon Milk 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R173Q3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Watermelon Milk 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RN0353ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Lychee Milk 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RO73Q3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Lychee Milk 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R50353ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Peach Milk 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R773Q3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Peach Milk 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RQ0353ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Caramel Milk 0,5l",
+                "price": 4,
+                "price_pickup": 4,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R0Q3Q3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Caramel Milk 0,7l",
+                "price": 4.9,
+                "price_pickup": 4.9,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "RO75R3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Black Milk 0,7l",
+                "price": 5,
+                "price_pickup": 5,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R775R3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Green Milk 0,7l",
+                "price": 5,
+                "price_pickup": 5,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R0Q5R3ROP1",
+                "categoryId": "RO3PONPO1",
+                "name": "Tiger Black Sugar Milk 0,7l",
+                "price": 5,
+                "price_pickup": 5,
+                "hasSizes": true,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R11QR3ROP1",
+                "categoryId": "R73PONPO1",
+                "name": "Black Milk mit Tapioca 0,7l",
+                "price": 5,
+                "price_pickup": 5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "R71QR3ROP1",
+                "categoryId": "R73PONPO1",
+                "name": "Tiger Black Sugar Milk mit Tapioca 0,7l",
+                "price": 5,
+                "price_pickup": 5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "00PN7P73O1",
+                "categoryId": "OQ77N7R01",
+                "name": "Fuze Tea Gr\u00fcner Tee Limette Minze 0,4l (EINWEG)",
+                "price": 2.5,
+                "price_pickup": 2.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "03PN7P73O1",
+                "categoryId": "OQ77N7R01",
+                "name": "Fuze Tea Schwarzer Tee Zitrone 0,4l (EINWEG)",
+                "price": 2.5,
+                "price_pickup": 2.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "0PPN7P73O1",
+                "categoryId": "OQ77N7R01",
+                "name": "Fuze Tea Schwarzer Tee Pfirsich Hibiskus 0,4l (EINWEG)",
+                "price": 2.5,
+                "price_pickup": 2.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O1N5O710N1",
+                "categoryId": "OQ77N7R01",
+                "name": "Coca-Cola 0,5l (EINWEG)",
+                "price": 2.5,
+                "price_pickup": 2.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OON5O710N1",
+                "categoryId": "OQ77N7R01",
+                "name": "Coca-Cola Zero Sugar 0,5l (EINWEG)",
+                "price": 2.5,
+                "price_pickup": 2.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O035O710N1",
+                "categoryId": "OQ77N7R01",
+                "name": "Fanta Orange 0,5l (EINWEG)",
+                "price": 2.5,
+                "price_pickup": 2.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O335O710N1",
+                "categoryId": "OQ77N7R01",
+                "name": "Sprite 0,5l (EINWEG)",
+                "price": 2.5,
+                "price_pickup": 2.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OP35O710N1",
+                "categoryId": "OQ77N7R01",
+                "name": "Fuze Tea Schwarzer Tee Pfirsich 0,4l (EINWEG)",
+                "price": 2.5,
+                "price_pickup": 2.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "OR35O710N1",
+                "categoryId": "OQ77N7R01",
+                "name": "ViO still 0,5l (EINWEG)",
+                "price": 2,
+                "price_pickup": 2,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "O3P5O710N1",
+                "categoryId": "OQ77N7R01",
+                "name": "Red Bull 0,25l (EINWEG)",
+                "price": 3,
+                "price_pickup": 3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "00Q7PP73O1",
+                "categoryId": "OQ77N7R01",
+                "name": "Red Bull Sugarfree 0,25l (EINWEG)",
+                "price": 3,
+                "price_pickup": 3,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "0NR7PP73O1",
+                "categoryId": "OQ77N7R01",
+                "name": "Bratee, Zitrone 0,75l",
+                "price": 2.5,
+                "price_pickup": 2.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "05R7PP73O1",
+                "categoryId": "OQ77N7R01",
+                "name": "Bratee, Granatapfel 0,75l",
+                "price": 2.5,
+                "price_pickup": 2.5,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            },
+            {
+                "productId": "001QPP73O1",
+                "categoryId": "OQ77N7R01",
+                "name": "4Bro, Ice Tea Mango Maracuja 0,5l",
+                "price": 2,
+                "price_pickup": 2,
+                "hasSizes": false,
+                "deliverymethod": 2,
+                "is_meal": true
+            }
+        ],
+        "categories": []
+    }
+}

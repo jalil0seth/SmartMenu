@@ -1,0 +1,38 @@
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-space-between {
+  justify-content: space-between;
+}
+
+.flex-flex-start {
+  justify-content: flex-start;
+}
+
+.stop-scroll {
+  overflow: hidden;
+  position: absolute; // removed fixed, has iPad issues, also prevents the auto scroll up.
+}
+
+.no-dot-list {
+  list-style-type: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.noselect { // Disallow text highlight
+  -webkit-user-select: none; // Safari
+  -ms-user-select: none; // IE
+  user-select: none;
+}

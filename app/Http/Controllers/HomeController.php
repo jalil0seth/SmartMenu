@@ -25,11 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        public function index()
-        {
             $products = Product::all();
             $categories = Category::all();
             return view('menu',compact('products','categories'));
-        }
     }
 }

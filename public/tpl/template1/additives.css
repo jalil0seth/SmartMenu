@@ -1,0 +1,125 @@
+.sidedish-allergens-wrapper .meal-allergens,
+.meal-allergens {
+  color:#999;
+  font-size:11px;
+  cursor:pointer;
+  padding:0px;
+}
+.sidedish-allergens-wrapper {
+  font-size: 90%;
+  line-height: 1.75em;
+  display: block;
+  color: #888;
+}
+.closepopup,
+.allergens-close{
+  float:right;
+  cursor: pointer;
+}
+.meal-allergens-close {
+  height: 35px;
+  width: auto;
+  background: #2f96ce;
+  color: #fff;
+  border: 0px;
+  float: right;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 15px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  line-height: 35px;
+  cursor: pointer;
+}
+.meal-allergens:after {
+  content: "\f05a";
+  font-family: FontAwesome;
+  font-weight: 400;
+  line-height: 1;
+}
+.additivesinline h1,
+.allergenspopup h1 {
+  font-size:18px;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+.additivesinline h3,
+.allergenspopup h3 {
+  font-size:18px;
+  margin-bottom:20px;
+  margin-top:20px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+}
+.additivesinline ul li,
+.allergenspopup ul li {
+  font-size: 13px;
+}
+.additivesinline p,
+.allergenspopup p{
+  font-size: 13px;
+  font-weight: normal;
+}
+.additivesinline .disclaimer,
+.allergenspopup .disclaimer {
+  margin-top: 24px;
+  font-size: 12px;
+  font-style: italic;
+}
+.meal-description-attribute-descriptions {
+  color: #999;
+  font-size: 11px;
+  word-break: break-word;
+  display: block;
+}
+.inlineinfo {
+  padding: 20px;
+  height: 100%;
+  padding-bottom: 100px;
+}
+.inlineinfo .popupheader {
+  border-color:#d4d4d4;
+}
+.inlineinfo .popupcontent {
+  height: 100%;
+}
+
+.inline-desc{
+  margin-bottom:20px;
+  margin-left:14px;
+}
+.inline-desc .hidden {
+  display: none;
+}
+.additivesinline {
+  height:0%;
+  background:#efefef;
+  position: absolute;
+  border-radius: 4px;
+  right: 0;
+  top:0;
+  width:100%;
+  border-bottom: 3px solid #3096ce;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  overflow-y:hidden;
+}
+.additivesinline.show {
+  height: 100%;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  border-bottom: 3px solid #3096ce;
+  padding-bottom: 20px;
+  overflow: auto;
+}
+.sidedishpopup.additivesopen {
+  overflow: hidden;
+}
+.sidedish-allergens-wrapper {
+  display:inline-block;
+  padding-left: 1em;
+}

@@ -1,0 +1,72 @@
+.templaterevamped-hero {
+  padding:20px;
+  .templaterevamped-header{
+    max-width: 200px;
+    @media (min-width: 640px) {
+      max-width: 100%;
+    }
+  }
+  .restaurantlogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+
+    height: 75px;
+    width: 75px;
+    border-radius: 8px;
+
+    @media (min-width: 640px) {
+      height: 120px;
+      width: 120px;
+      margin: 0 auto;
+    }
+  }
+  h1 {
+    font-family: "Takeaway Sans", "Avant Garde", "Century Gothic", Helvetica, Arial, sans-serif;
+    font-size:20px;
+    font-weight: bold;
+    color:#fff;
+    @media (min-width: 640px) {
+      font-size:30px;
+      text-align: center;
+    }
+  }
+}
+.nav-wrapper {
+  font-family: "Takeaway Sans", "Avant Garde", "Century Gothic", Helvetica, Arial, sans-serif;
+}
+
+.templaterevamped-shoppingcartna {
+  &.mobile{
+    display: block;
+    height:70px;
+    padding-top:40px;
+    text-align: center;
+    @media (min-width: 600px) {
+      display:none;
+    }
+  }
+  display: none;
+  @media (min-width: 600px) {
+    display:flex;
+    align-self: flex-start;
+    padding:16px;
+    top: 66px;
+    position: sticky;
+  }
+  @media (min-width: 1005px) {
+    width: 20%;
+  }
+  a {
+    text-align: center;
+    background-color: #2f96ce;
+    padding:16px 16px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+

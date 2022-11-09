@@ -1,0 +1,230 @@
+.full {
+  &.category-scrolling {
+    .menucard {
+      padding-top: 64px; // height of the category scroller, always needs to be added to an item below the category swiper
+    }
+
+    .menu-category-bar-container {
+      @include respond-to('>=tablet-landscape') {
+        width: calc(100% - 344px); // basket width
+        &.order-not-available{
+          width: 100%;
+        }
+      }
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 15;
+    }
+  }
+}
+
+.activesmartbanner {
+  .category-scrolling { // if the banner is active, stick it to that position
+    top: 79px;
+
+    .menu-category-bar-container {
+      top: 79px;
+    }
+  }
+}
+
+.menu-category-bar {
+  height: 64px;
+  background-color: $color-back-sub-content;
+  display: flex;
+  flex-direction: row;
+  color: $color-back-secondary;
+
+  &.menucard-container {
+    padding: 0;
+    max-width: 1130px;
+    //margin: 0 auto;
+  }
+
+  &-container {
+    @include respond-to('>=tablet-landscape') {
+      margin-top: 0;
+    }
+
+    background-color: $color-back-sub-content;
+    height: 64px;
+    position: relative; // needed for the searchbar
+  }
+
+  .expanded {
+    .icon-search {
+      background: $color-primary-contrast;
+      border-top: $color-grey-ultra-light 1px solid;
+      border-left: $color-grey-ultra-light 1px solid;
+      border-bottom: $color-grey-ultra-light 1px solid;
+    }
+
+    .menu-meal-search {
+      max-width: 5000px;
+    }
+  }
+
+  .menu-meal-search {
+    max-width: 0;
+    overflow: hidden;
+    position: absolute;
+    width: calc(100% - 50px);
+    left: 50px; // width of the search icon
+    top: 0; // needed for IE
+    display: flex;
+    justify-content: space-between;
+    z-index: 2; // needed to move the input over the categorie slider
+    background: $color-back-sub-content;
+
+    .menu-meal-search-label {
+      padding: 12px 0;
+      width: 100%;
+    }
+
+    .menu-meal-search-input {
+      height: 40px;
+      padding: 0 8px 0 0;
+      width: 100%;
+      border-radius: 2px;
+      background: $color-primary-contrast;
+      border-top: $color-grey-ultra-light 1px solid;
+      border-bottom: $color-grey-ultra-light 1px solid;
+    }
+
+    .menu-meal-search-close {
+      display: inline-block;
+      height: 40px;
+      margin: 12px 15px 12px 0;
+      width: 40px;
+      text-align: center;
+      border: $color-grey-ultra-light 1px solid;
+      background: $color-primary-contrast;
+      cursor: pointer;
+
+      &:after {
+
+        //magnifying glass
+        content: '\E994';
+        font-family: $font-fontello;
+        font-size: 11px;
+        line-height: 40px;
+        font-style: normal;
+      }
+    }
+  }
+
+  .menu-category-search,
+  .swipe-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    .swipe-next-button {
+      width: 64px;
+      height: 64px;
+      text-align: center;
+
+      &:before {
+        width: auto;
+        margin: 0;
+        line-height: 64px;
+        font-size: 12px;
+      }
+    }
+
+    .icon-search {
+      height: 40px;
+      line-height: 40px;
+      width: 35px;
+      margin: 0 0 0 15px;
+      text-align: center;
+      border-top: transparent 1px solid;
+      border-left: transparent 1px solid;
+      border-bottom: transparent 1px solid;
+
+      &:before {
+        width: auto;
+        margin: 0;
+        font-size: 19px;
+      }
+    }
+  }
+
+  .expanded {
+    .icon-search {
+      background: $color-primary-contrast;
+      border-top: $color-grey-ultra-light 1px solid;
+      border-left: $color-grey-ultra-light 1px solid;
+      border-bottom: $color-grey-ultra-light 1px solid;
+    }
+
+    .menu-meal-search {
+      max-width: 5000px;
+    }
+  }
+
+  .menu-category-list {
+    display: flex;
+    height: 64px;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+
+    .swiper-slide {
+      text-decoration: none;
+    }
+  }
+
+  a {
+    list-style: none;
+    font-size: 14px;
+    font-weight: 300;
+    height: 26px;
+    padding: 2px 19px 0;
+    font-family: $font-family-secondary;
+    color: $color-secondary;
+    text-overflow: unset;
+    width: auto;
+
+    &.slide-active {
+      color: $color-primary;
+      font-weight: 400;
+    }
+  }
+
+  .swipe-next {
+    @include respond-to('<=tablet-landscape') {
+      display: none;
+    }
+
+    -webkit-transition: opacity 300ms ease-in-out;
+    -moz-transition: opacity 300ms ease-in-out;
+    -ms-transition: opacity 300ms ease-in-out;
+    -o-transition: opacity 300ms ease-in-out;
+    opacity: 1;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.swiper-button-disabled {
+      -webkit-transition: opacity 300ms ease-in-out;
+      -moz-transition: opacity 300ms ease-in-out;
+      -ms-transition: opacity 300ms ease-in-out;
+      -o-transition: opacity 300ms ease-in-out;
+      opacity: 0;
+    }
+  }
+
+  .swiper-container {
+    width: 100%;
+  }
+}

@@ -1,0 +1,35 @@
+/**
+ * Global z-index file for the project. Try to keep it as simple as possible. Don't forget that every change may create
+ * unexpected results on popups, components, menus etc.
+ *
+ * Notes:
+ * If you set position to other value than "static" but your element's z-index still doesn't seem to work, it may be
+ * that some parent element has z-index set.
+ *
+ * The stacking contexts have hierarchy, and each stacking context is considered in the stacking order of the parent's
+ * stacking context. So with following html:
+ *
+ *   <div id="el1" style="z-index: 5"></div>
+ *   <div id="el2" style="z-index: 3">
+ *     <div id="el3" style="z-index: 8"></div>
+ *   </div>
+ *
+ * No matter how big the z-index of el3 will be set, it will always be under el1 because it's parent has lower stacking
+ * context. You can imagine stacking order as levels where stacking order of el3 is actually 3.8 which is lower than 5.
+ */
+
+.seopages,
+.myaccountpages {
+  .main-header {
+    z-index: 20;
+    position: relative;
+  }
+}
+
+.content-apps .apps-headline span {
+  z-index: 1;
+}
+
+.tv-spinner {
+  z-index: 100 !important;
+}

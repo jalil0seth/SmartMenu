@@ -1,0 +1,182 @@
+.menu{
+  .hero{
+    margin-bottom: 0px;
+  }
+}
+.menucard-container {
+  padding: 16px 24px 24px;
+  max-width: 1130px;
+  margin: 0 auto;
+  position: relative;
+  flex:auto;
+
+  &.order-not-available{
+    margin: 0;
+    @media (min-width: 1005px) {
+      margin:0 auto;
+    }
+  }
+  .menucard__category-image-container{
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1px 1px 0 0;
+    height:88px;
+    @media (min-width: 1005px) {
+      height: 133px;
+    }
+  }
+  .menucat {
+    border-radius: 2px 2px 0 0;
+    border: 1px solid #f8f5f2;
+
+    .category {
+      border-radius: 2px 2px 0 0;
+      padding: 19px 12px;
+      background-color: #f8f5f2;
+
+      .category-name{
+        font-family: "Takeaway Sans", "Avant Garde", "Century Gothic", Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #0a3847;
+      }
+      .category-description {
+        margin: 4px 0 0;
+        color: #0a3847;
+        font-family: "Roboto Slab", Arial, serif;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 1.83;
+        position: relative;
+      }
+    }
+    .addtobasket:hover{
+        background: #eef7fa;
+        box-shadow: 0 1px 1px #cfcac4;
+        cursor: pointer;
+    }
+
+    .addtobasket {
+      border: 1px solid #ebebeb;
+      border-radius: 2px;
+      margin: 8px 0;
+      position: relative;
+      padding: 16px 22px;
+      display: flex !important;
+      flex-wrap: wrap;
+      align-items: stretch;
+      .product-name {
+        font-family: "Takeaway Sans", "Avant Garde", "Century Gothic", Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.22;
+        color: #0a3847;
+        margin: 0 0 4px;
+      }
+      .product-price {
+        font-family: "Takeaway Sans", "Avant Garde", "Century Gothic", Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.22;
+        letter-spacing: -0.5px;
+        color: #f86600;
+        margin: auto 0 0;
+      }
+      .product-description {
+        font-family: "Takeaway Sans", "Avant Garde", "Century Gothic", Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #666;
+        line-height: 1.5;
+        margin: 0 0 4px;
+      }
+      .product-order-button:before{
+           font-weight: 500;
+           position: absolute;
+           top: 0;
+           right: 0;
+           width: 40px;
+           height: 40px;
+           line-height: 40px;
+           border-bottom: 1px solid #ebebeb;
+           border-left: 1px solid #ebebeb;
+           border-radius: 0 2px 0 0;
+           color: #125fca;
+           font-size: 24px;
+           text-align: center;
+           content: '+';
+         }
+      }
+    .addtobasket {
+      &.order-not-available {
+        .product-order-button:before{
+          display:none;
+        }
+        &:hover{
+          cursor: auto;
+        }
+      }
+    }
+  }
+  .meal-wrapper{
+    max-width: calc(100% - 40px);
+    margin: 0 2% 0 0;
+    padding: 8px 12px;
+    flex: 1;
+  }
+  .meal__product-image-container {
+
+    @media (min-width: 1005px) {
+      flex: 0 0 100px;
+      height: 100px;
+      width: 100px;
+
+    }
+
+    align-self: center;
+    display: flex;
+    flex: 0 0 70px;
+    height: 70px;
+    justify-content: center;
+    margin: 0 32px 8px;
+    text-align: right;
+    width: 70px;
+
+    .meal__product-image {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+.menucard-listing{
+  display:flex;
+}
+.templaterevamped-shoppingcartna {
+  display: none;
+  @media (min-width: 600px) {
+    display:flex;
+    align-self: flex-start;
+    padding:16px;
+    top: 66px;
+    position: sticky;
+  }
+  @media (min-width: 1005px) {
+    width: 20%;
+  }
+  a {
+    text-align: center;
+    background-color: #2f96ce;
+    padding:16px 16px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+
