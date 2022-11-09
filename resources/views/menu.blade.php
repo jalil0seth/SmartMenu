@@ -20,7 +20,7 @@
       <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
       <style>
       .cart-meal-name {
-         word-break: 0 !important;
+         word-break: normal !important;
       }
       </style>
    </head>
