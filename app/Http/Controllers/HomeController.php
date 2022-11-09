@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Setting;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -27,6 +28,7 @@ class HomeController extends Controller
     {
             $products = Product::all();
             $categories = Category::all();
-            return view('menu',compact('products','categories'));
+            $setting = Setting::first();
+            return view('menu',compact('products','categories','setting'));
     }
 }

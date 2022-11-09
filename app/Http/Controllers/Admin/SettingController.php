@@ -49,7 +49,7 @@ class SettingController extends Controller
             Media::whereIn('id', $media)->update(['model_id' => $setting->id]);
         }
 
-        return redirect()->route('admin.settings.index');
+        return redirect()->route('admin.settings.edit',1);
     }
 
     public function edit(Setting $setting)
@@ -88,7 +88,7 @@ class SettingController extends Controller
             }
         }
 
-        return redirect()->route('admin.settings.index');
+        return redirect()->route('admin.settings.edit',1);
     }
 
     public function show(Setting $setting)

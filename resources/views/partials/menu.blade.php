@@ -156,7 +156,7 @@
             @endcan
             @can('setting_access')
                 <li class="{{ request()->is("admin/settings") || request()->is("admin/settings/*") ? "active" : "" }}">
-                    <a href="{{ route("admin.settings.index") }}">
+                    <a href="{{ route("admin.settings.edit", 1) }}">
                         <i class="fa-fw fas fa-cogs">
 
                         </i>
