@@ -3,7 +3,7 @@
 <div class="login-box">
     <div class="login-logo">
         <a href="{{ route('admin.home') }}">
-            {{ trans('panel.site_title') }}
+            <img src="{{@asset('smartmenu_logo.png')}}" style="width :200px; padding:15px !important"/>
         </a>
     </div>
     <div class="login-box-body">

@@ -72,12 +72,6 @@
                                             @endif
                                         </td>
                                         <td>
-                                            @can('category_show')
-                                                <a class="btn btn-xs btn-primary" href="{{ route('admin.categories.show', $category->id) }}">
-                                                    {{ trans('global.view') }}
-                                                </a>
-                                            @endcan
-
                                             @can('category_edit')
                                                 <a class="btn btn-xs btn-info" href="{{ route('admin.categories.edit', $category->id) }}">
                                                     {{ trans('global.edit') }}

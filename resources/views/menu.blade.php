@@ -26,7 +26,7 @@
             <div id="navigationclosebutton" class="menubutton"><i class="fa fa-close fa-2x" aria-hidden="true"></i></div>
             <div class="nav-wrapper">
                <ul>
-                  <li><a href="review" title="Bewertungen zu TopTop Donuts ansehen">Menu</a></li>
+                  <li class='active'><a href="review" title="Bewertungen zu TopTop Donuts ansehen">Menu</a></li>
                   <li><a href="contact" title="Nehmen Sie Kontakt mit TopTop Donuts auf">Contact</a></li>
                   <li><a href="colofon" title="">About Us</a></li>
                </ul>
@@ -96,7 +96,12 @@
                                     </div>
                                     <!-- product-name -->
                                     @isset($p->notes)
-                                        <div class="product-description" itemprop="description">• {{$p->notes}} </div>
+                                        <div class="product-description" itemprop="description">
+                                        <ul class='notes'>
+                                        @foreach (preg_split("/\r\n|\n|\r/", $p->notes) as $notes)
+                                           <li>•  {{$notes}}</li>
+                                        @endforeach
+                                        </ul></div>
                                     @endisset
 
                                     <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
