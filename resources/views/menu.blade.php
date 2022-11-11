@@ -246,11 +246,11 @@
       </div>
       <div class="container">
          <div class="contact">
-            <h3>Kontakt</h3>
+            <h3>Adresse</h3>
             <div class="widget" id="address">
                <div itemscope itemtype="http://schema.org/Restaurant">
                   <h2 itemprop="name">{{$setting->nom}}</h2>
-                  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress"></span><br/><span itemprop="postalCode">40000</span>&nbsp;<span itemprop="addressLocality">Marrakech</span></div>
+                  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">+212611551122</span><br/><span itemprop="postalCode">40000</span>&nbsp;<span itemprop="addressLocality">Marrakech</span></div>
                   <div><br/></div>
                   <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
                      <meta itemprop="latitude" content="50.9247977" />
