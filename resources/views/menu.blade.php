@@ -222,7 +222,7 @@
                            <span class="cart-sum-name cart-meal-exclude">Nicht im Mindestbestellwert</span>
                         </div>
                         <section class="cartbutton">
-                           <a class="cartbutton-button btn-disabled" onclick="proceedCheckout()" href="order.html">
+                           <a class="cartbutton-button btn-disabled" onclick="proceedCheckout()" href="#">
                            Commander
                            </a>
                            <div class="minimumorderamount-reached" style="display: none;"></div>
