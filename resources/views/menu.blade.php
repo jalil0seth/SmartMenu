@@ -250,7 +250,7 @@
             <div class="widget" id="address">
                <div itemscope itemtype="http://schema.org/Restaurant">
                   <h2 itemprop="name">{{$setting->nom}}</h2>
-                  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">Severinstraße&nbsp;56</span><br/><span itemprop="postalCode">50678</span>&nbsp;<span itemprop="addressLocality">Köln</span></div>
+                  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress"></span><br/><span itemprop="postalCode">40000</span>&nbsp;<span itemprop="addressLocality">Marrakech</span></div>
                   <div><br/></div>
                   <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
                      <meta itemprop="latitude" content="50.9247977" />
@@ -261,10 +261,9 @@
          </div>
          <div class="links">
             <h3>Info</h3>
-            <a href="terms">AGB</a><br/>
-            <a href="privacystatement">Datenschutzerklärung</a><br/>
-            <a href="cookiestatement">Verwendung von Cookies</a><br/>
-            <a href="colofon">Impressum</a>
+            <a href="#">About us</a><br/>
+            <a href="#">Contact</a><br/>
+            <a href="#">Planifier votre evenement</a><br/>
             <br/>
          </div>
       </div>
