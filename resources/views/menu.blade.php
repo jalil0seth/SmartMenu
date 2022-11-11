@@ -31,7 +31,7 @@
             <div id="navigationclosebutton" class="menubutton"><i class="fa fa-close fa-2x" aria-hidden="true"></i></div>
             <div class="nav-wrapper">
                <ul>
-                  <li class='active'><a href="review" title="Bewertungen zu TopTop Donuts ansehen">Menu</a></li>
+                  <li class='active'><a href="#" title="Bewertungen zu TopTop Donuts ansehen">Menu</a></li>
                   <li><a href="#" title="Nehmen Sie Kontakt mit TopTop Donuts auf">Contact</a></li>
                   <li><a href="#" title="">About Us</a></li>
                </ul>
