@@ -24,7 +24,7 @@ class LivreursController extends Controller
 
         $livreurs = Livreur::with(['user', 'media'])->get();
 
-        $users = User::get();
+        $users = User::where('id','>',2)->get();
 
         return view('admin.livreurs.index', compact('livreurs', 'users'));
     }
@@ -33,7 +33,7 @@ class LivreursController extends Controller
     {
         abort_if(Gate::denies('livreur_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $users = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $users = User::where('id','>',2)->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('admin.livreurs.create', compact('users'));
     }
@@ -57,7 +57,7 @@ class LivreursController extends Controller
     {
         abort_if(Gate::denies('livreur_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $users = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $users = User::where('id','>',2)->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $livreur->load('user');
 
