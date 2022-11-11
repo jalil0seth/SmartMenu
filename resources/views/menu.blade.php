@@ -32,8 +32,8 @@
             <div class="nav-wrapper">
                <ul>
                   <li class='active'><a href="review" title="Bewertungen zu TopTop Donuts ansehen">Menu</a></li>
-                  <li><a href="contact" title="Nehmen Sie Kontakt mit TopTop Donuts auf">Contact</a></li>
-                  <li><a href="colofon" title="">About Us</a></li>
+                  <li><a href="#" title="Nehmen Sie Kontakt mit TopTop Donuts auf">Contact</a></li>
+                  <li><a href="#" title="">About Us</a></li>
                </ul>
             </div>
          </div>
