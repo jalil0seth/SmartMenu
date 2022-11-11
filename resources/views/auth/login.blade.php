@@ -3,7 +3,7 @@
 <div class="login-box">
     <div class="login-logo">
         <a href="{{ route('admin.home') }}">
-            <img src="{{@asset('smartmenu_logo.png')}}" style="width :200px; padding:15px !important"/>
+            {{\App\Models\Setting::first()->nom}}
         </a>
     </div>
     <div class="login-box-body">

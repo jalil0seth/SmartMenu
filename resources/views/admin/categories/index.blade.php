@@ -25,13 +25,10 @@
 
                                     </th>
                                     <th>
-                                        {{ trans('cruds.category.fields.id') }}
+                                        {{ trans('cruds.category.fields.image') }}
                                     </th>
                                     <th>
                                         {{ trans('cruds.category.fields.name') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.category.fields.image') }}
                                     </th>
                                     <th>
                                         &nbsp;
@@ -41,13 +38,11 @@
                                     <td>
                                     </td>
                                     <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                     </td>
                                     <td>
                                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                     </td>
-                                    <td>
-                                    </td>
+
                                     <td>
                                     </td>
                                 </tr>
@@ -59,17 +54,14 @@
 
                                         </td>
                                         <td>
-                                            {{ $category->id ?? '' }}
+                                            @if($category->image)
+                                                <a href="{{ route('admin.categories.edit', $category->id) }}" style="display: inline-block">
+                                                    <img src="{{ $category->image->getUrl() }}" width="130px">
+                                                </a>
+                                            @endif
                                         </td>
                                         <td>
                                             {{ $category->name ?? '' }}
-                                        </td>
-                                        <td>
-                                            @if($category->image)
-                                                <a href="{{ $category->image->getUrl() }}" target="_blank" style="display: inline-block">
-                                                    <img src="{{ $category->image->getUrl('thumb') }}">
-                                                </a>
-                                            @endif
                                         </td>
                                         <td>
                                             @can('category_edit')

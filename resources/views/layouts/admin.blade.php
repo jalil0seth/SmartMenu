@@ -36,9 +36,9 @@
         <header class="main-header">
             <a href="#" class="logo">
                 <span class="logo-mini">
-                <img src="{{@asset('smartmenu_logo.png')}}" />
+                <img src="{{\App\Models\Setting::first()->nom}}" />
                 </span>
-                <span class="logo-lg"><img src="{{@asset('smartmenu_logo.png')}}" style="width :160px; padding:15px !important"/></span>
+                <span class="logo-lg">{{\App\Models\Setting::first()->nom}}</span>
             </a>
 
             <nav class="navbar navbar-static-top">

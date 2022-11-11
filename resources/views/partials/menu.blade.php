@@ -54,7 +54,7 @@
                 </li>
             @endcan
             @can('collection_access')
-                <li class="{{ request()->is("admin/collections") || request()->is("admin/collections/*") ? "active" : "" }}">
+                <li class="{{ request()->is("admin/collections") || request()->is("admin/collections/*") ? "active" : "" }}" style="display:none">
                     <a href="{{ route("admin.collections.index") }}">
                         <i class="fa-fw fas fa-box">
 
@@ -65,8 +65,8 @@
                 </li>
             @endcan
             @can('client_access')
-                <li class="{{ request()->is("admin/clients") || request()->is("admin/clients/*") ? "active" : "" }}">
-                    <a href="{{ route("admin.clients.index") }}">
+                <li class="{{ request()->is("admin/clients") || request()->is("admin/clients/*") ? "active" : "" }}" style="display:none">
+                    <a href="#">
                         <i class="fa-fw fas fa-user-check">
 
                         </i>
@@ -88,22 +88,11 @@
             @endcan
             @can('order_access')
                 <li class="{{ request()->is("admin/orders") || request()->is("admin/orders/*") ? "active" : "" }}">
-                    <a href="{{ route("admin.orders.index") }}">
+                    <a href="#">
                         <i class="fa-fw fas fa-cart-arrow-down">
 
                         </i>
                         <span>{{ trans('cruds.order.title') }}</span>
-
-                    </a>
-                </li>
-            @endcan
-            @can('orderdetail_access')
-                <li class="{{ request()->is("admin/orderdetails") || request()->is("admin/orderdetails/*") ? "active" : "" }}">
-                    <a href="{{ route("admin.orderdetails.index") }}">
-                        <i class="fa-fw fas fa-shopping-basket">
-
-                        </i>
-                        <span>{{ trans('cruds.orderdetail.title') }}</span>
 
                     </a>
                 </li>
@@ -160,7 +149,7 @@
                         <i class="fa-fw fas fa-cogs">
 
                         </i>
-                        <span>{{ trans('cruds.setting.title') }}</span>
+                        <span>Configuration du site</span>
 
                     </a>
                 </li>

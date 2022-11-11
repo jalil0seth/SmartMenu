@@ -2,13 +2,13 @@
 <html itemscope="itemscope" itemtype="http://schema.org/WebPage" lang="de"
    xml:lang="de" xmlns="http://www.w3.org/1999/xhtml">
    <head>
-      <title>TopTop Donuts - Essen online Commander in Köln</title>
+      <title>{{$setting->nom}} - Livraison à domicile</title>
       <meta name="description" content="Wähle deine Lieblingsgerichte von der TopTop Donuts Speisekarte in Köln und bestelle einfach online. Genieße leckeres Essen, schnell geliefert!"/>
       <meta name="keywords" content="TopTop Donuts, TopTop Donuts, Essen Commander, TopTop Donuts Köln, Essen liefern, Snacks, Kuchen, Nachspeisen"/>
       <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
       <meta name="theme-color" content="#55ADDE"/>
       <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
-      <link rel="shortcut icon" href="favicon.ico"/>
+      <link rel="shortcut icon" href="{{$setting->logo['thumbnail']}}"/>
       <link rel="stylesheet" type="text/css" href="{{ asset('style/style22.css') }}"/>
       <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/takeaway22.css') }}"/>
       <link rel="stylesheet" type="text/css" href="{{ asset('font-awesome/css/font-awesome.min.css') }}"/>
@@ -284,21 +284,13 @@
              // setcookie
              setCookie('realRefr','dh',false);
          }
+         var site ='';
          
          
       </script>
       <div id="tooltip" class="tooltip" style="display:none"></div>
-      <div
-         class="cc-banner"
-         data-content-text="Wir verwenden Cookies und andere Technologien, um Dein Benutzererlebnis zu verbessern und zu personalisieren, für Analysen zur Optimierung und Werbung in Zusammenarbeit mit Dritten. Wir verwenden unsere eigenen Cookies und Cookies von Dritten. Wenn Du auf OK klickst, akzeptierst Du die Verwendung aller Cookies. Wir setzen immer notwendige Cookies. Wähle {preferencesUrl}Einstellungen verwalten{/preferencesUrl}, um zu entscheiden, welche Cookies Du akzeptieren möchtest, um Deine Präferenzen anzupassen und um weitere Informationen zu finden."
-         data-url="/cookiestatement"
-         data-url-text="Einstellungen verwalten"
-         data-button-text="OK"
-         data-hide-link-after-text="true"
-         data-button-text-aria="Alle Cookies akzeptieren"
-         data-button-essential-package="Essentielle"
-         data-button-essential-package-aria="Essentielles Cookie-Paket akzeptieren"
-         ></div>
+
+         
       <script src="{{ asset('assets/js/app11.js') }}"></script>
       <script src="{{ asset('tpl/template1/additives1.js') }}" /></script>    <script type="application/javascript">
          var uaCode = 'UA-7904955-1';

@@ -25,25 +25,16 @@
 
                                     </th>
                                     <th>
-                                        {{ trans('cruds.product.fields.id') }}
+                                        {{ trans('cruds.product.fields.image') }}
                                     </th>
                                     <th>
                                         {{ trans('cruds.product.fields.name') }}
                                     </th>
                                     <th>
-                                        {{ trans('cruds.product.fields.image') }}
-                                    </th>
-                                    <th>
                                         {{ trans('cruds.product.fields.price') }}
                                     </th>
                                     <th>
-                                        {{ trans('cruds.product.fields.old_price') }}
-                                    </th>
-                                    <th>
                                         {{ trans('cruds.product.fields.category') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.product.fields.notes') }}
                                     </th>
                                     <th>
                                         &nbsp;
@@ -53,12 +44,7 @@
                                     <td>
                                     </td>
                                     <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                                    </td>
-                                    <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                                    </td>
-                                    <td>
+                                        
                                     </td>
                                     <td>
                                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
@@ -75,9 +61,6 @@
                                         </select>
                                     </td>
                                     <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                                    </td>
-                                    <td>
                                     </td>
                                 </tr>
                             </thead>
@@ -88,29 +71,20 @@
 
                                         </td>
                                         <td>
-                                            {{ $product->id ?? '' }}
+                                            @foreach($product->image as $key => $media)
+                                                <a href="{{ route('admin.products.edit', $product->id) }}"  style="display: inline-block">
+                                                    <img src="{{ $media->getUrl('thumb') }}" width="100%">
+                                                </a>
+                                            @endforeach
                                         </td>
                                         <td>
                                             {{ $product->name ?? '' }}
                                         </td>
                                         <td>
-                                            @foreach($product->image as $key => $media)
-                                                <a href="{{ $media->getUrl() }}" target="_blank" style="display: inline-block">
-                                                    <img src="{{ $media->getUrl('thumb') }}">
-                                                </a>
-                                            @endforeach
-                                        </td>
-                                        <td>
-                                            {{ $product->price ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $product->old_price ?? '' }}
+                                            {{ $product->price ?? '' }} DH
                                         </td>
                                         <td>
                                             {{ $product->category->name ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $product->notes ?? '' }}
                                         </td>
                                     <td>
                                             @can('product_edit')
