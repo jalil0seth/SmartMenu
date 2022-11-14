@@ -27,6 +27,10 @@
       .btn-xs{
         margin: 2px !important;
       }
+      .dt-buttons{
+        display:none !important;
+      }
+      
     </style>
     @yield('styles')
 </head>
