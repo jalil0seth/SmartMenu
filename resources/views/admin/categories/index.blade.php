@@ -56,7 +56,7 @@
                                         <td>
                                             @if($category->image)
                                                 <a href="{{ route('admin.categories.edit', $category->id) }}" style="display: inline-block">
-                                                    <img src="{{ $category->image->getUrl() }}" width="130px">
+                                                    <img class="imgcat" src="{{ $category->image->getUrl() }}" >
                                                 </a>
                                             @endif
                                         </td>
