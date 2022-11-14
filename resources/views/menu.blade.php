@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html itemscope="itemscope" itemtype="http://schema.org/WebPage" lang="de"
-   xml:lang="de" xmlns="http://www.w3.org/1999/xhtml">
+<html itemscope="itemscope" itemtype="http://schema.org/WebPage" lang="fr"
+   xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <title>{{$setting->nom}} - Livraison à domicile</title>
       <meta name="description" content="Wähle deine Lieblingsgerichte von der TopTop Donuts Speisekarte in Köln und bestelle einfach online. Genieße leckeres Essen, schnell geliefert!"/>
