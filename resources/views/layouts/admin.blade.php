@@ -44,7 +44,7 @@
         <header class="main-header">
             <a href="#" class="logo">
                 <span class="logo-mini">
-                <img src="{{\App\Models\Setting::first()->nom}}" />
+                  {{\App\Models\Setting::first()->nom}}
                 </span>
                 <span class="logo-lg">{{\App\Models\Setting::first()->nom}}</span>
             </a>
