@@ -90,8 +90,8 @@
                             Votre addresse</label>
                             <textarea id="address2" name="address" required></textarea>
                          </div>
-                         <div class="items deliverytime">
-                          <label for="deliverytime">
+                         <div class="items region">
+                          <label for="region">
                            Veuillez sélectionner votre <b>lieu sur Marrakech</b>		</label>
                           <select id="region" name="region" required>
                              <option value="" disabled selected>-</option>
