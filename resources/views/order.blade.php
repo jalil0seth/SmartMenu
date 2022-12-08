@@ -107,7 +107,7 @@
                            <div class="items phonenumber">
                               <label for="phonenumber">
                                Numéro de téléphone			</label>
-                              <input type="text" id="phone"  name="phone" value="" required/>
+                              <input type="tel" id="phone"  name="phone" value="" required/>
                            </div>
                         </div>
                         <div class="checkoutstep step2">
