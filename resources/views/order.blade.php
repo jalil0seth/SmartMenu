@@ -3,22 +3,22 @@
     xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>TopTop Donuts - Livraison à domicile</title>
+        <title>{{ $setting->nom }} - Livraison à domicile</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="theme-color" content="#55ADDE" />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
-    <link rel="shortcut icon" href="https://donuts.illebrand.com/storage/41/conversions/6373a68001867_logo-removebg-preview-(1)-thumb.jpg" />
-    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/style/style22.css" />
-    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/assets/css/takeaway22.css" />
-    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/font-awesome/css/font-awesome.min.css" />
+    <link rel="shortcut icon" href="{{ $setting->logo['thumbnail'] }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/style22.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/takeaway22.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('font-awesome/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/tpl/template1/additives.css" />
-    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/basket/css/sidedishes.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('tpl/template1/additives.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('basket/css/sidedishes.css') }}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
     <style>
         .cart-meal-name {
             word-break: normal !important;
