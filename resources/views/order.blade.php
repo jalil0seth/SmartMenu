@@ -94,7 +94,7 @@
                           <label for="deliverytime">
                            Veuillez sélectionner votre <b>lieu sur Marrakech</b>		</label>
                           <select id="region" name="region" required>
-                             <option value="-" selected>-</option>
+                             <option value="-" disabled>-</option>
                              <option value="Massira 1" >Massira 1</option>
                              <option value="Mhamid" >Mhamid</option>
                           </select>
