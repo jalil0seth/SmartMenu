@@ -106,7 +106,8 @@
                                         <div itemscope itemtype="http://schema.org/Product">
                                             <div class="add-to-cart addtobasket" data-name="{{ $p->name }}"
                                                 data-price="{{ $p->price }}"
-                                                data-imgproduct="{{ $p->image[0]['url'] }}">
+                                                data-imgproduct="{{ $p->image[0]['url'] }}"
+                                                data-productid="{{ $p->id }}">
                                                 <div class="meal-wrapper">
                                                     <div class="product-name" itemprop="name">
                                                         {{ $p->name }}

@@ -9,11 +9,12 @@ var shoppingCart = (function() {
     cart = [];
     
     // Constructor
-    function Item(name, price, imgproduct, count) {
+    function Item(name, price, imgproduct, productid, count) {
       this.name = name;
       this.price = price;
       this.count = count;
       this.imgproduct = imgproduct;
+      this.productid = productid;
     }
     
     // Save cart
@@ -36,7 +37,7 @@ var shoppingCart = (function() {
     var obj = {};
     
     // Add to cart
-    obj.addItemToCart = function(name, price, imgproduct, count) {
+    obj.addItemToCart = function(name, price, imgproduct,productid, count) {
       for(var item in cart) {
         if(cart[item].name === name) {
           cart[item].count ++;
@@ -44,7 +45,7 @@ var shoppingCart = (function() {
           return;
         }
       }
-      var item = new Item(name, price, imgproduct, count);
+      var item = new Item(name, price, imgproduct, productid, count);
       cart.push(item);
       saveCart();
     }
@@ -145,9 +146,12 @@ var shoppingCart = (function() {
     event.preventDefault();
     var name = $(this).data('name');
     var imgProduct = $(this).data('imgproduct');
-    console.log(imgProduct);
+    var productid = $(this).data('productid');
+
     var price = Number($(this).data('price'));
-    shoppingCart.addItemToCart(name, price, imgProduct, 1);
+
+
+    shoppingCart.addItemToCart(name, price, imgProduct,productid, 1);
     displayCart();
   });
   
@@ -202,6 +206,7 @@ var shoppingCart = (function() {
     var cartArray = shoppingCart.listCart();
     var output = "";
     var output22 = "";
+    var output_final = "";
     for(var i in cartArray) {
         output += "<div class='cart-single-meal'>"
         + "<div class='cart-row'>"
@@ -229,7 +234,13 @@ var shoppingCart = (function() {
         + " = " 
         + "<td>" + cartArray[i].total + "</td>" 
         +  "</tr>";
+
+        output_final += "<div class='productrow'><div class='prodname'>"
+        + "<span style='display: flex;align-items:center;'>" + cartArray[i].count + " x <img src='" + cartArray[i].imgproduct + "' width='40px'/>" + cartArray[i].name + "</span></div>"
+        + "<div class='prodprice'>" + cartArray[i].price + " DH</div></div>";
     }
+    
+    $('.listproduct').html(output_final);
     $('.show-cart').html(output);
     $('.total-cart').html(shoppingCart.totalCart());
 
@@ -293,3 +304,10 @@ var shoppingCart = (function() {
   });
   
   displayCart();
+
+  $('input#cartContent').val(JSON.stringify(cart));
+  
+    $('#passercommade').on("click", function(event) {
+      $('#cartContent').val(JSON.stringify(cart));
+      $( "#passercommade_form" ).submit();
+    })

@@ -31,4 +31,19 @@ class HomeController extends Controller
             $setting = Setting::first();
             return view('menu',compact('products','categories','setting'));
     }
+
+    public function order()
+    {
+            $products = Product::all();
+            $categories = Category::all();
+            $setting = Setting::first();
+            return view('order',compact('products','categories','setting'));
+    }
+
+    public function order_post(Request $request)
+    {
+        return json_decode($request->cartContent, false);
+    }
+
+    
 }

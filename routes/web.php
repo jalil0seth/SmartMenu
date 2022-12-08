@@ -1,6 +1,9 @@
 <?php
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/order', 'HomeController@order')->name('order');
+Route::post('/sendorder', 'HomeController@order_post')->name('order_post');
+
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
