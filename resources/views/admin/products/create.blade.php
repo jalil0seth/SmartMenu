@@ -30,7 +30,7 @@
                         </div>
                         <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
                             <label for="price">{{ trans('cruds.product.fields.price') }}</label>
-                            <input class="form-control" type="number" name="price" id="price" value="{{ old('price', '') }}" step="1">
+                            <input class="form-control" type="number" name="price" id="price" value="{{ old('price', '') }}" step="1" min="2">
                             @if($errors->has('price'))
                                 <span class="help-block" role="alert">{{ $errors->first('price') }}</span>
                             @endif
