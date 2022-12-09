@@ -248,12 +248,17 @@ var shoppingCart = (function() {
     $('.total-p').html(totalP());
     $('.total-r').html(totalR());
     $('.total-count').html(shoppingCart.totalCount());
-    if(totalR()==0){
+
+    if(shoppingCart.totalCart()>120){
       $('.remining').hide();
       $(".cartbutton-button").removeClass("btn-disabled");
+      $(".cartbutton-button").attr("href","/order");
+
     }else{
       $('.remining').show();
       $(".cartbutton-button").addClass("btn-disabled");
+      $(".cartbutton-button").attr("href","");
+
     }
 
     if(shoppingCart.totalCart()>0){
@@ -306,8 +311,18 @@ var shoppingCart = (function() {
   displayCart();
 
   $('input#cartContent').val(JSON.stringify(cart));
+  $('input#total').val(shoppingCart.totalCart());
+  $('input#livraison').val(totalS());
   
     $('#passercommade').on("click", function(event) {
-      $('#cartContent').val(JSON.stringify(cart));
-      $( "#passercommade_form" ).submit();
+      if ($('#address2').val() != '' && $('#region').val() != '' && $('#nom').val() != '' && $('#phone').val() != '' && $('#phone').val().length == 10) {
+        $('#cartContent').val(JSON.stringify(cart));
+        $('input#total').val(shoppingCart.totalCart());
+        $('input#livraison').val(totalS());
+        $( "#passercommade_form" ).submit();
+      }
     })
+
+    var add_minutes =  function (dt, minutes) {
+      return new Date(dt.getTime() + minutes*60000);
+   }

@@ -25,8 +25,12 @@
 
                                     </th>
                                     <th>
-                                        {{ trans('cruds.order.fields.id') }}
+
                                     </th>
+                                    <th>
+                                        Reference
+                                    </th>
+
                                     <th>
                                         {{ trans('cruds.order.fields.client') }}
                                     </th>
@@ -44,16 +48,11 @@
                                     <td>
                                     </td>
                                     <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                     </td>
                                     <td>
-                                        <select class="search">
-                                            <option value>{{ trans('global.all') }}</option>
-                                            @foreach($clients as $key => $item)
-                                                <option value="{{ $item->name }}">{{ $item->name }}</option>
-                                            @endforeach
-                                        </select>
+                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                     </td>
+
                                     <td>
                                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                     </td>
@@ -71,16 +70,18 @@
 
                                         </td>
                                         <td>
-                                            {{ $order->id ?? '' }}
+                                            @foreach (\App\Models\Orderdetail::where('order_id',$order->id)->get() as $o)
+                                                <img src="{{$o->image}}" width="30px" />
+                                            @endforeach
+                                        </td>
+                                        <td>
+                                            {{ $order->ref ?? '' }}
                                         </td>
                                         <td>
                                             {{ $order->client->name ?? '' }}
                                         </td>
                                         <td>
-                                            {{ $order->total ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $order->livraison ?? '' }}
+                                            {{ $order->total ?? '' }} DH
                                         </td>
                                         <td>
                                             @can('order_show')

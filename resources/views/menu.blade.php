@@ -244,7 +244,7 @@
                                     commande</span>
                             </div>
                             <section class="cartbutton">
-                                <a class="cartbutton-button btn-disabled" onclick="proceedCheckout()" href="#">
+                                <a class="cartbutton-button btn-disabled" href="">
                                     Commander
                                 </a>
                                 <div class="minimumorderamount-reached" style="display: none;"></div>

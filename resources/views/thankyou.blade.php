@@ -45,6 +45,10 @@
     .items.remarks {
     width: 98% !important;
 }
+div#counter {
+    font-size: 50px;
+    text-align: center;
+}
       
     </style>
 </head>
@@ -76,71 +80,44 @@
       <div class="full">
          <div class="checkoutpage clearfix">
             <div class="checkoutform">
-               <h1 class="title">Finaliser votre commande</h1>
+               <h1 class="title">Merci pour votre commande</h1>
                <div class="widget">
                   <div id="checkout">
                      <form action="/sendorder" method="post" id="passercommade_form">
                         @csrf
                         <div class="checkoutstep step1">
-                          Comment pouvons-nous vous contacter?
+                          Informations sur votre commande
                         </div>
                         <div class="checkout naw clearfix">
-                          <div class="items address">
-                            <label for="address">
-                            Votre addresse</label>
-                            <textarea id="address2" name="address" required></textarea>
-                         </div>
-                         <div class="items region">
-                          <label for="region">
-                           Veuillez sélectionner votre <b>lieu sur Marrakech</b>		</label>
-                          <select id="region" name="region" required>
-                          <option value="" selected>-</option>
-                          @foreach ($regions as  $region)
-                             <option value="{{$region->id}}" >{{$region->regions}}</option>
-                          @endforeach
-                          </select>
-                       </div>
+                           <div class="items phonenumber">
+                              <label for="phonenumber">
+                               Reference		</label>
+                              <input value="{{$order->ref}}" disabled/>
+                           </div>
                            <div class="items surname">
                               <label for="surname">
-                              Nom complet			</label>
-                              <input type="text" id="nom"  name="nom" value="" required/>
+                              Status de votre comamnde </label>
+                              <input value="{{($order->status == 'nouveau')? 'En cours de préparation': $order->status}}" disabled/>
+                           </div>
+
+                           @if ($order->livreur_id != '')
+                           <div class="items phonenumber">
+                              <label for="phonenumber">
+                               Nom de votre livreur			</label>
+                               <input value="Hassan Akar" disabled/>
                            </div>
                            <div class="items phonenumber">
                               <label for="phonenumber">
-                               Numéro de téléphone			</label>
-                              <input type="tel" id="phone"  name="phone" minlength="10" maxlength="10" value="" required/>
+                                 Numéro de téléphone	du livreur			</label>
+                               <input value="061541250" onclick="open('tel:+212605505651')" disabled/>
                            </div>
+                           @endif
                         </div>
                         <div class="checkoutstep step2">
-                          Ajouter des remarques sur votre commande
+                           Votre commande sera livré dans :
                         </div>
                         <div class="items remarks">
-                           <label for="remarks">
-                            Vos remarques
-                           </label>
-                           <textarea id="notes" name="notes"></textarea>
-                        </div>
-                        <div class="paymentinfo clearfix">
-                           <div class="items paymenticons clearfix">
-                              <div class="payments">
-                                 <input type="radio" name="paymentmethod" id="ipaymentmethod0" class="offline" value="0" checked/></td>
-                                 <label for="ipaymentmethod0" class=""><img src="tpl/template1/images/paymenticons/payment_0.png"/>Payement a la livraison</label>
-                              </div>
-                              <div class="payments" style="display: none;">
-                                 <input type="radio" name="paymentmethod" id="ipaymentmethod15" class="online" value="15" /></td>
-                                 <label for="ipaymentmethod15" class=""><img src="tpl/template1/images/paymenticons/payment_15.png"/>Klarna</label>
-                              </div>
-                              <div class="payments" style="display: none;">
-                                 <input type="radio" name="paymentmethod" id="ipaymentmethod18" class="online" value="18" /></td>
-                                 <label for="ipaymentmethod18" class=""><img src="tpl/template1/images/paymenticons/payment_18.png"/>PayPal</label>
-                              </div>
-                           </div>
-                           <div id="paymethod_details" class="clearfix"></div>
-                           <input type="hidden" name="cartContent" id="cartContent" value="">
-                           <input type="hidden" name="total" id="total" value="">
-                           <input type="hidden" name="livraison" id="livraison" value="">
-                           <!--checkboxes and extra checks -->
-                           <input type="submit" class="btn_order" id="passercommade" name="checkoutbutton" value="Passer votre commande"/>
+                           <div id="counter"></div>
                         </div>
                      </form>
                   </div>
@@ -150,19 +127,29 @@
                <div class="widget">
                   <div id="basket">
                      <div class="baskettitle">
-                        <h2 class="basket-title-closed">Votre commande (<span class="total-cart"></span> DH)</h2>
+                        <h2 class="basket-title-closed">Votre commande ({{$order->total}} DH)</h2>
                         <h2 class="basket-title-open">Votre commande</h2>
                      </div>
                     <div id="cartcontent">
-                        <div class="listproduct"></div>
+                     <div class="listproduct2">
+                        @foreach ($orderd as $o)
+                        <div class="productrow">
+                           <div class="prodname">
+                               <span style="display: flex; align-items: center;">{{$o->quantity}} x <img src="{{$o->image}}" width="40px" />{{$o->productname}}</span>
+                           </div>
+                           <div class="prodprice">{{$o->total/$o->quantity}} DH</div>
+                       </div>
+                        @endforeach
+                    </div>
+                    
                         <div class="productrow last"></div>
                         <div class="line delivery">
                            <div class="prodname">Livraison:</div>
-                           <div class="prodprice"><span class="total-shipping"></span> DH</div>
+                           <div class="prodprice">{{$order->livraison}} DH</div>
                         </div>
                         <div class="totals line">
                            <div class="prodname">Total</div>
-                           <div class="prodprice"><span class="total-p"></span> DH</div>
+                           <div class="prodprice">{{$order->total}} DH</div>
                         </div>
                         <div>
                            <div colspan="4">&nbsp;</div>
@@ -216,6 +203,39 @@
        <div class="background" style="background-image: url('{{ $setting->banners[0]['url'] }}');"></div>
         <script src="{{ asset('basket/js/shake.js') }}"></script>
         <script src="{{ asset('basket/js/shopping31.js') }}"></script>
+        <script>
+
+         // Set the date we're counting down to
+         console.log(new Date(Date.parse('{{$order->created_at}}')));
+         console.log(add_minutes(new Date(Date.parse('{{$order->created_at}}')),45+60));
+         console.log(new Date());
+         var countDownDate = add_minutes(new Date(Date.parse('{{$order->created_at}}')),45+60).getTime();
+         
+         // Update the count down every 1 second
+         var x = setInterval(function() {
+         
+           // Get today's date and time
+           var now = new Date().getTime();
+             
+           // Find the distance between now and the count down date
+           var distance = countDownDate - now;
+             
+           // Time calculations for days, hours, minutes and seconds
+           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+           var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+           var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+           var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+             
+           // Output the result in an element with id="demo"
+           document.getElementById("counter").innerHTML =  minutes + "m " + seconds + "s ";
+             
+           // If the count down is over, write some text 
+           if (distance < 0) {
+             clearInterval(x);
+             document.getElementById("counter").innerHTML = "Merci d'appeller notre service de livraison";
+           }
+         }, 1000);
+         </script>
    </body>
 </html>
 <!--templaterevamped--><!--ip-10-200-41-227

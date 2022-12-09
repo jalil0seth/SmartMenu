@@ -25,6 +25,8 @@ class Orderdetail extends Model
         'quantity',
         'product_id',
         'order_id',
+        'productname',
+        'image',
         'discount',
         'created_at',
         'updated_at',
