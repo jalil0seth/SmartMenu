@@ -88,7 +88,7 @@
             @endcan
             @can('order_access')
                 <li class="{{ request()->is("admin/orders") || request()->is("admin/orders/*") ? "active" : "" }}">
-                    <a href="#">
+                    <a href="{{ route("admin.orders.index") }}">
                         <i class="fa-fw fas fa-cart-arrow-down">
 
                         </i>

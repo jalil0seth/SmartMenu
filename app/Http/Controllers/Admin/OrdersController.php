@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Gate;
+use App\Models\Order;
+use App\Models\Client;
+use App\Models\Orderdetail;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyOrderRequest;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
-use App\Models\Client;
-use App\Models\Order;
-use Gate;
-use Illuminate\Http\Request;
+use App\Http\Requests\MassDestroyOrderRequest;
 use Symfony\Component\HttpFoundation\Response;
 
 class OrdersController extends Controller
@@ -18,7 +19,7 @@ class OrdersController extends Controller
     {
         abort_if(Gate::denies('order_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $orders = Order::with(['client'])->get();
+        $orders = Order::with(['client'])->orderBy('id', 'DESC')->get();
 
         $clients = Client::get();
 
@@ -63,9 +64,13 @@ class OrdersController extends Controller
     {
         abort_if(Gate::denies('order_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
+        $status_orders = ['Nouveau','En cours de préparation', 'En livraison','Livré'];
+
+        $orderd= Orderdetail::where('order_id',$order->id)->get();
+
         $order->load('client');
 
-        return view('admin.orders.show', compact('order'));
+        return view('admin.orders.show', compact('order','status_orders','orderd'));
     }
 
     public function destroy(Order $order)

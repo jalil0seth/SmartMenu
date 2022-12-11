@@ -34,6 +34,25 @@
             width: 140px;
             height: 30px;
       }
+      #nouveau{
+        background-color: #daf2fd;
+      }
+      #ok{
+        background-color: #dbfdda;
+      }
+      #enlivraison{
+        background-color: #fdeeda;
+      }
+      #livre{
+      background-color: #9ab58a85
+      }
+
+    .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+  }
+      
 
     </style>
     @yield('styles')

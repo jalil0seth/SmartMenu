@@ -1,20 +1,24 @@
 @extends('layouts.admin')
 @section('content')
 <div class="content">
-    @can('order_create')
-        <div style="margin-bottom: 10px;" class="row">
-            <div class="col-lg-12">
-                <a class="btn btn-success" href="{{ route('admin.orders.create') }}">
-                    {{ trans('global.add') }} {{ trans('cruds.order.title_singular') }}
-                </a>
-            </div>
-        </div>
-    @endcan
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('cruds.order.title_singular') }} {{ trans('global.list') }}
+                    <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill" href="#custom-tabs-one-home" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">Nouvelle commandes</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill" href="#custom-tabs-one-profile" role="tab" aria-controls="custom-tabs-one-profile" aria-selected="false">En cours de preparation</a>
+                         </li>
+                        <li class="nav-item">
+                        <a class="nav-link" id="custom-tabs-one-messages-tab" data-toggle="pill" href="#custom-tabs-one-messages" role="tab" aria-controls="custom-tabs-one-messages" aria-selected="false">En cours de livraion</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" id="custom-tabs-one-settings-tab" data-toggle="pill" href="#custom-tabs-one-settings" role="tab" aria-controls="custom-tabs-one-settings" aria-selected="false">Livres</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -25,20 +29,22 @@
 
                                     </th>
                                     <th>
-
+                                        Status
                                     </th>
                                     <th>
                                         Reference
                                     </th>
+                                    <th>
+                                        Region
+                                    </th>
+                                    <th>
+                                        Client
+                                    </th>
+                                    <th>
+                                        Total
+                                    </th>
+                                    <th>
 
-                                    <th>
-                                        {{ trans('cruds.order.fields.client') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.order.fields.total') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.order.fields.livraison') }}
                                     </th>
                                     <th>
                                         &nbsp;
@@ -48,6 +54,7 @@
                                     <td>
                                     </td>
                                     <td>
+                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                     </td>
                                     <td>
                                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
@@ -58,6 +65,11 @@
                                     </td>
                                     <td>
                                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                                    </td>
+                                    <td>
+                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                                    </td>
+                                    <td>
                                     </td>
                                     <td>
                                     </td>
@@ -65,17 +77,18 @@
                             </thead>
                             <tbody>
                                 @foreach($orders as $key => $order)
-                                    <tr data-entry-id="{{ $order->id }}">
+                                    <tr data-entry-id="{{ $order->id }}" >
                                         <td>
 
                                         </td>
                                         <td>
-                                            @foreach (\App\Models\Orderdetail::where('order_id',$order->id)->get() as $o)
-                                                <img src="{{$o->image}}" width="30px" />
-                                            @endforeach
+                                            {{ ucfirst($order->status) ?? '' }}
                                         </td>
                                         <td>
                                             {{ $order->ref ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ \App\Models\Region::where('id',\App\Models\Client::where('id',$order->client_id)->pluck('region_id')->first())->pluck('regions')->first()?? '' }}
                                         </td>
                                         <td>
                                             {{ $order->client->name ?? '' }}
@@ -83,25 +96,16 @@
                                         <td>
                                             {{ $order->total ?? '' }} DH
                                         </td>
+                                        <td style="display:none">
+                                            @foreach (\App\Models\Orderdetail::where('order_id',$order->id)->get() as $o)
+                                                <img src="{{$o->image}}" width="30px" />
+                                            @endforeach
+                                        </td>
                                         <td>
                                             @can('order_show')
                                                 <a class="btn btn-xs btn-primary" href="{{ route('admin.orders.show', $order->id) }}">
                                                     {{ trans('global.view') }}
                                                 </a>
-                                            @endcan
-
-                                            @can('order_edit')
-                                                <a class="btn btn-xs btn-info" href="{{ route('admin.orders.edit', $order->id) }}">
-                                                    {{ trans('global.edit') }}
-                                                </a>
-                                            @endcan
-
-                                            @can('order_delete')
-                                                <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                    <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
-                                                </form>
                                             @endcan
 
                                         </td>
