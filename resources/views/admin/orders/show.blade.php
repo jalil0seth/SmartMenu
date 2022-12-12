@@ -126,12 +126,17 @@
                                                     {{ $order->client->adresse ?? '' }}
                                                 </td>
                                             </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table class="table table-bordered table-striped">
+                                        <tbody>
                                             <tr>
                                                 <th>
-                                                    Total
+                                                    Notes
                                                 </th>
                                                 <td>
-                                                    {{ $order->total ?? '' }} DH
+                                                    {{ $order->notes ?? '' }}
                                                 </td>
                                             </tr>
                                             <tr>
@@ -140,6 +145,14 @@
                                                 </th>
                                                 <td>
                                                     {{ $order->livraison }} DH
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    Total
+                                                </th>
+                                                <td>
+                                                    {{ $order->total ?? '' }} DH
                                                 </td>
                                             </tr>
                                         </tbody>

@@ -24,6 +24,7 @@ class Order extends Model
         'client_id',
         'total',
         'livraison',
+        'notes',
         'status',
         'ref',
         'livreur_id',

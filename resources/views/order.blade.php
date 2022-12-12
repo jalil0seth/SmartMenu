@@ -55,10 +55,13 @@
          <div class="nav">
             <div id="navigationclosebutton" class="menubutton"><i class="fa fa-close fa-2x" aria-hidden="true"></i></div>
             <div class="nav-wrapper">
-              <ul>
-                  <li class='active'><a href="#" title="Bewertungen zu TopTop Donuts ansehen">Menu</a></li>
-                  <li><a href="#" title="Nehmen Sie Kontakt mit TopTop Donuts auf">Contact</a></li>
-                  <li><a href="#" title="">About Us</a></li>
+               <ul>
+                  <li class='active'><a href="/" >Menu</a></li>
+                  <li><a href="tel:{{str_replace(' ','',str_replace(' ','',$setting->phone))}}">Appeler</a></li>
+                  <li><a href="https://api.whatsapp.com/send?phone=212{{str_replace('07','7',str_replace('06','6',str_replace(' ','',$setting->whatsapp)))}}" target="_blank">Whatsapp</a></li>
+                  <li><a href="{{$setting->instagram}}" target="_blank">Instagram</a></li>
+                  <li><a href="{{$setting->facebook}}" target="_blank">Facebook</a></li>
+                  <li><a href="{{$setting->tiktok}}" target="_blank">TikTok</a></li>
               </ul>
           </div>
          </div>
@@ -171,7 +174,10 @@
                            <div class="prodactionbtn"></div>
                            <div class="prodnumber"></div>
                            <div class="prodname">Livraison gratuite à partir de :</div>
-                           <div class="prodprice">150 DH</div>
+                           <div class="prodprice">{{$setting->free_shipping}} DH</div>
+                           <input type="hidden" value="{{$setting->free_shipping}} " id="free_shipping">
+                           <input type="hidden" value="{{$setting->shipping}} " id="shipping">
+                           <input type="hidden" value="{{$setting->min_order}} " id="min_order">
                         </div>
                      </div>
                   </div>
