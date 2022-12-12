@@ -59,7 +59,7 @@ class OrdersController extends Controller
 
         $clients = Client::get();
 
-        return view('admin.orders.index2', compact('clients', 'orders','enliv','liv','annulle'));
+        return view('admin.orders.index2', compact('livX','clients', 'orders','enliv','liv','annulle'));
     }
 
     
