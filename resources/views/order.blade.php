@@ -95,9 +95,9 @@
                            Veuillez sélectionner votre <b>lieu sur Marrakech</b>		</label>
                           <select id="region" name="region" required>
                           <option value="" selected>-</option>
-                          @foreach ($regions as  $region)
-                             <option value="{{$region->id}}" >{{$region->regions}}</option>
-                          @endforeach
+                           @foreach ($regions as  $region)
+                              <option value="{{$region->id}}" >{{$region->regions}}</option>
+                           @endforeach
                           </select>
                        </div>
                            <div class="items surname">
