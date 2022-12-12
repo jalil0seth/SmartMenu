@@ -54,6 +54,14 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.setting.fields.min_order_helper') }}</span>
                         </div>
+                        <div class="form-group {{ $errors->has('shipping') ? 'has-error' : '' }}">
+                            <label for="shipping">Prix de livraison</label>
+                            <input class="form-control" type="number" name="shipping" id="shipping" value="{{ old('shipping', $setting->shipping) }}" step="1">
+                            @if($errors->has('shipping'))
+                                <span class="help-block" role="alert">{{ $errors->first('shipping') }}</span>
+                            @endif
+                            <span class="help-block"></span>
+                        </div>
                         <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
                             <label for="email">{{ trans('cruds.setting.fields.email') }}</label>
                             <input class="form-control" type="email" name="email" id="email" value="{{ old('email', $setting->email) }}">
@@ -61,6 +69,38 @@
                                 <span class="help-block" role="alert">{{ $errors->first('email') }}</span>
                             @endif
                             <span class="help-block">{{ trans('cruds.setting.fields.email_helper') }}</span>
+                        </div>
+                        <div class="form-group {{ $errors->has('instagram') ? 'has-error' : '' }}">
+                            <label for="instagram">{{ trans('cruds.setting.fields.instagram') }}</label>
+                            <input class="form-control" type="instagram" name="instagram" id="instagram" value="{{ old('instagram', $setting->instagram) }}">
+                            @if($errors->has('instagram'))
+                                <span class="help-block" role="alert">{{ $errors->first('instagram') }}</span>
+                            @endif
+                            <span class="help-block"></span>
+                        </div>
+                        <div class="form-group {{ $errors->has('tiktok') ? 'has-error' : '' }}">
+                            <label for="tiktok">{{ trans('cruds.setting.fields.tiktok') }}</label>
+                            <input class="form-control" type="tiktok" name="tiktok" id="tiktok" value="{{ old('tiktok', $setting->tiktok) }}">
+                            @if($errors->has('tiktok'))
+                                <span class="help-block" role="alert">{{ $errors->first('tiktok') }}</span>
+                            @endif
+                            <span class="help-block"></span>
+                        </div>
+                        <div class="form-group {{ $errors->has('whatsapp') ? 'has-error' : '' }}">
+                            <label for="whatsapp">{{ trans('cruds.setting.fields.whatsapp') }}</label>
+                            <input class="form-control" type="whatsapp" name="whatsapp" id="whatsapp" value="{{ old('whatsapp', $setting->whatsapp) }}">
+                            @if($errors->has('whatsapp'))
+                                <span class="help-block" role="alert">{{ $errors->first('whatsapp') }}</span>
+                            @endif
+                            <span class="help-block"></span>
+                        </div>
+                        <div class="form-group {{ $errors->has('facebook') ? 'has-error' : '' }}">
+                            <label for="facebook">{{ trans('cruds.setting.fields.facebook') }}</label>
+                            <input class="form-control" type="facebook" name="facebook" id="facebook" value="{{ old('facebook', $setting->facebook) }}">
+                            @if($errors->has('facebook'))
+                                <span class="help-block" role="alert">{{ $errors->first('facebook') }}</span>
+                            @endif
+                            <span class="help-block"></span>
                         </div>
                         <div class="form-group {{ $errors->has('start_time') ? 'has-error' : '' }}">
                             <label for="start_time">{{ trans('cruds.setting.fields.start_time') }}</label>

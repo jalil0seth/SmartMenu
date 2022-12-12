@@ -33,7 +33,14 @@ class Setting extends Model implements HasMedia
         'nom',
         'free_shipping',
         'min_order',
+        
+        'facebook',
+        'instagram',
+        'tiktok',
+        'whatsapp',
+
         'email',
+        'shipping',
         'start_time',
         'end_time',
         'adresse',

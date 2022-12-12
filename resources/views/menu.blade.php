@@ -34,9 +34,12 @@
             </div>
             <div class="nav-wrapper">
                 <ul>
-                    <li class='active'><a href="#" title="Bewertungen zu TopTop Donuts ansehen">Menu</a></li>
-                    <li><a href="#" title="Nehmen Sie Kontakt mit TopTop Donuts auf">Contact</a></li>
-                    <li><a href="#" title="">About Us</a></li>
+                    <li class='active'><a href="/" >Menu</a></li>
+                    <li><a href="tel:{{str_replace(' ','',str_replace(' ','',$setting->phone))}}">Appeler</a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone={{$setting->whatsapp}}" target="_blank">Whatsapp</a></li>
+                    <li><a href="{{$setting->instagram}}" target="_blank">Instagram</a></li>
+                    <li><a href="{{$setting->facebook}}" target="_blank">Facebook</a></li>
+                    <li><a href="{{$setting->tiktok}}" target="_blank">TikTok</a></li>
                 </ul>
             </div>
         </div>
@@ -212,11 +215,13 @@
                                     <span class="cart-sum-price"><span class="total-p"></span> DH</span>
                                 </div>
                                 <div class="cart-row chcolor">
-                                    <span class="cart-sum-name">Livraison gratuite à partir de 150 DH</span>
+                                    <span class="cart-sum-name">Livraison gratuite à partir de {{$setting->free_shipping}} DH</span>
+                                    <input type="hidden" value="{{$setting->free_shipping}} " id="free_shipping">
+                                    <input type="hidden" value="{{$setting->shipping}} " id="shipping">
+                                    <input type="hidden" value="{{$setting->min_order}} " id="min_order">
                                 </div>
                                 <div class="cart-row remining">
-                                    <span class="cart-sum-name row-green chcolor2">Montant nécessaire pour atteindre la
-                                        valeur minimale de commande</span>
+                                    <span class="cart-sum-name row-green chcolor2">Montant nécessaire pour commander ({{$setting->min_order}} DH)</span>
                                     <span class="cart-sum-price row-green chcolor2"><span class="total-r"></span>
                                         DH</span>
                                 </div>
@@ -275,7 +280,8 @@
                     <div itemscope itemtype="http://schema.org/Restaurant">
                         <h2 itemprop="name">{{ $setting->nom }}</h2>
                         <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span
-                                itemprop="streetAddress">+212611551122</span><br /><span
+                                itemprop="streetAddress">{{str_replace(' ','',str_replace(' ','',$setting->phone))}}
+                                </span><br /><span
                                 itemprop="postalCode">40000</span>&nbsp;<span
                                 itemprop="addressLocality">Marrakech</span></div>
                         <div><br /></div>
@@ -283,6 +289,7 @@
                             <meta itemprop="latitude" content="50.9247977" />
                             <meta itemprop="longitude" content="6.9587405" />
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -331,7 +338,7 @@
 
         <script src="{{ asset('basket/js/main22.js') }}"></script>
         <script src="{{ asset('basket/js/shake.js') }}"></script>
-        <script src="{{ asset('basket/js/shopping33.js') }}"></script>
+        <script src="{{ asset('basket/js/shopping39.js') }}"></script>
 
 </body>
 
