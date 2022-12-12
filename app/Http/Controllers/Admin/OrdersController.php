@@ -23,7 +23,7 @@ class OrdersController extends Controller
         if( in_array("Livreur", Auth::user()->roles->pluck('title')->toArray())){
             return redirect('admin/orders/livreur/livraison');
         }
-        
+
         abort_if(Gate::denies('order_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return redirect('admin/orders/filter/nouveau');
@@ -124,7 +124,6 @@ class OrdersController extends Controller
 
     public function changeit(Request $request)
     {
-        abort_if(Gate::denies('order_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $order = Order::find($request->order_id);
         $order->status  = $request->status;
 
