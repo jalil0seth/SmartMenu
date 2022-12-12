@@ -75,6 +75,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Orders
     Route::delete('orders/destroy', 'OrdersController@massDestroy')->name('orders.massDestroy');
     Route::get('orders/filter/{status}', 'OrdersController@filter');
+    Route::get('orders/livreur/{status}', 'OrdersController@livreur');
     Route::post('orders/changeOrder', 'OrdersController@changeit');
     
     Route::resource('orders', 'OrdersController');

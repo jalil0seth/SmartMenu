@@ -9,6 +9,7 @@ use App\Models\Livreur;
 use App\Models\Orderdetail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Http\Requests\MassDestroyOrderRequest;
@@ -38,6 +39,21 @@ class OrdersController extends Controller
         $clients = Client::get();
 
         return view('admin.orders.index', compact('clients', 'orders','new','prep','enliv','liv','annulle'));
+    }
+
+    public function livreur($status)
+    {
+        abort_if(Gate::denies('Livreur'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        $orders = Order::with(['client'])->where('livreur_id',Auth::user()->id)->where('status', 'like', '%' . strtolower($status) . '%')->orderBy('id', 'DESC')->get();
+
+        $enliv = Order::with(['client'])->where('livreur_id',Auth::user()->id)->where('status', 'like', '%livraison%')->orderBy('id', 'DESC')->count();
+        $liv = Order::with(['client'])->where('livreur_id',Auth::user()->id)->where('status', 'like', '%Livré%')->orderBy('id', 'DESC')->count();
+        $annulle = Order::with(['client'])->where('livreur_id',Auth::user()->id)->where('status', 'like', '%Annulée%')->orderBy('id', 'DESC')->count();
+
+        $clients = Client::get();
+
+        return view('admin.orders.index2', compact('clients', 'orders','enliv','liv','annulle'));
     }
 
     

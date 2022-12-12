@@ -63,6 +63,9 @@
                                                     Selectionner un livreur
                                                 </th>
                                                 <td>
+                                                    @if ($order->livreur_id != '')
+                                                        <img src="{{\App\Models\Livreur::find($order->livreur_id)->photo->getUrl('thumb')}}" width="40px" srcset="">
+                                                    @endif
                                                     <select name="livreur" id="livreur" class="custom-select rounded-0">
                                                         <option value="">Selectionner un livreur</option>
                                                         @foreach ($livreurs as $liv)

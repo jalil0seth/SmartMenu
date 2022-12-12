@@ -7,19 +7,13 @@
                 <div class="panel-heading">
                     <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
                         <li class="nav-item">
-                            <a class="{{ request()->is("admin/orders/filter/nouveau") ? "active nav-link" : "nav-link " }}" id="custom-tabs-one-home-tab" href="/admin/orders/filter/nouveau">Nouvelle commandes <span class="badge badge-primary" style="background-color:rgb(42, 138, 255) !important">{{$new}}</span></a>
+                        <a class="{{ request()->is("admin/orders/livreur/livraison") ? "active nav-link" : "nav-link " }}" id="custom-tabs-one-messages-tab" href="/admin/orders/livreur/livraison" >En cours de livraison <span class="badge badge-primary" style="background-color:rgb(246, 151, 74) !important">{{$enliv}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="{{ request()->is("admin/orders/filter/preparation") ? "active nav-link" : "nav-link " }}" id="custom-tabs-one-profile-tab" href="/admin/orders/filter/preparation">En cours de préparation <span class="badge badge-primary" style="background-color:rgb(124, 177, 155) !important">{{$prep}}</a>
-                         </li>
-                        <li class="nav-item">
-                        <a class="{{ request()->is("admin/orders/filter/livraison") ? "active nav-link" : "nav-link " }}" id="custom-tabs-one-messages-tab" href="/admin/orders/filter/livraison" >En cours de livraison <span class="badge badge-primary" style="background-color:rgb(246, 151, 74) !important">{{$enliv}}</a>
+                        <a class="{{ request()->is("admin/orders/livreur/Livré") ? "active nav-link" : "nav-link " }}"  href="/admin/orders/livreur/Livré" >Livrés <span class="badge badge-primary" style="background-color:rgb(81, 121, 104) !important">{{$liv}}</a>
                         </li>
                         <li class="nav-item">
-                        <a class="{{ request()->is("admin/orders/filter/Livré") ? "active nav-link" : "nav-link " }}"  href="/admin/orders/filter/Livré" >Livrés <span class="badge badge-primary" style="background-color:rgb(81, 121, 104) !important">{{$liv}}</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="{{ request()->is("admin/orders/filter/Annulée") ? "active nav-link" : "nav-link " }}"  href="/admin/orders/filter/Annulée">Annulées <span class="badge badge-primary" style="background-color:#f00 !important">{{$annulle}}</a>
+                        <a class="{{ request()->is("admin/orders/livreur/Annulée") ? "active nav-link" : "nav-link " }}"  href="/admin/orders/livreur/Annulée">Annulées <span class="badge badge-primary" style="background-color:#f00 !important">{{$annulle}}</a>
                         </li>
                     </ul>
                 </div>
