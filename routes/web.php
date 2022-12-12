@@ -10,13 +10,14 @@ Route::get('/home', function () {
         return redirect()->route('admin.home')->with('status', session('status'));
     }
 
-    return redirect()->route('admin.home');
+    return redirect()->to('admin.home');
 });
+
 
 Auth::routes(['register' => false]);
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', 'OrdersController@index')->name('home');
     // Permissions
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');
     Route::resource('permissions', 'PermissionsController');
@@ -73,6 +74,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Orders
     Route::delete('orders/destroy', 'OrdersController@massDestroy')->name('orders.massDestroy');
+    Route::get('orders/filter/{status}', 'OrdersController@filter');
+    Route::post('orders/changeOrder', 'OrdersController@changeit');
+    
     Route::resource('orders', 'OrdersController');
 
     // Orderdetails

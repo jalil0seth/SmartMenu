@@ -19,6 +19,8 @@
                                 <div class="col-md-6">
                                     <table class="table table-bordered table-striped">
                                         <tbody>
+                                            <form action="/admin/orders/changeOrder" method="post" >
+                                                @csrf
 
                                             <tr id="{{$order->status}}">
                                                 <th >
@@ -61,16 +63,28 @@
                                                     Selectionner un livreur
                                                 </th>
                                                 <td>
-                                                    <select name="status" id="status" class="custom-select rounded-0">
-                                                        @foreach ($status_orders as $s)
-                                                            <option value="{{ $s }}"
-                                                                @if ($order->status == $s) selected @endif>
-                                                                {{ ucfirst($s) ?? '' }}</option>
+                                                    <select name="livreur" id="livreur" class="custom-select rounded-0">
+                                                        <option value="">Selectionner un livreur</option>
+                                                        @foreach ($livreurs as $liv)
+                                                            <option value="{{ $liv->id }}"
+                                                                @if ($order->livreur_id == $liv->id) selected @endif>
+                                                                {{ ucfirst($liv->name) ?? '' }}</option>
                                                         @endforeach
                                                     </select>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                    <input type="hidden" name="order_id" value="{{$order->id}}">
+                                                    <button type="submit" class="btn btn-success" style="float:right">Enregistrer</button>
+                                                </td>
+                                            </tr>
                                         </tbody>
+
+                                        </form>
                                     </table>
                                 </div>
                                 <div class="col-md-6">

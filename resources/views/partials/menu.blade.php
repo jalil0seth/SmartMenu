@@ -1,14 +1,17 @@
 <aside class="main-sidebar">
     <section class="sidebar" style="height: auto;">
         <ul class="sidebar-menu tree" data-widget="tree">
-            <li>
-                <a href="{{ route("admin.home") }}">
-                    <i class="fas fa-fw fa-tachometer-alt">
+            @can('order_access')
+                <li class="{{ request()->is("admin/orders") || request()->is("admin/orders/*") ? "active" : "" }}">
+                    <a href="{{ route("admin.orders.index") }}">
+                        <i class="fa-fw fas fa-cart-arrow-down">
 
-                    </i>
-                    {{ trans('global.dashboard') }}
-                </a>
-            </li>
+                        </i>
+                        <span>{{ trans('cruds.order.title') }}</span>
+
+                    </a>
+                </li>
+            @endcan
             @can('category_access')
                 <li class="{{ request()->is("admin/categories") || request()->is("admin/categories/*") ? "active" : "" }}">
                     <a href="{{ route("admin.categories.index") }}">
@@ -42,6 +45,17 @@
                     </a>
                 </li>
             @endcan
+            @can('region_access')
+            <li class="{{ request()->is("admin/regions") || request()->is("admin/regions/*") ? "active" : "" }}">
+                <a href="{{ route("admin.regions.index") }}">
+                    <i class="fa-fw fas fa-map">
+
+                    </i>
+                    <span>{{ trans('cruds.region.title') }}</span>
+
+                </a>
+            </li>
+            @endcan
             @can('page_access')
                 <li class="{{ request()->is("admin/pages") || request()->is("admin/pages/*") ? "active" : "" }}">
                     <a href="{{ route("admin.pages.index") }}">
@@ -71,28 +85,6 @@
 
                         </i>
                         <span>{{ trans('cruds.client.title') }}</span>
-
-                    </a>
-                </li>
-            @endcan
-            @can('region_access')
-                <li class="{{ request()->is("admin/regions") || request()->is("admin/regions/*") ? "active" : "" }}">
-                    <a href="{{ route("admin.regions.index") }}">
-                        <i class="fa-fw fas fa-map">
-
-                        </i>
-                        <span>{{ trans('cruds.region.title') }}</span>
-
-                    </a>
-                </li>
-            @endcan
-            @can('order_access')
-                <li class="{{ request()->is("admin/orders") || request()->is("admin/orders/*") ? "active" : "" }}">
-                    <a href="{{ route("admin.orders.index") }}">
-                        <i class="fa-fw fas fa-cart-arrow-down">
-
-                        </i>
-                        <span>{{ trans('cruds.order.title') }}</span>
 
                     </a>
                 </li>
