@@ -127,9 +127,12 @@ class OrdersController extends Controller
         $order = Order::find($request->order_id);
         $order->status  = $request->status;
 
+        if( in_array("Livreur", Auth::user()->roles->pluck('title')->toArray())){
+            $order->save();
+            return redirect()->to('/admin/orders/'.$request->order_id);
+        }
         $order->livreur_id  = $request->livreur;
         $order->save();
-
         return redirect()->to('/admin/orders/'.$request->order_id);
     }
 
