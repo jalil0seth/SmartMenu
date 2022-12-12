@@ -28,6 +28,7 @@
                                                 </th>
                                                 <td>
                                                     <select name="status" id="status" class="custom-select rounded-0">
+                                                        @can('Livreur') @php $status_orders = $status_orders2 @endphp @endcan
                                                         @foreach ($status_orders as $s)
                                                             <option value="{{ $s }}"
                                                                 @if ($order->status == $s) selected @endif>
@@ -66,7 +67,7 @@
                                                     @if ($order->livreur_id != '')
                                                         <img src="{{\App\Models\Livreur::find($order->livreur_id)->photo->getUrl('thumb')}}" width="40px" srcset="">
                                                     @endif
-                                                    <select name="livreur" id="livreur" class="custom-select rounded-0">
+                                                    <select name="livreur" id="livreur" class="custom-select rounded-0" @can('Livreur') disabled @endcan>
                                                         <option value="">Selectionner un livreur</option>
                                                         @foreach ($livreurs as $liv)
                                                             <option value="{{ $liv->id }}"

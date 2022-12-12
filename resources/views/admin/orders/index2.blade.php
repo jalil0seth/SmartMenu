@@ -19,31 +19,10 @@
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <table class=" table table-bordered table-striped table-hover datatable datatable-Order">
+                        <table class=" table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th width="10">
-
-                                    </th>
-                                    <th>
-                                        Livreur
-                                    </th>
-                                    <th>
-                                        Status
-                                    </th>
-                                    <th>
-                                        Reference
-                                    </th>
-                                    <th>
-                                        Region
-                                    </th>
-                                    <th>
-                                        Client
-                                    </th>
-                                    <th>
-                                        Total
-                                    </th>
-                                    <th>
 
                                     </th>
                                     <th>
@@ -55,77 +34,32 @@
                                     </td>
                                     <td>
                                     </td>
-                                    <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                                    </td>
-                                    <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                                    </td>
-
-                                    <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                                    </td>
-                                    <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                                    </td>
-                                    <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                                    </td>
-                                    <td>
-                                    </td>
-                                    <td>
-                                    </td>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($orders as $key => $order)
                                     <tr data-entry-id="{{ $order->id }}" >
                                         <td>
-
+                                            <a class="btn btn-xs btn-primary" href="{{ route('admin.orders.show', $order->id) }}">
+                                                {{ $order->ref ?? '' }}
+                                            </a> 
                                         </td>
                                         <td>
-                                            @if ($order->livreur_id  != '')
-                                                <img src="{{\App\Models\Livreur::find($order->livreur_id)->photo->getUrl('thumb')}}" width="40px" srcset="">
-                                            @else
-                                            <img src="{{asset('noimg.jpeg')}}" width="40px" srcset="">
-                                            
-                                            @endif
-                                        </td>
-                                        <td>
-                                            {{ ucfirst($order->status) ?? '' }}
-                                        </td>
-                                        <td>
-                                            @if (intval(\Carbon\Carbon::now()->diff($order->created_at)->format('%H')) > 1)
-                                            Plus d'une heure 
-                                            @else 
-                                                {{\Carbon\Carbon::now()->diff($order->created_at)->format('%I:%S')}} s
-                                            @endif
-                                        </td>
-                                        <td>
-                                            {{ ucfirst($order->status) ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $order->ref ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ \App\Models\Region::where('id',\App\Models\Client::where('id',$order->client_id)->pluck('region_id')->first())->pluck('regions')->first()?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $order->client->name ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $order->total ?? '' }} DH
-                                        </td>
-                                        <td style="display:none">
-                                            @foreach (\App\Models\Orderdetail::where('order_id',$order->id)->get() as $o)
-                                                <img src="{{$o->image}}" width="30px" />
-                                            @endforeach
-                                        </td>
-                                        <td>
-                                            @can('order_show')
-                                                <a class="btn btn-xs btn-primary" href="{{ route('admin.orders.show', $order->id) }}">
-                                                    {{ trans('global.view') }}
+                                            @can('Livreur')
+                                                <a class="btn btn-xs btn-warning" href="{{ route('admin.orders.show', $order->id) }}">
+                                                @if (intval(\Carbon\Carbon::now()->diff($order->created_at)->format('%H')) > 1)
+                                                > 1h
+                                                @else 
+                                                    {{\Carbon\Carbon::now()->diff($order->created_at)->format('%I:%S')}} s
+                                                @endif
                                                 </a>
+                                                <a class="btn btn-xs btn-info" href="{{ route('admin.orders.show', $order->id) }}">
+                                                {{ \App\Models\Region::where('id',\App\Models\Client::where('id',$order->client_id)->pluck('region_id')->first())->pluck('regions')->first()?? '' }}
+                                                </a>
+                                                <a class="btn btn-xs btn-info" href="{{ route('admin.orders.show', $order->id) }}">
+                                                    {{ $order->total }} DH
+                                                </a>
+
                                             @endcan
 
                                         </td>

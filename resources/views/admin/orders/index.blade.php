@@ -102,7 +102,7 @@
                                         </td>
                                         <td>
                                             @if (intval(\Carbon\Carbon::now()->diff($order->created_at)->format('%H')) > 1)
-                                            Plus d'une heure 
+                                            > 1h
                                             @else 
                                                 {{\Carbon\Carbon::now()->diff($order->created_at)->format('%I:%S')}} s
                                             @endif

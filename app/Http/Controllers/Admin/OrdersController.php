@@ -44,12 +44,13 @@ class OrdersController extends Controller
     public function livreur($status)
     {
         abort_if(Gate::denies('Livreur'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $liv = Livreur::where('user_id',Auth::user()->id)->first()->id;
 
-        $orders = Order::with(['client'])->where('livreur_id',Auth::user()->id)->where('status', 'like', '%' . strtolower($status) . '%')->orderBy('id', 'DESC')->get();
+        $orders = Order::with(['client'])->where('livreur_id',$liv)->where('status', 'like', '%' . strtolower($status) . '%')->orderBy('id', 'DESC')->get();
 
-        $enliv = Order::with(['client'])->where('livreur_id',Auth::user()->id)->where('status', 'like', '%livraison%')->orderBy('id', 'DESC')->count();
-        $liv = Order::with(['client'])->where('livreur_id',Auth::user()->id)->where('status', 'like', '%Livré%')->orderBy('id', 'DESC')->count();
-        $annulle = Order::with(['client'])->where('livreur_id',Auth::user()->id)->where('status', 'like', '%Annulée%')->orderBy('id', 'DESC')->count();
+        $enliv = Order::with(['client'])->where('livreur_id',$liv)->where('status', 'like', '%livraison%')->orderBy('id', 'DESC')->count();
+        $liv = Order::with(['client'])->where('livreur_id',$liv)->where('status', 'like', '%Livré%')->orderBy('id', 'DESC')->count();
+        $annulle = Order::with(['client'])->where('livreur_id',$liv)->where('status', 'like', '%Annulée%')->orderBy('id', 'DESC')->count();
 
         $clients = Client::get();
 
@@ -94,17 +95,25 @@ class OrdersController extends Controller
 
     public function show(Order $order)
     {
-        abort_if(Gate::denies('order_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        //abort_if(Gate::denies(['order_show','Livreur']), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
 
         $status_orders = ['Nouveau','En cours de préparation', 'En cours de livraison','Livré','Annulée'];
+        $status_orders2 = ['En cours de livraison','Livré','Annulée'];
 
         $livreurs = Livreur::get();
 
         $orderd= Orderdetail::where('order_id',$order->id)->get();
 
+        $liv = Livreur::where('user_id',Auth::user()->id)->first()->id;
+
+        if( in_array("Livreur", Auth::user()->roles->pluck('title')->toArray()) and $liv != $order->livreur_id){
+            return redirect('admin/orders/livreur/livraison');
+        }
+
         $order->load('client');
 
-        return view('admin.orders.show', compact('order','status_orders','orderd','livreurs'));
+        return view('admin.orders.show', compact('order','status_orders','status_orders2','orderd','livreurs'));
     }
 
 
