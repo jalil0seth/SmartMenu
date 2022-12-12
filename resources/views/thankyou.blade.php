@@ -92,33 +92,40 @@ div#counter {
                            <div class="items phonenumber">
                               <label for="phonenumber">
                                Reference		</label>
-                              <input value="{{$order->ref}}" disabled/>
+                               <div style="margin-top:4px;border-radius: 2px;height: 35px;padding: 3px;color: #555;border: 1px solid #adbcdb;background-color:beige">{{$order->ref}}</div>
                            </div>
                            <div class="items surname">
                               <label for="surname">
-                              Status de votre comamnde </label>
-                              <input value="{{($order->status == 'nouveau')? 'En cours de préparation': $order->status}}" disabled/>
+                              Status de votre commande </label>
+                              <div style="margin-top:4px;border-radius: 2px;height: 35px;padding: 3px;color: #555;border: 1px solid #adbcdb;background-color:beige">{{($order->status == 'nouveau')? 'En cours de préparation': $order->status}}</div>
                            </div>
 
                            @if ($order->livreur_id != '')
-                           <div class="items phonenumber">
-                              <label for="phonenumber">
-                               Nom de votre livreur			</label>
-                               <input value="Hassan Akar" disabled/>
-                           </div>
-                           <div class="items phonenumber">
-                              <label for="phonenumber">
-                                 Numéro de téléphone	du livreur			</label>
-                               <input value="061541250" onclick="open('tel:+212605505651')" disabled/>
-                           </div>
+                              <div class="items phonenumber">
+                                 <label for="phonenumber">
+                                 Nom de votre livreur			</label>
+                                 <br><br>
+                                 <div style="margin-top:4px;border-radius: 2px;height: 35px;padding: 3px;color: #555;border: 1px solid #adbcdb;background-color:beige">
+                                    
+                                    {{\App\Models\Livreur::find($order->livreur_id)->first()->name}}</div>
+                                 
+                              </div>
+                              <div class="items phonenumber">
+                                 <label for="phonenumber">
+                                    Appeller le livreur			</label>
+                                 <br><br>
+                                    <a href="tel:{{str_replace(' ','',\App\Models\Livreur::find($order->livreur_id)->first()->phone)}}"><img src="{{ asset('whatsap.png') }} " width="35px" srcset=""></a>
+                              </div>
                            @endif
                         </div>
+                        <div id="counter2">
                         <div class="checkoutstep step2">
                            Votre commande sera livré dans :
                         </div>
                         <div class="items remarks">
                            <div id="counter"></div>
                         </div>
+                     </div>
                      </form>
                   </div>
                </div>
@@ -232,7 +239,7 @@ div#counter {
            // If the count down is over, write some text 
            if (distance < 0) {
              clearInterval(x);
-             document.getElementById("counter").innerHTML = "Merci d'appeller notre service de livraison";
+             document.getElementById("counter2").style.display = "none";
            }
          }, 1000);
          </script>

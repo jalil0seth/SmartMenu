@@ -37,7 +37,7 @@
                                         {{ trans('cruds.livreur.fields.phone') }}
                                     </th>
                                     <th>
-                                        {{ trans('cruds.livreur.fields.user') }}
+                                        livreur
                                     </th>
                                     <th>
                                         &nbsp;
