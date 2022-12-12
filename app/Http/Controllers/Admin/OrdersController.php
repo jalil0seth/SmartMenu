@@ -49,13 +49,13 @@ class OrdersController extends Controller
     public function livreur($status)
     {
         abort_if(Gate::denies('Livreur'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        $liv = Livreur::where('user_id',Auth::user()->id)->first()->id;
+        $livX = Livreur::where('user_id',Auth::user()->id)->first()->id;
 
-        $orders = Order::with(['client'])->where('livreur_id',$liv)->where('status', 'like', '%' . strtolower($status) . '%')->orderBy('id', 'DESC')->get();
+        $orders = Order::with(['client'])->where('livreur_id',$livX)->where('status', 'like', '%' . strtolower($status) . '%')->orderBy('id', 'DESC')->get();
 
-        $enliv = Order::with(['client'])->where('livreur_id',$liv)->where('status', 'like', '%livraison%')->orderBy('id', 'DESC')->count();
-        $liv = Order::with(['client'])->where('livreur_id',$liv)->where('status', 'like', '%Livré%')->orderBy('id', 'DESC')->count();
-        $annulle = Order::with(['client'])->where('livreur_id',$liv)->where('status', 'like', '%Annulée%')->orderBy('id', 'DESC')->count();
+        $enliv = Order::with(['client'])->where('livreur_id',$livX)->where('status', 'like', '%livraison%')->count();
+        $liv = Order::with(['client'])->where('livreur_id',$livX)->where('status', 'like', '%Livré%')->count();
+        $annulle = Order::with(['client'])->where('livreur_id',$livX)->where('status', 'like', '%Annulée%')->count();
 
         $clients = Client::get();
 
