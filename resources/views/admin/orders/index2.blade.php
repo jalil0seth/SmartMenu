@@ -1,10 +1,16 @@
 @extends('layouts.admin')
 @section('content')
+<style></style>
 <div class="content">
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="image">
+                            Bonjour, {{\App\Models\Livreur::find($orders[0]->livreur_id)->name}} <img src="{{\App\Models\Livreur::find($orders[0]->livreur_id)->photo->getUrl('thumb')}}" class="img-circle elevation-2" alt="User Image">
+                        </div>
+                        </div>
                     <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
                         <li class="nav-item">
                         <a class="{{ request()->is("admin/orders/livreur/livraison") ? "active nav-link" : "nav-link " }}" id="custom-tabs-one-messages-tab" href="/admin/orders/livreur/livraison" >En cours de livraison <span class="badge badge-primary" style="background-color:rgb(246, 151, 74) !important">{{$enliv}}</a>

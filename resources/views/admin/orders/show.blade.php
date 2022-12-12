@@ -65,7 +65,7 @@
                                                 </th>
                                                 <td>
                                                     @if ($order->livreur_id != '')
-                                                        <img src="{{\App\Models\Livreur::find($order->livreur_id)->photo->getUrl('thumb')}}" width="40px" srcset="">
+                                                        <img src="{{\App\Models\Livreur::find($order->livreur_id)->photo->getUrl('thumb')}}" width="40px" class="img-circle elevation-2" srcset="">
                                                     @endif
                                                     <select name="livreur" id="livreur" class="custom-select rounded-0" @can('Livreur') disabled @endcan>
                                                         <option value="">Selectionner un livreur</option>
