@@ -107,7 +107,7 @@ div#counter {
                                  <br><br>
                                  <div style="margin-top:4px;border-radius: 2px;height: 35px;padding: 3px;color: #555;border: 1px solid #adbcdb;background-color:beige">
                                     
-                                    {{\App\Models\Livreur::find($order->livreur_id)->first()->name}}</div>
+                                    {{\App\Models\Livreur::find($order->livreur_id)->name}}</div>
                                  
                               </div>
                               <div class="items phonenumber">
