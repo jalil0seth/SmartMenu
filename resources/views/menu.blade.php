@@ -36,7 +36,7 @@
                 <ul>
                     <li class='active'><a href="/" >Menu</a></li>
                     <li><a href="tel:{{str_replace(' ','',str_replace(' ','',$setting->phone))}}">Appeler</a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone={{$setting->whatsapp}}" target="_blank">Whatsapp</a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=+212{{str_replace('06','6',str_replace(' ','',$setting->whatsapp))}}" target="_blank">Whatsapp</a></li>
                     <li><a href="{{$setting->instagram}}" target="_blank">Instagram</a></li>
                     <li><a href="{{$setting->facebook}}" target="_blank">Facebook</a></li>
                     <li><a href="{{$setting->tiktok}}" target="_blank">TikTok</a></li>

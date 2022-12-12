@@ -71,7 +71,7 @@
                             <span class="help-block">{{ trans('cruds.setting.fields.email_helper') }}</span>
                         </div>
                         <div class="form-group {{ $errors->has('instagram') ? 'has-error' : '' }}">
-                            <label for="instagram">{{ trans('cruds.setting.fields.instagram') }}</label>
+                            <label for="instagram">Instagram</label>
                             <input class="form-control" type="instagram" name="instagram" id="instagram" value="{{ old('instagram', $setting->instagram) }}">
                             @if($errors->has('instagram'))
                                 <span class="help-block" role="alert">{{ $errors->first('instagram') }}</span>
@@ -79,7 +79,7 @@
                             <span class="help-block"></span>
                         </div>
                         <div class="form-group {{ $errors->has('tiktok') ? 'has-error' : '' }}">
-                            <label for="tiktok">{{ trans('cruds.setting.fields.tiktok') }}</label>
+                            <label for="tiktok">TikTok</label>
                             <input class="form-control" type="tiktok" name="tiktok" id="tiktok" value="{{ old('tiktok', $setting->tiktok) }}">
                             @if($errors->has('tiktok'))
                                 <span class="help-block" role="alert">{{ $errors->first('tiktok') }}</span>
@@ -87,7 +87,7 @@
                             <span class="help-block"></span>
                         </div>
                         <div class="form-group {{ $errors->has('whatsapp') ? 'has-error' : '' }}">
-                            <label for="whatsapp">{{ trans('cruds.setting.fields.whatsapp') }}</label>
+                            <label for="whatsapp">Whatsapp</label>
                             <input class="form-control" type="whatsapp" name="whatsapp" id="whatsapp" value="{{ old('whatsapp', $setting->whatsapp) }}">
                             @if($errors->has('whatsapp'))
                                 <span class="help-block" role="alert">{{ $errors->first('whatsapp') }}</span>
@@ -95,7 +95,7 @@
                             <span class="help-block"></span>
                         </div>
                         <div class="form-group {{ $errors->has('facebook') ? 'has-error' : '' }}">
-                            <label for="facebook">{{ trans('cruds.setting.fields.facebook') }}</label>
+                            <label for="facebook">Facebook</label>
                             <input class="form-control" type="facebook" name="facebook" id="facebook" value="{{ old('facebook', $setting->facebook) }}">
                             @if($errors->has('facebook'))
                                 <span class="help-block" role="alert">{{ $errors->first('facebook') }}</span>
