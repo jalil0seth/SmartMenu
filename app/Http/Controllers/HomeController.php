@@ -83,6 +83,7 @@ class HomeController extends Controller
         // create order
         $order = new Order;
         $order->client_id = $client->id;
+        $order->livreur_id = 1;
         $order->status = 'nouveau';
         $order->ref = 'A'.rand(10000000,100000000);
         $order->total = $request->total;
