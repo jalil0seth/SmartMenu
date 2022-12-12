@@ -19,11 +19,12 @@ class OrdersController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('order_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        
+                
         if( in_array("Livreur", Auth::user()->roles->pluck('title')->toArray())){
             return redirect('admin/orders/livreur/livraison');
         }
+        
+        abort_if(Gate::denies('order_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return redirect('admin/orders/filter/nouveau');
     }
