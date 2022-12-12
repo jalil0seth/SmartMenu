@@ -110,10 +110,12 @@ class OrdersController extends Controller
 
         $orderd= Orderdetail::where('order_id',$order->id)->get();
 
-        $liv = Livreur::where('user_id',Auth::user()->id)->first()->id;
+        if(Livreur::where('user_id',Auth::user()->id)->count() != 0){
+            $liv = Livreur::where('user_id',Auth::user()->id)->first()->id;
 
-        if( in_array("Livreur", Auth::user()->roles->pluck('title')->toArray()) and $liv != $order->livreur_id){
-            return redirect('admin/orders/livreur/livraison');
+            if( in_array("Livreur", Auth::user()->roles->pluck('title')->toArray()) and $liv != $order->livreur_id){
+                return redirect('admin/orders/livreur/livraison');
+            }
         }
 
         $order->load('client');
