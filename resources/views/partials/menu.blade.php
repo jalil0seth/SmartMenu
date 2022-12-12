@@ -68,7 +68,7 @@
             </li>
             @endcan
             @can('page_access')
-                <li class="{{ request()->is("admin/pages") || request()->is("admin/pages/*") ? "active" : "" }}">
+                <li class="{{ request()->is("admin/pages") || request()->is("admin/pages/*") ? "active" : "" }}" style="display:none">
                     <a href="{{ route("admin.pages.index") }}">
                         <i class="fa-fw fas fa-align-left">
 
@@ -111,7 +111,7 @@
                     </a>
                     <ul class="treeview-menu">
                         @can('permission_access')
-                            <li class="{{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "active" : "" }}">
+                            <li class="{{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "active" : "" }}" style="display:none">
                                 <a href="{{ route("admin.permissions.index") }}">
                                     <i class="fa-fw fas fa-unlock-alt">
 
@@ -122,7 +122,7 @@
                             </li>
                         @endcan
                         @can('role_access')
-                            <li class="{{ request()->is("admin/roles") || request()->is("admin/roles/*") ? "active" : "" }}">
+                            <li class="{{ request()->is("admin/roles") || request()->is("admin/roles/*") ? "active" : "" }}" style="display:none">
                                 <a href="{{ route("admin.roles.index") }}">
                                     <i class="fa-fw fas fa-briefcase">
 
