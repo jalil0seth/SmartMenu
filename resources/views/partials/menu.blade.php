@@ -14,7 +14,7 @@
             @endcan
             @can('Livreur')
             <li class="{{ request()->is("admin/orders/livreur/livraison") || request()->is("admin/orders/livreur/*") ? "active" : "" }}">
-                <a href="admin/orders/livreur/livraison">
+                <a href="/admin/orders/livreur/livraison">
                     <i class="fa-fw fas fa-cart-arrow-down">
 
                     </i>

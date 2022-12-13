@@ -8,8 +8,9 @@
                 <div class="panel-heading">
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div class="image">
-                            Bonjour, {{\App\Models\Livreur::find($livX)->name}} <img src="{{\App\Models\Livreur::find($livX)->photo->getUrl('thumb')}}" class="img-circle elevation-2" alt="User Image">
+                            <img src="{{\App\Models\Livreur::find($livX)->photo->getUrl('thumb')}}" class="img-circle elevation-2" alt="User Image"> {{\App\Models\Livreur::find($livX)->name}} 
                         </div>
+                        <hr>
                         </div>
                     <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
                         <li class="nav-item">
@@ -27,20 +28,16 @@
                     <div class="table-responsive">
                         <table class=" table table-bordered table-striped table-hover">
                             <thead>
-                                <tr>
-                                    <th width="10">
-
-                                    </th>
-                                    <th>
-                                        &nbsp;
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    </td>
-                                    <td>
-                                    </td>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th width="10%">
+                                            Référence
+                                        </th>
+                                        <th width="90%">
+                                            Informations
+                                        </th>
+                                    </tr>
+                                </thead>
                             </thead>
                             <tbody>
                                 @foreach($orders as $key => $order)
@@ -50,26 +47,27 @@
                                                 {{ $order->ref ?? '' }}
                                             </a> 
                                         </td>
-                                        <td>
-                                            @can('Livreur')
-                                                <a class="btn btn-xs btn-warning" href="{{ route('admin.orders.show', $order->id) }}">
-                                                @if (intval(\Carbon\Carbon::now()->diff($order->created_at)->format('%H')) > 1)
-                                                > 1h
-                                                @else 
-                                                    {{\Carbon\Carbon::now()->diff($order->created_at)->format('%I:%S')}} s
-                                                @endif
-                                                </a>
-                                                <a class="btn btn-xs btn-info" href="{{ route('admin.orders.show', $order->id) }}">
+                                        <td>    
+                                            
+                                            <a class="btn btn-xs btn-info" href="{{ route('admin.orders.show', $order->id) }}">
                                                 {{ \App\Models\Region::where('id',\App\Models\Client::where('id',$order->client_id)->pluck('region_id')->first())->pluck('regions')->first()?? '' }}
                                                 </a>
-                                                <a class="btn btn-xs btn-info" href="{{ route('admin.orders.show', $order->id) }}">
-                                                    {{ $order->total }} DH
-                                                </a>
+                                            @if (intval(\Carbon\Carbon::now()->diff($order->created_at)->format('%H')) > 1 or intval(\Carbon\Carbon::now()->diff($order->created_at)->format('%D')) >=1)
+                                            <a class="btn btn-xs btn-warning" href="{{ route('admin.orders.show', $order->id) }}">
+                                            > 1h
+                                            </a>
+                                            @else 
+                                            <a class="btn btn-xs btn-success" href="{{ route('admin.orders.show', $order->id) }}">
+                                                {{\Carbon\Carbon::now()->diff($order->created_at)->format('%Im:%Ss')}}
+                                            </a>
+                                            @endif
 
-                                            @endcan
+
+                                            <a class="btn btn-xs btn-info" href="{{ route('admin.orders.show', $order->id) }}">
+                                                {{ $order->total }} DH
+                                            </a>
 
                                         </td>
-
                                     </tr>
                                 @endforeach
                             </tbody>

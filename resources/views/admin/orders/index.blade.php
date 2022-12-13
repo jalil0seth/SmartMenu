@@ -28,18 +28,12 @@
                         <table class=" table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th width="10">
-
+                                    <th width="10%">
+                                        Référence
                                     </th>
-                                    <th>
-                                        &nbsp;
+                                    <th width="90%">
+                                        Informations
                                     </th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    </td>
-                                    <td>
-                                    </td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,21 +47,26 @@
                                         <td>    
                                             <a href="{{ route('admin.orders.show', $order->id) }}">
                                             @if ($order->livreur_id  != '')
-                                            <img src="{{\App\Models\Livreur::find($order->livreur_id)->photo->getUrl('thumb')}}" class="img-circle elevation-2" width="40px" srcset="">
-                                            @else
-                                            <img src="{{asset('noimg.jpeg')}}" width="40px" class="img-circle elevation-2" srcset="">
+                                                <img src="{{\App\Models\Livreur::find($order->livreur_id)->photo->getUrl('thumb')}}" class="img-circle elevation-2" width="40px" srcset="">
+                                                @else
+                                                <img src="{{asset('noimg.jpeg')}}" width="40px" class="img-circle elevation-2" srcset="">
                                             @endif
                                             </a>
-                                            <a class="btn btn-xs btn-warning" href="{{ route('admin.orders.show', $order->id) }}">
-                                            @if (intval(\Carbon\Carbon::now()->diff($order->created_at)->format('%H')) > 1)
-                                            > 1h
-                                            @else 
-                                                {{\Carbon\Carbon::now()->diff($order->created_at)->format('%I:%S')}} s
-                                            @endif
-                                            </a>
+                                            
                                             <a class="btn btn-xs btn-info" href="{{ route('admin.orders.show', $order->id) }}">
-                                            {{ \App\Models\Region::where('id',\App\Models\Client::where('id',$order->client_id)->pluck('region_id')->first())->pluck('regions')->first()?? '' }}
+                                                {{ \App\Models\Region::where('id',\App\Models\Client::where('id',$order->client_id)->pluck('region_id')->first())->pluck('regions')->first()?? '' }}
+                                                </a>
+                                            @if (intval(\Carbon\Carbon::now()->diff($order->created_at)->format('%H')) > 1 or intval(\Carbon\Carbon::now()->diff($order->created_at)->format('%D')) >=1)
+                                            <a class="btn btn-xs btn-warning" href="{{ route('admin.orders.show', $order->id) }}">
+                                            > 1h
                                             </a>
+                                            @else 
+                                            <a class="btn btn-xs btn-success" href="{{ route('admin.orders.show', $order->id) }}">
+                                                {{\Carbon\Carbon::now()->diff($order->created_at)->format('%Im:%Ss')}}
+                                            </a>
+                                            @endif
+
+
                                             <a class="btn btn-xs btn-info" href="{{ route('admin.orders.show', $order->id) }}">
                                                 {{ $order->total }} DH
                                             </a>
