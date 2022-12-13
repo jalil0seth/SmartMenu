@@ -37,9 +37,6 @@
                                         {{ trans('cruds.livreur.fields.phone') }}
                                     </th>
                                     <th>
-                                        livreur
-                                    </th>
-                                    <th>
                                         &nbsp;
                                     </th>
                                 </tr>
@@ -53,9 +50,6 @@
                                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                     </td>
                                     <td>
-                                    </td>
-                                    <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                     </td>
                                     <td>
                                         <select class="search">
@@ -84,15 +78,12 @@
                                         <td>
                                             @if($livreur->photo)
                                                 <a href="{{ $livreur->photo->getUrl() }}" target="_blank" style="display: inline-block">
-                                                    <img src="{{ $livreur->photo->getUrl('thumb') }}">
+                                                    <img src="{{ $livreur->photo->getUrl('thumb') }}" class="img-circle elevation-2">
                                                 </a>
                                             @endif
                                         </td>
                                         <td>
                                             {{ $livreur->phone ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $livreur->user->name ?? '' }}
                                         </td>
                                         <td>
                                             @can('livreur_show')

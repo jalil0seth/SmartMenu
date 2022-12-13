@@ -17,7 +17,7 @@ class RegionsController extends Controller
     {
         abort_if(Gate::denies('region_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $regions = Region::all();
+        $regions = Region::orderBy('regions','asc')->get();;
 
         return view('admin.regions.index', compact('regions'));
     }

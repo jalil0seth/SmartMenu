@@ -41,7 +41,7 @@ class HomeController extends Controller
             $products = Product::all();
             $categories = Category::all();
             $setting = Setting::first();
-            $regions = Region::all();
+            $regions = Region::orderBy('regions','asc')->get();
             return view('order',compact('products','categories','setting','regions'));
     }
 

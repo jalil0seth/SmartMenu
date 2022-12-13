@@ -25,12 +25,6 @@
 
                                     </th>
                                     <th>
-                                        {{ trans('cruds.region.fields.id') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.region.fields.ville') }}
-                                    </th>
-                                    <th>
                                         {{ trans('cruds.region.fields.regions') }}
                                     </th>
                                     <th>
@@ -44,26 +38,14 @@
                                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                     </td>
                                     <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                                    </td>
-                                    <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                                    </td>
-                                    <td>
                                     </td>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($regions as $key => $region)
-                                    <tr data-entry-id="{{ $region->id }}">
+                                    <tr >
                                         <td>
 
-                                        </td>
-                                        <td>
-                                            {{ $region->id ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $region->ville ?? '' }}
                                         </td>
                                         <td>
                                             {{ $region->regions ?? '' }}

@@ -6,12 +6,14 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('global.edit') }} {{ trans('cruds.setting.title_singular') }}
+                    Configuration du site 
                 </div>
                 <div class="panel-body">
                     <form method="POST" action="{{ route("admin.settings.update", [$setting->id]) }}" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
+                        <h4 style="font-size:18px">Configuration Generale</h4>
+                        <hr>
                         <div class="form-group {{ $errors->has('nom') ? 'has-error' : '' }}">
                             <label for="nom">{{ trans('cruds.setting.fields.nom') }}</label>
                             <input class="form-control" type="text" name="nom" id="nom" value="{{ old('nom', $setting->nom) }}">
@@ -20,48 +22,76 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.setting.fields.nom_helper') }}</span>
                         </div>
-                        <div class="form-group {{ $errors->has('logo') ? 'has-error' : '' }}">
-                            <label for="logo">{{ trans('cruds.setting.fields.logo') }}</label>
-                            <div class="needsclick dropzone" id="logo-dropzone">
+                        
+                        <!-- LOGO + BANNNERS -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group {{ $errors->has('logo') ? 'has-error' : '' }}">
+                                    <label for="logo">{{ trans('cruds.setting.fields.logo') }}</label>
+                                    <div class="needsclick dropzone" id="logo-dropzone">
+                                    </div>
+                                    @if($errors->has('logo'))
+                                        <span class="help-block" role="alert">{{ $errors->first('logo') }}</span>
+                                    @endif
+                                    <span class="help-block">{{ trans('cruds.setting.fields.logo_helper') }}</span>
+                                </div>
                             </div>
-                            @if($errors->has('logo'))
-                                <span class="help-block" role="alert">{{ $errors->first('logo') }}</span>
-                            @endif
-                            <span class="help-block">{{ trans('cruds.setting.fields.logo_helper') }}</span>
-                        </div>
-                        <div class="form-group {{ $errors->has('banners') ? 'has-error' : '' }}">
-                            <label for="banners">{{ trans('cruds.setting.fields.banners') }}</label>
-                            <div class="needsclick dropzone" id="banners-dropzone">
+                            <div class="col-md-6">
+                                <div class="form-group {{ $errors->has('banners') ? 'has-error' : '' }}">
+                                    <label for="banners">{{ trans('cruds.setting.fields.banners') }}</label>
+                                    <div class="needsclick dropzone" id="banners-dropzone">
+                                    </div>
+                                    @if($errors->has('banners'))
+                                        <span class="help-block" role="alert">{{ $errors->first('banners') }}</span>
+                                    @endif
+                                    <span class="help-block">{{ trans('cruds.setting.fields.banners_helper') }}</span>
+                                </div>
                             </div>
-                            @if($errors->has('banners'))
-                                <span class="help-block" role="alert">{{ $errors->first('banners') }}</span>
-                            @endif
-                            <span class="help-block">{{ trans('cruds.setting.fields.banners_helper') }}</span>
                         </div>
-                        <div class="form-group {{ $errors->has('free_shipping') ? 'has-error' : '' }}">
-                            <label for="free_shipping">{{ trans('cruds.setting.fields.free_shipping') }}</label>
-                            <input class="form-control" type="number" name="free_shipping" id="free_shipping" value="{{ old('free_shipping', $setting->free_shipping) }}" step="1">
-                            @if($errors->has('free_shipping'))
-                                <span class="help-block" role="alert">{{ $errors->first('free_shipping') }}</span>
-                            @endif
-                            <span class="help-block">{{ trans('cruds.setting.fields.free_shipping_helper') }}</span>
                         </div>
-                        <div class="form-group {{ $errors->has('min_order') ? 'has-error' : '' }}">
-                            <label for="min_order">{{ trans('cruds.setting.fields.min_order') }}</label>
-                            <input class="form-control" type="number" name="min_order" id="min_order" value="{{ old('min_order', $setting->min_order) }}" step="1">
-                            @if($errors->has('min_order'))
-                                <span class="help-block" role="alert">{{ $errors->first('min_order') }}</span>
-                            @endif
-                            <span class="help-block">{{ trans('cruds.setting.fields.min_order_helper') }}</span>
+                        <div class="panel-body">
+                        <h4 style="font-size:18px">Configuration des achats</h4>
+                        <hr>
+                        <!-- LIV + MIN ORDER + FREE SHIPPING -->
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group {{ $errors->has('free_shipping') ? 'has-error' : '' }}">
+                                    <label for="free_shipping">{{ trans('cruds.setting.fields.free_shipping') }} (DH)</label>
+                                    <input class="form-control" type="number" name="free_shipping" id="free_shipping" value="{{ old('free_shipping', $setting->free_shipping) }}" step="1">
+                                    @if($errors->has('free_shipping'))
+                                        <span class="help-block" role="alert">{{ $errors->first('free_shipping') }}</span>
+                                    @endif
+                                    <span class="help-block">{{ trans('cruds.setting.fields.free_shipping_helper') }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group {{ $errors->has('min_order') ? 'has-error' : '' }}">
+                                    <label for="min_order">{{ trans('cruds.setting.fields.min_order') }} (DH)</label>
+                                    <input class="form-control" type="number" name="min_order" id="min_order" value="{{ old('min_order', $setting->min_order) }}" step="1">
+                                    @if($errors->has('min_order'))
+                                        <span class="help-block" role="alert">{{ $errors->first('min_order') }}</span>
+                                    @endif
+                                    <span class="help-block">{{ trans('cruds.setting.fields.min_order_helper') }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group {{ $errors->has('shipping') ? 'has-error' : '' }}">
+                                    <label for="shipping">Prix de livraison (DH)</label>
+                                    <input class="form-control" type="number" name="shipping" id="shipping" value="{{ old('shipping', $setting->shipping) }}" step="1">
+                                    @if($errors->has('shipping'))
+                                        <span class="help-block" role="alert">{{ $errors->first('shipping') }}</span>
+                                    @endif
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group {{ $errors->has('shipping') ? 'has-error' : '' }}">
-                            <label for="shipping">Prix de livraison</label>
-                            <input class="form-control" type="number" name="shipping" id="shipping" value="{{ old('shipping', $setting->shipping) }}" step="1">
-                            @if($errors->has('shipping'))
-                                <span class="help-block" role="alert">{{ $errors->first('shipping') }}</span>
-                            @endif
-                            <span class="help-block"></span>
+                        
+                        <!-- LIV + MIN ORDER + FREE SHIPPING -->
+
                         </div>
+                        <div class="panel-body">
+                        <h4 style="font-size:18px">Réseaux sociaux</h4>
+                        <hr>
                         <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
                             <label for="email">{{ trans('cruds.setting.fields.email') }}</label>
                             <input class="form-control" type="email" name="email" id="email" value="{{ old('email', $setting->email) }}">
@@ -102,6 +132,11 @@
                             @endif
                             <span class="help-block"></span>
                         </div>
+                        
+                        </div>
+                        <div class="panel-body">
+                        <h4 style="font-size:18px">Informations sur le magasin</h4>
+                        <hr>
                         <div class="form-group {{ $errors->has('start_time') ? 'has-error' : '' }}">
                             <label for="start_time">{{ trans('cruds.setting.fields.start_time') }}</label>
                             <input class="form-control timepicker" type="text" name="start_time" id="start_time" value="{{ old('start_time', $setting->start_time) }}">

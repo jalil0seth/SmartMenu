@@ -12,7 +12,7 @@
                     <form method="POST" action="{{ route("admin.regions.update", [$region->id]) }}" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
-                        <div class="form-group {{ $errors->has('ville') ? 'has-error' : '' }}">
+                        <div class="form-group {{ $errors->has('ville') ? 'has-error' : '' }}" style="display: none">
                             <label for="ville">{{ trans('cruds.region.fields.ville') }}</label>
                             <input class="form-control" type="text" name="ville" id="ville" value="{{ old('ville', $region->ville) }}">
                             @if($errors->has('ville'))
@@ -21,7 +21,7 @@
                             <span class="help-block">{{ trans('cruds.region.fields.ville_helper') }}</span>
                         </div>
                         <div class="form-group {{ $errors->has('regions') ? 'has-error' : '' }}">
-                            <label for="regions">{{ trans('cruds.region.fields.regions') }}</label>
+                            <label for="regions">Region</label>
                             <input class="form-control" type="text" name="regions" id="regions" value="{{ old('regions', $region->regions) }}">
                             @if($errors->has('regions'))
                                 <span class="help-block" role="alert">{{ $errors->first('regions') }}</span>
