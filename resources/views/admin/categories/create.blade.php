@@ -19,7 +19,7 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.category.fields.name_helper') }}</span>
                         </div>
-                        <div class="form-group {{ $errors->has('is_active') ? 'has-error' : '' }}">
+                        <div class="form-group {{ $errors->has('is_active') ? 'has-error' : '' }}" style="display: none">
                             <div>
                                 <input type="hidden" name="is_active" value="0">
                                 <input type="checkbox" name="is_active" id="is_active" value="1" {{ old('is_active', 0) == 1 || old('is_active') === null ? 'checked' : '' }}>
@@ -30,7 +30,7 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.category.fields.is_active_helper') }}</span>
                         </div>
-                        <div class="form-group {{ $errors->has('in_homepage') ? 'has-error' : '' }}">
+                        <div class="form-group {{ $errors->has('in_homepage') ? 'has-error' : '' }}" style="display: none">
                             <div>
                                 <input type="hidden" name="in_homepage" value="0">
                                 <input type="checkbox" name="in_homepage" id="in_homepage" value="1" {{ old('in_homepage', 0) == 1 || old('in_homepage') === null ? 'checked' : '' }}>
