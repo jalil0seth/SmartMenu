@@ -40,7 +40,7 @@
                         <i class="fa-fw fas fa-archive">
 
                         </i>
-                        <span>{{ trans('cruds.product.title') }}</span>
+                        <span>Produits</span>
 
                     </a>
                 </li>
