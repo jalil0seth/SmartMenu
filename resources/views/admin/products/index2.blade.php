@@ -4,8 +4,8 @@
         @can('category_create')
             <div style="margin-bottom: 10px;" class="row">
                 <div class="col-md-12">
-                    <a class="btn btn-success" href="{{ route('admin.categories.create') }}">
-                        {{ trans('global.add') }} {{ trans('cruds.category.title_singular') }}
+                    <a class="btn btn-success" href="{{ route('admin.products.create') }}">
+                        {{ trans('global.add') }} Produit
                     </a>
                 </div>
             </div>
@@ -25,6 +25,9 @@
                                         <th>
                                             Produit
                                         </th>
+                                        <th>
+                                            Categorie
+                                        </th>                                   
                                         <th>
                                             Prix
                                          </th>
@@ -85,9 +88,12 @@
                                                             <i class="icon-drag-handle"></i>
                                                         </div>
                                                         <div class="col-md-11">
-                                                            {{ $product->price ?? '' }} DH
+                                                            {{ $product->category->name ?? '' }}
                                                         </div>
                                                     </div>
+                                                </td>
+                                                <td class="price">
+                                                    {{ $product->price ?? '' }} DH
                                                 </td>
                                                 <td class="position">
                                                     {{ $product->rank ?? '' }}
