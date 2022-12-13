@@ -35,12 +35,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('categories/media', 'CategoriesController@storeMedia')->name('categories.storeMedia');
     Route::post('categories/ckmedia', 'CategoriesController@storeCKEditorImages')->name('categories.storeCKEditorImages');
     Route::resource('categories', 'CategoriesController');
+    Route::post('categories/reorder', 'CategoriesController@reorder')->name('categories.reorder');
 
     // Products
     Route::delete('products/destroy', 'ProductsController@massDestroy')->name('products.massDestroy');
     Route::post('products/media', 'ProductsController@storeMedia')->name('products.storeMedia');
     Route::post('products/ckmedia', 'ProductsController@storeCKEditorImages')->name('products.storeCKEditorImages');
     Route::resource('products', 'ProductsController');
+    Route::post('products/reorder', 'ProductsController@reorder')->name('products.reorder');
 
     // Livreurs
     Route::delete('livreurs/destroy', 'LivreursController@massDestroy')->name('livreurs.massDestroy');

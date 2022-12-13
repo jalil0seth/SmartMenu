@@ -105,7 +105,7 @@
                                     </div>
                                 </div>
                                 <div class="product-container">
-                                    @foreach (\App\Models\Product::where('category_id', $cat->id)->get() as $p)
+                                    @foreach (\App\Models\Product::where('category_id', $cat->id)->orderBy('rank','asc')->get() as $p)
                                         <div itemscope itemtype="http://schema.org/Product">
                                             <div class="add-to-cart addtobasket" data-name="{{ $p->name }}"
                                                 data-price="{{ $p->price }}"

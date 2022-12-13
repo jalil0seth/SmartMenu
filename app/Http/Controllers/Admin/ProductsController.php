@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Gate;
+use App\Models\Product;
+use App\Models\Category;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Traits\MediaUploadingTrait;
-use App\Http\Requests\MassDestroyProductRequest;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
-use App\Models\Category;
-use App\Models\Product;
-use Gate;
-use Illuminate\Http\Request;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
+use App\Http\Requests\MassDestroyProductRequest;
+use App\Http\Controllers\Traits\MediaUploadingTrait;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProductsController extends Controller
 {
@@ -26,7 +27,7 @@ class ProductsController extends Controller
 
         $categories = Category::get();
 
-        return view('admin.products.index', compact('categories', 'products'));
+        return view('admin.products.index2', compact('categories', 'products'));
     }
 
     public function create()
@@ -120,5 +121,29 @@ class ProductsController extends Controller
         $media         = $model->addMediaFromRequest('upload')->toMediaCollection('ck-media');
 
         return response()->json(['id' => $media->id, 'url' => $media->getUrl()], Response::HTTP_CREATED);
+    }
+
+    public function reorder(Request $request)
+    {
+        $request->validate([
+            'ids'         => 'required|array',
+            'ids.*'       => 'integer',
+            'category_id' => 'required|integer|exists:categories,id',
+        ]);
+
+        foreach ($request->ids as $index => $id) {
+            DB::table('products')
+                ->where('id', $id)
+                ->update([
+                    'rank' => $index + 1,
+                    'category_id' => $request->category_id
+                ]);
+        }
+
+        $positions = Category::find($request->category_id)
+            ->products()
+            ->pluck('rank', 'id');
+
+        return response(compact('positions'), Response::HTTP_OK);
     }
 }

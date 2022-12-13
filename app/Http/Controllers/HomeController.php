@@ -30,8 +30,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-            $products = Product::all();
-            $categories = Category::all();
+            $products = Product::orderBy('rank','asc')->get();
+            $categories = Category::orderBy('rank','asc')->get();
             $setting = Setting::first();
             return view('menu',compact('products','categories','setting'));
     }
