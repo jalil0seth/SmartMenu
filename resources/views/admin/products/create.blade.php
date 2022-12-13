@@ -13,13 +13,13 @@
                         @csrf
                         <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                             <label for="name">{{ trans('cruds.product.fields.name') }}</label>
-                            <input class="form-control" type="text" name="name" id="name" value="{{ old('name', '') }}">
+                            <input class="form-control" type="text" name="name" id="name" value="{{ old('name', '') }}" required>
                             @if($errors->has('name'))
                                 <span class="help-block" role="alert">{{ $errors->first('name') }}</span>
                             @endif
                             <span class="help-block">{{ trans('cruds.product.fields.name_helper') }}</span>
                         </div>
-                        <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">
+                        <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}" required>
                             <label for="image">{{ trans('cruds.product.fields.image') }}</label>
                             <div class="needsclick dropzone" id="image-dropzone">
                             </div>
@@ -28,7 +28,7 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.product.fields.image_helper') }}</span>
                         </div>
-                        <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
+                        <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}" required>
                             <label for="price">{{ trans('cruds.product.fields.price') }}</label>
                             <input class="form-control" type="number" name="price" id="price" value="{{ old('price', '') }}" step="1" min="2">
                             @if($errors->has('price'))
