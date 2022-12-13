@@ -25,9 +25,6 @@
 
                                     </th>
                                     <th>
-                                        {{ trans('cruds.category.fields.image') }}
-                                    </th>
-                                    <th>
                                         {{ trans('cruds.category.fields.name') }}
                                     </th>
                                     <th>
@@ -35,8 +32,6 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <td>
-                                    </td>
                                     <td>
                                     </td>
                                     <td>
@@ -53,18 +48,12 @@
                                         <td>
 
                                         </td>
-                                        <td>
-                                            @if($category->image)
-                                                <a href="{{ route('admin.categories.edit', $category->id) }}" style="display: inline-block">
-                                                    <img class="imgcat" src="{{ $category->image->getUrl() }}" >
-                                                </a>
-                                            @endif
+                                        <td  style="background-image: url('{{ $category->image->getUrl() }}');height:60px;background-size: cover; background-position: 50% 0;">
+                                            <span style="color: #fff; background-color: rgb(52 66 88); padding: 4px">{{ $category->name ?? '' }}</span>
                                         </td>
                                         <td>
-                                            {{ $category->name ?? '' }}
-                                        </td>
-                                        <td>
-                                            @can('category_edit')
+                                            <span style="float: right">
+                                                @can('category_edit')
                                                 <a class="btn btn-xs btn-info" href="{{ route('admin.categories.edit', $category->id) }}">
                                                     {{ trans('global.edit') }}
                                                 </a>
@@ -77,6 +66,7 @@
                                                     <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
                                                 </form>
                                             @endcan
+                                            </span>
 
                                         </td>
 
