@@ -5,7 +5,7 @@
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-12">
                 <a class="btn btn-success" href="{{ route('admin.categories.create') }}">
-                    {{ trans('global.add') }} {{ trans('cruds.category.title_singular') }}
+                    {{ trans('global.add') }} une categorie
                 </a>
             </div>
         </div>
@@ -14,32 +14,25 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {{ trans('cruds.category.title_singular') }} {{ trans('global.list') }}
+                    Un Total de  {{\App\Models\Product::count()}} produits
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <table class=" table table-bordered table-striped table-hover datatable datatable-Category">
+                        <table class=" table table-bordered table-striped table-hover" style="border-collapse:separate;border-spacing: 0 1em;">
                             <thead>
                                 <tr>
                                     <th width="10">
 
                                     </th>
+                                    <th width="70%">
+                                        Nom de la categorie
+                                    </th>
                                     <th>
-                                        {{ trans('cruds.category.fields.name') }}
+                                        Nb de produits
                                     </th>
                                     <th>
                                         &nbsp;
                                     </th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    </td>
-                                    <td>
-                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                                    </td>
-
-                                    <td>
-                                    </td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -48,14 +41,17 @@
                                         <td>
 
                                         </td>
-                                        <td  style="background-image: url('{{ $category->image->getUrl() }}');height:60px;background-size: cover; background-position: 50% 0;">
+                                        <td  style="background-image: url('{{ $category->image->getUrl() }}');height:100px;background-size: cover; border: 1px solid;">
                                             <span style="color: #fff; background-color: rgb(52 66 88); padding: 4px">{{ $category->name ?? '' }}</span>
+                                        </td>
+                                        <td>
+                                            {{\App\Models\Product::where('category_id',$category->id)->count()}} produits
                                         </td>
                                         <td>
                                             <span style="float: right">
                                                 @can('category_edit')
                                                 <a class="btn btn-xs btn-info" href="{{ route('admin.categories.edit', $category->id) }}">
-                                                    {{ trans('global.edit') }}
+                                                    {{ trans('global.edit') }} la categorie
                                                 </a>
                                             @endcan
 
@@ -63,7 +59,7 @@
                                                 <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                    <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
+                                                    <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }} la categorie">
                                                 </form>
                                             @endcan
                                             </span>
