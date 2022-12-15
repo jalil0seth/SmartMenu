@@ -149,10 +149,14 @@ var shoppingCart = (function() {
     var productid = $(this).data('productid');
 
     var price = Number($(this).data('price'));
+    var oos = Number($(this).data('oos'));
 
-
-    shoppingCart.addItemToCart(name, price, imgProduct,productid, 1);
-    displayCart();
+    if(oos == 1){
+      
+    }else{
+      shoppingCart.addItemToCart(name, price, imgProduct,productid, 1);
+      displayCart();
+    }
   });
   
   // Clear items
