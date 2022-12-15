@@ -72,6 +72,9 @@
             background-color: #394860 !important;
             border-color: #fff !important;
         }
+        #oos{
+            background-color: #e9abab69;
+        }
     </style>
     @yield('styles')
 </head>

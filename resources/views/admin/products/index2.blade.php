@@ -71,14 +71,14 @@
                                         </tr>
                                         @foreach (\App\Models\Product::where('category_id', $category->id)->orderBy('rank', 'asc')->get() as $product)
                                             <tr data-id="{{ $product->id }}" colspan="8" class="meal"
-                                                style="border:solid 1px #d0494a69;">
+                                                style="border:solid 1px #d0494a69;" @if($product->oos == 1) id="oos" @endif>
                                                 <td style="display: none">
                                                     {{ $product->id ?? '' }}
                                                 </td>
                                                 <td>
                                                     <div class="input-group">
                                                         <img width="50px" src="{{ $product->image[0]['preview_url'] }}" class="img-circle elevation-2">
-                                                        {{ $product->name ?? '' }}
+                                                        {{ $product->name ?? '' }} @if($product->oos == 1) <span class="float-right badge bg-danger">Non disponible</span> @endif
                                                     </div>
 
                                                 </td>

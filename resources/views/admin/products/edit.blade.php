@@ -29,9 +29,21 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.product.fields.image_helper') }}</span>
                         </div>
+
+                        <div class="form-group {{ $errors->has('is_active') ? 'has-error' : '' }}">
+                          <div @if ($product->oos == 1) id="oos" @endif>
+                              <input type="hidden" name="oos" value="0">
+                              <label for="oos" style="font-weight: 400">Mettre le produit ( Non disponible )</label>
+                              <input type="checkbox" name="oos" id="oos" value="1" {{ $product->oos || old('oos', 0) === 1 ? 'checked' : '' }}>
+                          </div>
+                          @if($errors->has('oos'))
+                              <span class="help-block" role="alert">{{ $errors->first('is_active') }}</span>
+                          @endif
+                        </div>
+
                         <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
                             <label for="price">{{ trans('cruds.product.fields.price') }}</label>
-                            <input class="form-control" type="number" name="price" id="price" value="{{ old('price', $product->price) }}" step="1">
+                            <input class="form-control" type="number" name="price" id="price" value="{{ old('price', $product->price) }}" step="1" min="2">
                             @if($errors->has('price'))
                                 <span class="help-block" role="alert">{{ $errors->first('price') }}</span>
                             @endif

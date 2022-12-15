@@ -23,6 +23,20 @@
         .cart-meal-name {
             word-break: normal !important;
         }
+        .badge {
+            display: inline-block;
+            min-width: 10px;
+            padding: 3px 7px;
+            font-size: 10px;
+            font-weight: bold;
+            color: #fff;
+            line-height: 1;
+            vertical-align: middle;
+            white-space: nowrap;
+            text-align: center;
+            background-color: rgba(220, 149, 149, 0.56);
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -110,10 +124,14 @@
                                             <div class="add-to-cart addtobasket" data-name="{{ $p->name }}"
                                                 data-price="{{ $p->price }}"
                                                 data-imgproduct="{{ $p->image[0]['url'] }}"
-                                                data-productid="{{ $p->id }}">
+                                                data-productid="{{ $p->id }}"
+                                                data-oos="{{ $p->oos }}">
                                                 <div class="meal-wrapper">
                                                     <div class="product-name" itemprop="name">
-                                                        {{ $p->name }}
+                                                        {{ $p->name }} 
+                                                        @if ($p->oos == 1)
+                                                            <span class="float-right badge bg-danger">Non disponible</span>
+                                                        @endif
                                                     </div>
                                                     <!-- product-name -->
                                                     @isset($p->notes)
