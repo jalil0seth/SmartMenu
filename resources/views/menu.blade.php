@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('style/style22.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/takeaway22.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('font-awesome/css/font-awesome.min.css') }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="{{ asset('tpl/template1/additives.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('basket/css/sidedishes.css') }}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
@@ -37,6 +37,15 @@
             background-color: rgba(220, 149, 149, 0.56);
             border-radius: 10px;
         }
+        #icon {
+            margin-right: 6px;
+        }
+        @media (max-width:600px)  {
+        .nav li.active a {
+            padding: 15px;
+            font-size: 20px;
+        }
+    }
     </style>
 </head>
 
@@ -48,12 +57,12 @@
             </div>
             <div class="nav-wrapper">
                 <ul>
-                    <li class='active'><a href="/" >Menu</a></li>
-                    <li><a href="tel:{{str_replace(' ','',str_replace(' ','',$setting->phone))}}">Appeler</a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=212{{str_replace('07','7',str_replace('06','6',str_replace(' ','',$setting->whatsapp)))}}" target="_blank">Whatsapp</a></li>
-                    <li><a href="{{$setting->instagram}}" target="_blank">Instagram</a></li>
-                    <li><a href="{{$setting->facebook}}" target="_blank">Facebook</a></li>
-                    <li><a href="{{$setting->tiktok}}" target="_blank">TikTok</a></li>
+                    <li class='active'><a href="/" ><i class="fa-regular fa-square-caret-down" id="icon"></i> Menu</a></li>
+                    <li><a href="tel:{{str_replace(' ','',str_replace(' ','',$setting->phone))}}"><i class="fa-solid fa-phone-volume" id="icon"></i> Appeler</a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=212{{str_replace('07','7',str_replace('06','6',str_replace(' ','',$setting->whatsapp)))}}" target="_blank"><i class="fa-brands fa-whatsapp" id="icon"></i> Whatsapp</a></li>
+                    <li><a href="{{$setting->instagram}}" target="_blank"><i class="fa-brands fa-instagram" id="icon"></i> Instagram</a></li>
+                    <li><a href="{{$setting->facebook}}" target="_blank"><i class="fa-brands fa-facebook" id="icon"></i>Facebook</a></li>
+                    <li><a href="{{$setting->tiktok}}" target="_blank"><i class="fa-brands fa-tiktok" id="icon"></i> TikTok</a></li>
                 </ul>
             </div>
         </div>
