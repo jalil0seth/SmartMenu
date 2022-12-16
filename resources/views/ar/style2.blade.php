@@ -507,7 +507,7 @@
                 let cat = $(this).attr('id');
                 let name = $(this).data('name');
                 console.log(cat.replace("cat", ""));
-                location.href = "/ar/cat"+cat.replace("cat", "")+"-"+name.replace(" ", "-");
+                location.href = "/ar-cat"+cat.replace("cat", "")+"-"+name.replace(" ", "-");
             });
             $('.footer').css("height", "");
         });

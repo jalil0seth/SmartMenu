@@ -3,7 +3,7 @@
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/fr', 'HomeController@fr')->name('fr');
 Route::get('/ar', 'HomeController@ar')->name('ar');
-Route::get('/{lang}/cat{id}-{name}', 'HomeController@cat')->name('cat');
+Route::get('/{lang}-cat{id}-{name}', 'HomeController@cat')->name('cat');
 
 Route::get('/order', 'HomeController@order')->name('order');
 

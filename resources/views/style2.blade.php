@@ -386,7 +386,7 @@
                 let cat = $(this).attr('id');
                 let name = $(this).data('name');
                 console.log(cat.replace("cat", ""));
-                location.href = "/fr/cat"+cat.replace("cat", "")+"-"+name.replace(" ", "-");
+                location.href = "/fr-cat"+cat.replace("cat", "")+"-"+name.replace(" ", "-");
             });
         });
 
