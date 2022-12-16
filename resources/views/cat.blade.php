@@ -201,7 +201,6 @@
                                 </div>
                                 <!-- product-container -->
                             </div>
-                            <hr id="hrslide">
                     </div>
                     <!-- menucard-container -->
                 </div>
