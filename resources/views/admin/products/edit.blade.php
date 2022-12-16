@@ -12,14 +12,28 @@
                     <form method="POST" action="{{ route("admin.products.update", [$product->id]) }}" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
-                        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                            <label for="name">{{ trans('cruds.product.fields.name') }}</label>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+                            <label for="name">Nom</label>
                             <input class="form-control" type="text" name="name" id="name" value="{{ old('name', $product->name) }}">
                             @if($errors->has('name'))
                                 <span class="help-block" role="alert">{{ $errors->first('name') }}</span>
                             @endif
                             <span class="help-block">{{ trans('cruds.product.fields.name_helper') }}</span>
                         </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group {{ $errors->has('name_ar') ? 'has-error' : '' }}">
+                            <label for="name_ar">Nom (AR)</label>
+                            <input class="form-control" type="text" name="name_ar" id="name_ar" value="{{ old('name_ar', $product->name_ar) }}">
+                            @if($errors->has('name_ar'))
+                                <span class="help-block" role="alert">{{ $errors->first('name_ar') }}</span>
+                            @endif
+                            <span class="help-block"></span>
+                        </div>
+                        </div>
+                      </div>
                         <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">
                             <label for="image">{{ trans('cruds.product.fields.image') }}</label>
                             <div class="needsclick dropzone" id="image-dropzone">

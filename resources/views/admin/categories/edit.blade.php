@@ -12,22 +12,54 @@
                     <form method="POST" action="{{ route("admin.categories.update", [$category->id]) }}" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
-                        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                            <label class="required" for="name">{{ trans('cruds.category.fields.name') }}</label>
-                            <input class="form-control" type="text" name="name" id="name" value="{{ old('name', $category->name) }}" required>
-                            @if($errors->has('name'))
-                                <span class="help-block" role="alert">{{ $errors->first('name') }}</span>
-                            @endif
-                            <span class="help-block">{{ trans('cruds.category.fields.name_helper') }}</span>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+                                    <label class="required" for="name">{{ trans('cruds.category.fields.name') }}</label>
+                                    <input class="form-control" type="text" name="name" id="name" value="{{ old('name', $category->name) }}" required>
+                                    @if($errors->has('name'))
+                                        <span class="help-block" role="alert">{{ $errors->first('name') }}</span>
+                                    @endif
+                                    <span class="help-block">{{ trans('cruds.category.fields.name_helper') }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group {{ $errors->has('name_ar') ? 'has-error' : '' }}">
+                                    <label for=name_ar>{{ trans('cruds.category.fields.name') }} (AR)</label>
+                                    <input class="form-control" type="text" name="name_ar" id="name_ar" value="{{ old('name_ar', $category->name_ar) }}">
+                                    @if($errors->has('name_ar'))
+                                        <span class="help-block" role="alert">{{ $errors->first('name_ar') }}</span>
+                                    @endif
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
-                            <label for="description">{{ trans('cruds.product.fields.description') }}</label>
-                            <textarea class="form-control ckeditor" name="description" id="description">{!! old('description', $category->description) !!}</textarea>
-                            @if($errors->has('description'))
-                                <span class="help-block" role="alert">{{ $errors->first('description') }}</span>
-                            @endif
-                            <span class="help-block">{{ trans('cruds.product.fields.description_helper') }}</span>
+
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control ckeditor" name="description" id="description">{!! old('description', $category->description) !!}</textarea>
+                                    @if($errors->has('description'))
+                                        <span class="help-block" role="alert">{{ $errors->first('description') }}</span>
+                                    @endif
+                                    <span class="help-block">{{ trans('cruds.product.fields.description_helper') }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="form-group {{ $errors->has('description_ar') ? 'has-error' : '' }}">
+                                    <label for="description_ar">Description (AR)</label>
+                                    <textarea class="form-control ckeditor" name="description_ar" id="description_ar">{!! old('description_ar', $category->description_ar) !!}</textarea>
+                                    @if($errors->has('description_ar'))
+                                        <span class="help-block" role="alert">{{ $errors->first('description_ar') }}</span>
+                                    @endif
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="form-group {{ $errors->has('is_active') ? 'has-error' : '' }}">
                             <div>
                                 <input type="hidden" name="is_active" value="0">

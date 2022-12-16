@@ -33,6 +33,8 @@ class Category extends Model implements HasMedia
         'name',
         'rank',
         'description',
+        'name_ar',
+        'description_ar',
         'is_active',
         'in_homepage',
         'created_at',

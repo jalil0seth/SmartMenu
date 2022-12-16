@@ -1,27 +1,35 @@
-<!DOCTYPE html>
+<html dir="rtl" lang="ar">
 <html itemscope="itemscope" itemtype="http://schema.org/WebPage" lang="fr" xml:lang="fr"
     xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>{{ $setting->nom }} - Livraison à domicile</title>
+    <title>{{ $setting->nom }} - خدمة التوصيل</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="theme-color" content="#55ADDE" />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <link rel="shortcut icon" href="{{ $setting->logo['thumbnail'] }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('style/style22.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/style22_ar.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/takeaway22.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('font-awesome/css/font-awesome.min.css') }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="{{ asset('tpl/template1/additives.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('basket/css/sidedishes.css') }}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+    <style> @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300&display=swap'); </style>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
-    <style>
+        <style>
         .cart-meal-name {
             word-break: normal !important;
+        }
+        @media (min-width:600px) {
+            ul {
+                height: 30px !important;
+            }
         }
         .badge {
             display: inline-block;
@@ -37,20 +45,23 @@
             background-color: rgba(220, 149, 149, 0.56);
             border-radius: 10px;
         }
-        #icon {
-            margin-right: 6px;
-        }
-        @media (max-width:600px)  {
-        .nav li.active a {
-            padding: 15px;
-            font-size: 20px;
-        }
-        #contactnous{
-            display: none;
-        }
-    }
 
-    .discount {
+        #icon {
+            margin-left: 6px;
+        }
+
+        @media (max-width:600px) {
+            .nav li.active a {
+                padding: 15px;
+                font-size: 20px;
+            }
+
+            #contactnous {
+                display: none;
+            }
+        }
+
+        .discount {
             display: inline-block;
             min-width: 10px;
             padding: 3px 7px;
@@ -65,53 +76,130 @@
             border-radius: 5px;
         }
 
-    .category-description {
-        color: #545454 !important;
-    }
-    #hrslide{
-        border-top: 1px solid #b8b2ac !important;
-    }
+        .category-description {
+            color: #545454 !important;
+        }
 
-    .category {
-         margin-bottom: 0px !important; 
-    }
-    @keyframes tilt-shaking {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(5deg); }
-    50% { transform: rotate(0eg); }
-    75% { transform: rotate(-5deg); }
-    100% { transform: rotate(0deg); }
-    }
-    @keyframes skew-y-shakeing{
-    0% { transform: skewY(-15deg); }
-    5% { transform: skewY(15deg); }
-    10% { transform: skewY(-15deg); }
-    15% { transform: skewY(15deg); }
-    20% { transform: skewY(0deg); }
-    100% { transform: skewY(0deg); }
-    }
+        .category {
+            margin-bottom: 0px !important; 
+        }
 
-    .slide-whatsapp {
-        color: #025f06 !important;
-    }
-    .slide-phone {
-        color: #008ff8 !important;
-    }
-    .slide-instagram {
-        color: #9f12a4 !important;
-    }
-    .slide-fb {
-        color: #003aeb !important;
-    }
-    @media (min-width:600px) {
-            #mobile {
-                display: none;
+        .oldprice{
+            text-decoration: line-through;
+            color: #f86600;
+            font-size: 13px;
+        }
+
+        #hrslide {
+            border-top: 1px solid #b8b2ac !important;
+        }
+
+        #hrdesc {
+            border-top: 1px solid #f2efed !important;
+        }
+
+        .category {
+            margin-bottom: 0px !important;
+        }
+
+        @keyframes tilt-shaking {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(5deg);
+            }
+
+            50% {
+                transform: rotate(0eg);
+            }
+
+            75% {
+                transform: rotate(-5deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
             }
         }
+
+        @keyframes skew-y-shakeing {
+            0% {
+                transform: skewY(-15deg);
+            }
+
+            5% {
+                transform: skewY(15deg);
+            }
+
+            10% {
+                transform: skewY(-15deg);
+            }
+
+            15% {
+                transform: skewY(15deg);
+            }
+
+            20% {
+                transform: skewY(0deg);
+            }
+
+            100% {
+                transform: skewY(0deg);
+            }
+        }
+
+        .slide-whatsapp {
+            color: #025f06 !important;
+        }
+
+        .slide-phone {
+            color: #008ff8 !important;
+        }
+
+        .slide-instagram {
+            color: #9f12a4 !important;
+        }
+
+        .slide-fb {
+            color: #003aeb !important;
+        }
+
+        .header .menubutton {
+            float: left !important;
+            margin: 10px
+        }
+
+        ul {
+            height: 60px;
+        }
+
+        ul.notes{
+            height: 100% !important;
+        }
+        .nav li.active a {
+            margin-right: 0px !important;
+        }
+
+        .ar{
+            font-family: 'IBM Plex Sans Arabic', sans-serif !important;
+        }
+        .cart-single-meal .cart-row .cart-meal-amount {
+            padding-left: 6px !important;
+            padding-right: 0px !important;
+        }
+        .icon-ta-next-v2:before {
+            content: "\e993" !important;
+        }
+        .menucard-container .menucat .addtobasket .product-price {
+            margin-top: 20px;
+        }
+
     </style>
 </head>
 
-<body class="menu">
+<body class="menu" dir="rtl" lang="ar">
     <div class="header">
         <div id="navigationopenbutton" class="menubutton"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
         <div class="nav">
@@ -119,12 +207,18 @@
             </div>
             <div class="nav-wrapper">
                 <ul>
-                    <li class='active'><a href="/" ><i class="fa-regular fa-square-caret-down" id="icon"></i> Menu</a></li>
-                    <li><a href="tel:{{str_replace(' ','',str_replace(' ','',$setting->phone))}}"><i class="fa-solid fa-phone-volume" id="icon"></i> Appeler</a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=212{{str_replace('07','7',str_replace('06','6',str_replace(' ','',$setting->whatsapp)))}}" target="_blank"><i class="fa-brands fa-whatsapp" id="icon"></i> Whatsapp</a></li>
-                    <li><a href="{{$setting->instagram}}" target="_blank"><i class="fa-brands fa-instagram" id="icon"></i> Instagram</a></li>
-                    <li><a href="{{$setting->facebook}}" target="_blank"><i class="fa-brands fa-facebook" id="icon"></i>Facebook</a></li>
-                    <li><a href="{{$setting->tiktok}}" target="_blank"><i class="fa-brands fa-tiktok" id="icon"></i> TikTok</a></li>
+                    <li class='active ar'><a href="/"> القَائمة <i class="fa-regular fa-square-caret-down" id="icon"></i>
+                         </a></li>
+                    <li><a href="tel:{{ str_replace(' ', '', str_replace(' ', '', $setting->phone)) }}"><i
+                                class="fa-solid fa-phone-volume" id="icon"></i> اتصل بنا</a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=212{{ str_replace('07', '7', str_replace('06', '6', str_replace(' ', '', $setting->whatsapp))) }}"
+                            target="_blank"><i class="fa-brands fa-whatsapp" id="icon"></i> Whatsapp</a></li>
+                    <li><a href="{{ $setting->instagram }}" target="_blank"><i class="fa-brands fa-instagram"
+                                id="icon"></i> Instagram</a></li>
+                    <li><a href="{{ $setting->facebook }}" target="_blank"><i class="fa-brands fa-facebook"
+                                id="icon"></i>Facebook</a></li>
+                    <li><a href="{{ $setting->tiktok }}" target="_blank"><i class="fa-brands fa-tiktok"
+                                id="icon"></i> TikTok</a></li>
                 </ul>
             </div>
         </div>
@@ -148,17 +242,8 @@
                             <div class="menu-category-list">
                                 <div class="swiper-container js-swiper">
                                     <div class="swiper-wrapper">
-                                        
-                                        <a style="text-decoration:none; font-size:16px" id="contactnous" class="ar">Langue 
-                                            :</a>
-                                        <a style="text-decoration:none;" 
-                                        href="/ar" ><img src="{{asset('ar_lang.png')}}"   style="width:25px !important"></a>
-                                        <a style="text-decoration:none; font-size:16px" id="contactnous" class="ar">Contactez-nous :</a>
-                                        <a style="text-decoration:none; font-size:20px; animation: skew-y-shakeing 1.2s infinite;" class="slide-phone" href="tel:{{str_replace(' ','',str_replace(' ','',$setting->phone))}}"><i class="fa-solid fa-phone-volume" id="icon"></i></a>
-                                        <a style="text-decoration:none; font-size:20px; " class="slide-whatsapp" href="https://api.whatsapp.com/send?phone=212{{str_replace('07','7',str_replace('06','6',str_replace(' ','',$setting->whatsapp)))}}" target="_blank"><i class="fa-brands fa-whatsapp" id="icon"></i></a>
-                                        <a style="text-decoration:none; font-size:20px" href="{{$setting->instagram}}" class="slide-instagram" target="_blank"><i class="fa-brands fa-instagram" id="icon"></i></a>
-                                        <a style="text-decoration:none; font-size:20px" href="{{$setting->facebook}}" class="slide-fb" target="_blank"><i class="fa-brands fa-facebook" id="icon"></i></a>
-                                        <a style="text-decoration:none; font-size:20px" href="{{$setting->tiktok}}" target="_blank"><i class="fa-brands fa-tiktok" id="icon"></i></a>
+                                        <a href="/ar" class="swiper-slide wiper-slide-next ar"> <img src="{{ asset('left-arrow.svg') }}" style="width:14px;margin-left:2px" > رجوع الى المجموعات </a>
+                                        <a href="#" class="slide-active ar" style="text-decoration:none"><img src="{{ asset('bookmark.svg') }}" style="width:12px;margin-left:4px" >{{ $cat->name_ar ? $cat->name_ar : $cat->name }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -170,33 +255,82 @@
                 </div>
                 <div class="widget menucard-listing" id="menu">
                     <div class="menucard-container ">
-                        @foreach ($categories as $cat)
                             <div class="menucat menucard__meals-group" anchor-id="cat{{ $cat->id }}"
-                                id="cat{{ $cat->id }}" data-name="{{ $cat->name }}" style="cursor: pointer">
+                                id="cat{{ $cat->id }}">
                                 @if (isset($cat->image['url']))
                                     <div class="menucard__category-image-container"
                                         style="background-image: url('{{ $cat->image['url'] }}');">
                                     </div>
                                 @endif
                                 <div class="category">
-                                    <div class="category-name">
-                                        {{ $cat->name }} 
+                                    <div class="category-name ar">
+                                        {{ $cat->name_ar ? $cat->name_ar : $cat->name }}
                                         @if (collect($discounts)->where('category_id', $cat->id)->first() != null)
-                                            <span class="float-right discount bg-danger">-{{ round(collect($discounts)->where('category_id', $cat->id)->first()->discount)}}%</span> 
+                                            <span
+                                                class="float-right discount bg-danger">{{ round(collect($discounts)->where('category_id', $cat->id)->first()->discount) }}%-</span>
                                         @endif
-                                        <div style="float:right">
-                                            <i class="icon-ta-next-v2 swipe-next-button"></i>
+                                    </div>
+                                    <div class="category-description ar">
+                                        أكثر من {{ \App\Models\Product::where('category_id', $cat->id)->count() }}
+                                        منتجات في هذه المجموعة 
+                                        @if (isset($cat->description))<hr id="hrdesc">@endif
+                                        {!! $cat->description_ar ? $cat->description_ar : $cat->description !!}
+                                    </div>
+                                </div>
+                                <div class="product-container">
+                                    @foreach (\App\Models\Product::where('category_id', $cat->id)->orderBy('rank','asc')->get() as $p)
+                                        <div itemscope itemtype="http://schema.org/Product">
+                                            <div class="add-to-cart addtobasket" data-name="{{ $p->name }}"
+                                                data-price="{{ $p->price }}"
+                                                data-imgproduct="{{ $p->image[0]['url'] }}"
+                                                data-productid="{{ $p->id }}"
+                                                data-oos="{{ $p->oos }}">
+                                                <div itemprop="offers" itemscope
+                                                    itemtype="http://schema.org/Offer">
+                                                    <div class="product-price" itemprop="price">
+                                                        {{ $p->price }} دم 
+                                                    </div>
+                                                    @if ($p->old_price != '' and $p->old_price>$p->price)
+                                                    <div class="oldprice">
+                                                        {{ $p->old_price }} دم 
+                                                    </div>
+                                                    @endif
+                                                </div>
+                                                <div class="meal__product-image-container2"><img
+                                                    class="meal__product-image" src="{{ $p->image[0]['url'] }}"
+                                                    alt="{{ $p->name }}" border="0"></div>
+                                                <div class="meal-wrapper">
+                                                    <div class="product-name ar" itemprop="name">
+                                                        {{ $p->name_ar ? $p->name_ar : $p->name }} 
+                                                        @if ($p->old_price != '' and $p->old_price>$p->price)
+                                                        <span class="float-right discount bg-danger">{{round(($p->old_price-$p->price)*100/$p->old_price)}}%-</span>
+                                                        @endif
+                                                        @if ($p->oos == 1)
+                                                            <span class="float-right badge bg-danger">غير متوفر</span>
+                                                        @endif
+                                                    </div>
+                                                    <!-- product-name -->
+                                                    <div>
+                                                    @isset($p->notes)
+                                                        <div class="product-description" itemprop="description">
+                                                            <ul class='notes'>
+                                                                @foreach (preg_split("/\r\n|\n|\r/", $p->notes) as $notes)
+                                                                    <li>{{ $notes }} </li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </div>
+                                                    @endisset
+                                                    </div>
+                                                </div>
+
+                                                <div class="product-order-button"></div>
+                                            </div>
+                                            <!-- add simple product div OR show sidedish div -->
                                         </div>
-                                    </div>
-                                    <div class="category-description">
-                                        Plus de {{ \App\Models\Product::where('category_id',$cat->id)->count() }} produits dans cette categorie
-                                        {!! $cat->description !!} 
-                                    </div>
+                                    @endforeach
                                 </div>
                                 <!-- product-container -->
                             </div>
-                            <hr id="hrslide">
-                        @endforeach
                     </div>
                     <!-- menucard-container -->
                 </div>
@@ -207,9 +341,9 @@
                     <div class="btn btn-basket baskettitle basket-title-closed" id="btn-basket">
                         <div class="btn-icon">
                             <h2 onclick="$('#sB').toggleClass('opnU');">
-                                <span id="toshake">
-                                    <span class="btn-text-placeholder">Votre Commande </span>
-                                    <span class="btn-text btn-cart-price"><span class="total-cart"></span> DH</span>
+                                <span id="toshake" class="ar">
+                                    <span class="btn-text-placeholder">المجموع </span>
+                                    <span class="btn-text btn-cart-price"><span class="total-cart"></span> دم</span>
                                 </span>
                             </h2>
                         </div>
@@ -219,7 +353,7 @@
                     </div>
                     <div class="basket-title-open baskettitle">
                         <div class="basket-title-text">
-                            <span id="command" style="margin-right: -15px !important;"><b>Votre Commande</b></span>
+                            <span id="command" style="margin-right: -15px !important;" class="ar"><b>طلبيتك</b></span>
                             <span><i style="float: right !important;margin-top: 20px !important;margin-right: 15px !important;font-size: 20px !important;"
                                     class="fa fa-times" id="close" aria-hidden="true"></i> </span>
                         </div>
@@ -255,31 +389,36 @@
 
                             <div id="sum" class="cart-sum hideit" style="">
                                 <div class="cart-row">
-                                    <span class="cart-sum-name grey">Commande</span>
-                                    <span class="cart-sum-price grey"><span class="total-cart"></span> DH</span>
+                                    <span class="cart-sum-name grey">طلبيتك</span>
+                                    <span class="cart-sum-price grey"><span class="total-cart"></span> دم</span>
                                 </div>
                                 <div class="cart-row">
-                                    <span class="cart-sum-name grey">Livraison</span>
-                                    <span class="cart-sum-price grey"><span class="total-shipping"></span> DH</span>
+                                    <span class="cart-sum-name grey">التوصيل</span>
+                                    <span class="cart-sum-price grey"><span class="total-shipping"></span> دم</span>
                                 </div>
                                 <div class="cart-row row-sum">
-                                    <span class="cart-sum-name">Total</span>
-                                    <span class="cart-sum-price"><span class="total-p"></span> DH</span>
+                                    <span class="cart-sum-name">المجموع</span>
+                                    <span class="cart-sum-price"><span class="total-p"></span> دم</span>
                                 </div>
                                 <div class="cart-row chcolor">
-                                    <span class="cart-sum-name">Livraison gratuite à partir de {{$setting->free_shipping}} DH</span>
-                                    <input type="hidden" value="{{$setting->free_shipping}} " id="free_shipping">
-                                    <input type="hidden" value="{{$setting->shipping}} " id="shipping">
-                                    <input type="hidden" value="{{$setting->min_order}} " id="min_order">
-                                    <input type="hidden" value="{{$setting->end_time}} " data-text="{{$setting->nom}} est actuellement fermé. <br> Les horaires d'ouverture sont entre <br> {{$setting->start_time}} et {{$setting->end_time}}" id="end_time">
-                                    <input type="hidden" value="{{$setting->start_time}} " id="start_time">
-                                    <input type="hidden" value="Ce produit n'est pas disponible pour le moment" id="oos_text">
-                                    
+                                    <span class="cart-sum-name">توصيل مجاني ابتدأ من 
+                                        {{ $setting->free_shipping }} دم</span>
+                                    <input type="hidden" value="{{ $setting->free_shipping }} " id="free_shipping">
+                                    <input type="hidden" value="{{ $setting->shipping }} " id="shipping">
+                                    <input type="hidden" value="{{ $setting->min_order }} " id="min_order">
+                                    <input type="hidden" value="{{ $setting->end_time }} "
+                                        data-text="{{ $setting->nom }} est actuellement fermé. <br> Les horaires d'ouverture sont entre <br> {{ $setting->start_time }} et {{ $setting->end_time }}"
+                                        id="end_time">
+                                    <input type="hidden" value="{{ $setting->start_time }} " id="start_time">
+                                    <input type="hidden" value="Ce produit n'est pas disponible pour le moment"
+                                        id="oos_text">
+
                                 </div>
                                 <div class="cart-row remining">
-                                    <span class="cart-sum-name row-green chcolor2">Montant nécessaire pour commander ({{$setting->min_order}} DH)</span>
+                                    <span class="cart-sum-name row-green chcolor2">المبلغ المتبقي للطلب
+                                        ({{ $setting->min_order }} دم)</span>
                                     <span class="cart-sum-price row-green chcolor2"><span class="total-r"></span>
-                                        DH</span>
+                                        دم</span>
                                 </div>
                             </div>
 
@@ -306,7 +445,7 @@
                             </div>
                             <section class="cartbutton">
                                 <a class="cartbutton-button btn-disabled" href="">
-                                    Commander
+                                    اطلبها الآن
                                 </a>
                                 <div class="minimumorderamount-reached" style="display: none;"></div>
                             </section>
@@ -382,16 +521,7 @@
         <script src="{{ asset('tpl/template1/additives1.js') }}" />
         </script>
         <script type="application/javascript">
-         
-        $(document).ready(function() {
-            $('.menucat').on("click", function(e) {
-                let cat = $(this).attr('id');
-                let name = $(this).data('name');
-                console.log(cat.replace("cat", ""));
-                location.href = "/fr/cat"+cat.replace("cat", "")+"-"+name.replace(" ", "-");
-            });
-        });
-
+         var uaCode = 'UA-7904955-1';
       </script>
 
 

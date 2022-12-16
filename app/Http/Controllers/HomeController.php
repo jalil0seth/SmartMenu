@@ -29,7 +29,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
     public function index()
+    {
+        return redirect('fr');
+    }
+
+    public function fr()
     {
             $products = Product::orderBy('rank','asc')->get();
             $categories = Category::orderBy('rank','asc')->get();
@@ -38,13 +44,30 @@ class HomeController extends Controller
             return view('style'.$setting->style,compact('products','categories','setting','discounts'));
     }
 
-    public function cat($id, $name)
+
+    public function ar()
+    {
+            $products = Product::orderBy('rank','asc')->get();
+            $categories = Category::orderBy('rank','asc')->get();
+            $discounts = DB::select("select category_id,max((old_price-price)*100/old_price) as discount from products where old_price is not null and old_price-price>0 group by category_id"); 
+            $setting = Setting::first();
+            return view('ar.style'.$setting->style,compact('products','categories','setting','discounts'));
+    }
+
+    public function cat($lang, $id, $name)
     {
             $products = Product::where('category_id',$id)->orderBy('rank','asc')->get();
             $cat = Category::where('id',$id)->first();
             $setting = Setting::first();
             $discounts = DB::select("select category_id,max((old_price-price)*100/old_price) as discount from products where old_price is not null and old_price-price>0 group by category_id"); 
-            return view('cat',compact('products','cat','setting','discounts'));
+
+            if ($lang == 'ar') {
+                $lang = 'ar.';
+            } else {
+                $lang = '';
+            }
+            
+            return view($lang.'cat',compact('products','cat','setting','discounts'));
     }
 
     public function order()
