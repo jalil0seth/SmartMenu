@@ -192,6 +192,9 @@
         .icon-ta-next-v2:before {
             content: "\e993" !important;
         }
+        .menucard-container .menucat .addtobasket .product-price {
+            margin-top: 20px;
+        }
         #mobile{
                 display: none;
         }
@@ -285,6 +288,17 @@
                                                 data-imgproduct="{{ $p->image[0]['url'] }}"
                                                 data-productid="{{ $p->id }}"
                                                 data-oos="{{ $p->oos }}">
+                                                <div itemprop="offers" itemscope
+                                                    itemtype="http://schema.org/Offer">
+                                                    <div class="product-price" itemprop="price">
+                                                        {{ $p->price }} دم 
+                                                    </div>
+                                                    @if ($p->old_price != '' and $p->old_price>$p->price)
+                                                    <div class="oldprice">
+                                                        {{ $p->old_price }} دم 
+                                                    </div>
+                                                    @endif
+                                                </div>
                                                 <div class="meal__product-image-container2"><img
                                                     class="meal__product-image" src="{{ $p->image[0]['url'] }}"
                                                     alt="{{ $p->name }}" border="0"></div>
@@ -310,18 +324,6 @@
                                                         </div>
                                                     @endisset
                                                     </div>
-                                                    <hr>
-                                                    <div itemprop="offers" itemscope
-                                                    itemtype="http://schema.org/Offer">
-                                                    <div class="product-price" itemprop="price">
-                                                        {{ $p->price }} دم 
-                                                    </div>
-                                                    @if ($p->old_price != '' and $p->old_price>$p->price)
-                                                    <div class="oldprice">
-                                                        {{ $p->old_price }} دم 
-                                                    </div>
-                                                    @endif
-                                                </div>
                                                 </div>
 
                                                 <div class="product-order-button"></div>
