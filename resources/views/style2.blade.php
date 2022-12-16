@@ -149,10 +149,6 @@
                                     
                                         <a style="text-decoration:none;" 
                                         href="/ar" ><img src="{{asset('ar_lang.png')}}"   style="width:25px !important"></a>
-                                        <a style="text-decoration:none; font-size:16px" id="contactnous">Contactez-nous :
-                                        </a>
-
-
                                         <a style="text-decoration:none; font-size:20px; animation: skew-y-shakeing 1.2s infinite;" class="slide-phone" href="tel:{{str_replace(' ','',str_replace(' ','',$setting->phone))}}"><i class="fa-solid fa-phone-volume" id="icon"></i></a>
                                         <a style="text-decoration:none; font-size:20px; " class="slide-whatsapp" href="https://api.whatsapp.com/send?phone=212{{str_replace('07','7',str_replace('06','6',str_replace(' ','',$setting->whatsapp)))}}" target="_blank"><i class="fa-brands fa-whatsapp" id="icon"></i></a>
                                         <a style="text-decoration:none; font-size:20px" href="{{$setting->instagram}}" class="slide-instagram" target="_blank"><i class="fa-brands fa-instagram" id="icon"></i></a>
