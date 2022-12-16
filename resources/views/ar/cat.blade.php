@@ -195,12 +195,12 @@
         .menucard-container .menucat .addtobasket .product-price {
             position: absolute;
             right: 4px;
-            top: 40px
+            bottom: 40px
         }
         .menucard-container .menucat .addtobasket .oldprice {
             position: absolute;
             right: 4px;
-            top: 60px
+            bottom: 60px
         }
         #mobile{
                 display: none;
