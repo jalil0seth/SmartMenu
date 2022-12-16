@@ -66,7 +66,7 @@ class HomeController extends Controller
             } else {
                 $lang = '';
             }
-            
+        
             return view($lang.'cat',compact('products','cat','setting','discounts'));
     }
 

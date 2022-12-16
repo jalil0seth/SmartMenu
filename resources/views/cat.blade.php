@@ -106,7 +106,7 @@
     <div class="templaterevamped-hero">
         <div class="templaterevamped-header">
             <div class="restaurantlogo">
-                <img src="{{ $setting->logo['url'] }}">
+                <img src="/{{ $setting->logo['url'] }}">
             </div>
             <h1>
                 {{ $setting->nom }}
@@ -139,7 +139,7 @@
                                 id="cat{{ $cat->id }}">
                                 @if (isset($cat->image['url']))
                                     <div class="menucard__category-image-container"
-                                        style="background-image: url('{{ $cat->image['url'] }}');">
+                                        style="background-image: url('/{{ $cat->image['url'] }}');">
                                     </div>
                                 @endif
                                 <div class="category">
@@ -158,7 +158,7 @@
                                         <div itemscope itemtype="http://schema.org/Product">
                                             <div class="add-to-cart addtobasket" data-name="{{ $p->name }}"
                                                 data-price="{{ $p->price }}"
-                                                data-imgproduct="{{ $p->image[0]['url'] }}"
+                                                data-imgproduct="/{{ $p->image[0]['url'] }}"
                                                 data-productid="{{ $p->id }}"
                                                 data-oos="{{ $p->oos }}">
                                                 <div class="meal-wrapper">
@@ -195,7 +195,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="meal__product-image-container2"><img
-                                                        class="meal__product-image" src="{{ $p->image[0]['url'] }}"
+                                                        class="meal__product-image" src="/{{ $p->image[0]['url'] }}"
                                                         alt="{{ $p->name }}" border="0"></div>
                                                 <div class="product-order-button"></div>
                                             </div>
@@ -366,7 +366,7 @@
             </div>
         </div>
         <script type="text/javascript" src="{{ asset('tpl/template1/default1.js') }}"></script>
-        <div class="background" style="background-image: url('{{ $setting->banners[0]['url'] }}');"></div>
+        <div class="background" style="background-image: url('/{{ $setting->banners[0]['url'] }}');"></div>
         <script>
             /* DH migration */
 
