@@ -192,9 +192,6 @@
         .icon-ta-next-v2:before {
             content: "\e993" !important;
         }
-        .menucard-container .menucat .addtobasket .product-price {
-            margin-top: 20px;
-        }
         #mobile{
                 display: none;
         }
