@@ -161,7 +161,7 @@ var shoppingCart = (function() {
         setTimeout(function(){
         // toggle back after 1 second
         $('#tooltip').toggle();  
-      },3000)
+      },5000)
     }
     else if(oos == 1){
       $('.tooltip').html($('#oos_text').val());
