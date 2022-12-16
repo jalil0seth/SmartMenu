@@ -195,6 +195,9 @@
         .menucard-container .menucat .addtobasket .product-price {
             margin-top: 20px;
         }
+        #mobile{
+            display: none;
+        }
 
     </style>
 </head>

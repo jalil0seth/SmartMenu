@@ -103,11 +103,9 @@
     .slide-fb {
         color: #003aeb !important;
     }
-    @media (min-width:600px) {
             #mobile {
                 display: none;
             }
-        }
     </style>
 </head>
 

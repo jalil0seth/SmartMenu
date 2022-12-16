@@ -196,6 +196,10 @@
             content: "\e993" !important;
         }
 
+        #mobile {
+                display: none;
+            }
+    </style>
     </style>
 </head>
 

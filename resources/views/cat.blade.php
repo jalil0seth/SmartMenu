@@ -78,6 +78,10 @@
         color: #f86600;
         font-size: 13px;
     }
+
+    #mobile{
+        display: none;
+    }
     </style>
 </head>
 
