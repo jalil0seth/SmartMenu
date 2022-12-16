@@ -147,10 +147,8 @@
                                 <div class="swiper-container js-swiper">
                                     <div class="swiper-wrapper">
                                     
-                                        <a style="text-decoration:none; font-size:16px" id="contactnous" >Langue 
-                                            :</a>
                                         <a style="text-decoration:none;" 
-                                        href="/ar" ><img src="{{asset('ar_lang.png')}}"   style="width:45px !important"></a>
+                                        href="/ar" ><img src="{{asset('ar_lang.png')}}"   style="width:25px !important"></a>
                                         <a style="text-decoration:none; font-size:16px" id="contactnous">Contactez-nous :
                                         </a>
 
