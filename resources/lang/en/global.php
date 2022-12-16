@@ -242,7 +242,7 @@ return [
     'photo2'                         => 'Photo2',
     'photo3'                         => 'Photo3',
     'prefix'                         => 'Prefix',
-    'price'                          => 'Price',
+    'price'                          => 'Prix',
     'product_management'             => 'Product management',
     'product_name'                   => 'Product name',
     'products'                       => 'Products',
