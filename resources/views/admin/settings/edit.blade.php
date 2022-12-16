@@ -51,13 +51,13 @@
                                     <div class="card">
                                         <div class="card-body">
                                             @if ($setting->style == $style)
-                                            <img src="{{asset('style'.$style.'.png')}}" id="id{{$style}}" class="theme_select theme" width="250px" srcset="">
+                                            <img src="{{asset('style'.$style.'.png')}}" id="id{{$style}}" class="theme_select theme" width="230px" srcset="">
                                             </div>
                                             <div class="card-footer">
                                                 <span class="badge badge-primary selected" id="id{{$style}}">selected</span>
                                             </div>
                                             @else
-                                            <img src="{{asset('style'.$style.'.png')}}" id="id{{$style}}" class="theme" width="250px" srcset="">
+                                            <img src="{{asset('style'.$style.'.png')}}" id="id{{$style}}" class="theme" width="230px" srcset="">
                                             </div>
                                             <div class="card-footer">
                                                 <span class="badge badge-primary selected hided" id="id{{$style}}" >selected</span>
