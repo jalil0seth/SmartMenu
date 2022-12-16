@@ -107,7 +107,7 @@ return [
             'image_helper'       => '130x130',
             'category'           => 'Category',
             'category_helper'    => ' ',
-            'old_price'          => 'Prix d\'origine',
+            'old_price'          => 'Prix d\'origine (avant la réduction)',
             'old_price_helper'   => ' ',
             'description'        => 'Description',
             'description_helper' => ' ',
