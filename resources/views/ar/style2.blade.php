@@ -370,7 +370,6 @@
                                     <div class="swiper-wrapper">
                                         <a style="text-decoration:none; font-size:16px" id="contactnous" class="ar">اللغة 
                                             :</a>
-                                        <a style="text-decoration:none; font-size:16px" id="mobile"></a>
                                         <a style="text-decoration:none;" 
                                         href="/fr" ><img src="{{asset('fr_lang.png')}}"   style="width:25px !important"></a>
                                         <a style="text-decoration:none; font-size:16px" id="contactnous" class="ar">اتصل بنا
