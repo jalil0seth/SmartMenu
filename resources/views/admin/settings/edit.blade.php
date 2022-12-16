@@ -42,7 +42,7 @@
 
                         <div  class="form-group">
                             <label for="nom">Theme</label>
-                            <input type="hidden" value="{{$style}}" id="themeStyle" name="style">
+                            <input type="hidden" value="{{$setting->style}}" id="themeStyle" name="style">
                             <div id="imgx" class="row">
                                 <div style="display:flex; margin:15px;  overflow-x: auto;">
                                     @php $styles = [1,2]; @endphp
