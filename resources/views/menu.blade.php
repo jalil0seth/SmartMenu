@@ -237,6 +237,10 @@
                                     <input type="hidden" value="{{$setting->free_shipping}} " id="free_shipping">
                                     <input type="hidden" value="{{$setting->shipping}} " id="shipping">
                                     <input type="hidden" value="{{$setting->min_order}} " id="min_order">
+                                    <input type="hidden" value="{{$setting->end_time}} " data-text="{{$setting->nom}} est actuellement fermé. <br> Les horaires d'ouverture sont entre <br> {{$setting->start_time}} et {{$setting->end_time}}" id="end_time">
+                                    <input type="hidden" value="{{$setting->start_time}} " id="start_time">
+                                    <input type="hidden" value="Ce produit n'est pas disponible pour le moment" id="oos_text">
+                                    
                                 </div>
                                 <div class="cart-row remining">
                                     <span class="cart-sum-name row-green chcolor2">Montant nécessaire pour commander ({{$setting->min_order}} DH)</span>
@@ -356,7 +360,7 @@
 
         <script src="{{ asset('basket/js/main22.js') }}"></script>
         <script src="{{ asset('basket/js/shake.js') }}"></script>
-        <script src="{{ asset('basket/js/shopping40.js') }}"></script>
+        <script src="{{ asset('basket/js/shopping41.js') }}"></script>
 
 </body>
 

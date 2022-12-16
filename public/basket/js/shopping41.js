@@ -151,8 +151,26 @@ var shoppingCart = (function() {
     var price = Number($(this).data('price'));
     var oos = Number($(this).data('oos'));
 
-    if(oos == 1){
-      
+    var end_time = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), parseInt($("#end_time").val().trim().split(":")[0]), parseInt($("#end_time").val().trim().split(":")[1]), parseInt($("#end_time").val().trim().split(":")[2]), 0);
+    var start_time = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), parseInt($("#start_time").val().trim().split(":")[0]), parseInt($("#start_time").val().trim().split(":")[1]), parseInt($("#start_time").val().trim().split(":")[2]), 0);
+    var current_time = new Date();
+
+    if (!(current_time > start_time && current_time < end_time)) {
+      $('.tooltip').html($("#end_time").data('text'));
+      $('.tooltip').toggle();
+        setTimeout(function(){
+        // toggle back after 1 second
+        $('#tooltip').toggle();  
+      },3000)
+    }
+    else if(oos == 1){
+      $('.tooltip').html($('#oos_text').val());
+      $('.tooltip').toggle();
+        setTimeout(function(){
+        // toggle back after 1 second
+        $('#tooltip').toggle();  
+      },1500)
+
     }else{
       shoppingCart.addItemToCart(name, price, imgProduct,productid, 1);
       displayCart();
