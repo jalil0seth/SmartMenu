@@ -322,11 +322,11 @@
                                                     <div itemprop="offers" itemscope
                                                         itemtype="http://schema.org/Offer">
                                                         <div class="product-price" itemprop="price">
-                                                            {{ $p->price }} DH 
+                                                            {{ $p->price }} دم 
                                                         </div>
                                                         @if ($p->old_price != '' and $p->old_price>$p->price)
                                                         <div class="oldprice">
-                                                            {{ $p->old_price }} DH 
+                                                            {{ $p->old_price }} دم 
                                                         </div>
                                                         @endif
                                                     </div>
