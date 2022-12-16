@@ -10,6 +10,7 @@ use App\Models\Setting;
 use App\Models\Category;
 use App\Models\Orderdetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -32,8 +33,18 @@ class HomeController extends Controller
     {
             $products = Product::orderBy('rank','asc')->get();
             $categories = Category::orderBy('rank','asc')->get();
+            $discounts = DB::select("select category_id,max((old_price-price)*100/old_price) as discount from products where old_price is not null and old_price-price>0 group by category_id"); 
             $setting = Setting::first();
-            return view('menu',compact('products','categories','setting'));
+            return view('style'.$setting->style,compact('products','categories','setting','discounts'));
+    }
+
+    public function cat($id, $name)
+    {
+            $products = Product::where('category_id',$id)->orderBy('rank','asc')->get();
+            $cat = Category::where('id',$id)->first();
+            $setting = Setting::first();
+            $discounts = DB::select("select category_id,max((old_price-price)*100/old_price) as discount from products where old_price is not null and old_price-price>0 group by category_id"); 
+            return view('cat',compact('products','cat','setting','discounts'));
     }
 
     public function order()

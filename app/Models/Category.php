@@ -32,6 +32,7 @@ class Category extends Model implements HasMedia
     protected $fillable = [
         'name',
         'rank',
+        'description',
         'is_active',
         'in_homepage',
         'created_at',

@@ -1,5 +1,21 @@
 @extends('layouts.admin')
 @section('content')
+<style>
+    #imgx img{
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .theme_select{
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
+    .theme{
+        border: 1px solid #000;
+    }
+    .hided{
+        display: none;
+    }
+</style>
 <div class="content">
 
     <div class="row">
@@ -23,6 +39,35 @@
                             <span class="help-block">{{ trans('cruds.setting.fields.nom_helper') }}</span>
                         </div>
                         
+
+                        <div  class="form-group">
+                            <label for="nom">Theme</label>
+                            <input type="hidden" val="1" id="themeStyle" name="style">
+                            <div id="imgx" class="row">
+                                <div style="display:flex; margin:15px;  overflow-x: auto;">
+                                    @php $styles = [1,2]; @endphp
+
+                                    @foreach ($styles as $style)
+                                    <div class="card">
+                                        <div class="card-body">
+                                            @if ($setting->style == $style)
+                                            <img src="{{asset('style'.$style.'.png')}}" id="id{{$style}}" class="theme_select theme" width="250px" srcset="">
+                                            </div>
+                                            <div class="card-footer">
+                                                <span class="badge badge-primary selected" id="id{{$style}}">selected</span>
+                                            </div>
+                                            @else
+                                            <img src="{{asset('style'.$style.'.png')}}" id="id{{$style}}" class="theme" width="250px" srcset="">
+                                            </div>
+                                            <div class="card-footer">
+                                                <span class="badge badge-primary selected hided" id="id{{$style}}" >selected</span>
+                                            </div>
+                                            @endif
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
                         <!-- LOGO + BANNNERS -->
                         <div class="row">
                             <div class="col-md-6">
@@ -186,6 +231,20 @@
 @endsection
 
 @section('scripts')
+<script>
+    function removeHided(selector) {
+    document.querySelectorAll(selector)
+        .forEach(node => node.classList.remove('hided'));
+    }
+    $(".theme").click(function(){
+        $(".theme").removeClass('theme_select');
+        $(".selected").addClass('hided');
+        let id = $(this).attr('id');
+        removeHided('#'+id);
+        $(this).toggleClass("theme_select")  ; 
+        $('#themeStyle').val(id.replace('id',''));
+    })
+</script>
 <script>
     Dropzone.options.logoDropzone = {
     url: '{{ route('admin.settings.storeMedia') }}',

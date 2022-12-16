@@ -33,6 +33,7 @@ class Setting extends Model implements HasMedia
         'nom',
         'free_shipping',
         'min_order',
+        'style',
         
         'facebook',
         'instagram',

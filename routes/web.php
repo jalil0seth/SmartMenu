@@ -2,6 +2,7 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/order', 'HomeController@order')->name('order');
+Route::get('/cat{id}-{name}', 'HomeController@cat')->name('cat');
 Route::get('/track/{id}', 'HomeController@track')->name('track');
 Route::post('/sendorder', 'HomeController@order_post')->name('order_post');
 
