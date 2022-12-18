@@ -206,15 +206,15 @@
             /* height: 20px; */
             top: -6px;
         }
-
         .notification .badge {
             position: absolute;
             top: -10px;
             right: -10px;
-            padding: 5px 10px;
-            border-radius: 50%;
+            padding: 6px 8px;
+            border-radius: 100%;
             background: red;
             color: white;
+            font-size: 11px;
         }
     </style>
 </head>
