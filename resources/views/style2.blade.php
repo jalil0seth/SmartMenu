@@ -10,10 +10,12 @@
     <meta name="theme-color" content="#55ADDE" />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <link rel="shortcut icon" href="{{ $setting->logo['thumbnail'] }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('style/style22.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/takeaway22.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/style23.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/takeaway23.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('font-awesome/css/font-awesome.min.css') }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="{{ asset('tpl/template1/additives.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('basket/css/sidedishes.css') }}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
@@ -23,6 +25,7 @@
         .cart-meal-name {
             word-break: normal !important;
         }
+
         .badge {
             display: inline-block;
             min-width: 10px;
@@ -37,20 +40,23 @@
             background-color: rgba(220, 149, 149, 0.56);
             border-radius: 10px;
         }
+
         #icon {
             margin-right: 6px;
         }
-        @media (max-width:600px)  {
-        .nav li.active a {
-            padding: 15px;
-            font-size: 20px;
-        }
-        #contactnous{
-            display: none;
-        }
-    }
 
-    .discount {
+        @media (max-width:600px) {
+            .nav li.active a {
+                padding: 15px;
+                font-size: 20px;
+            }
+
+            #contactnous {
+                display: none;
+            }
+        }
+
+        .discount {
             display: inline-block;
             min-width: 10px;
             padding: 3px 7px;
@@ -65,64 +71,128 @@
             border-radius: 5px;
         }
 
-    .category-description {
-        color: #545454 !important;
-    }
-    #hrslide{
-        border-top: 1px solid #b8b2ac !important;
-    }
+        .category-description {
+            color: #545454 !important;
+        }
 
-    .category {
-         margin-bottom: 0px !important; 
-    }
-    @keyframes tilt-shaking {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(5deg); }
-    50% { transform: rotate(0eg); }
-    75% { transform: rotate(-5deg); }
-    100% { transform: rotate(0deg); }
-    }
-    @keyframes skew-y-shakeing{
-    0% { transform: skewY(-15deg); }
-    5% { transform: skewY(15deg); }
-    10% { transform: skewY(-15deg); }
-    15% { transform: skewY(15deg); }
-    20% { transform: skewY(0deg); }
-    100% { transform: skewY(0deg); }
-    }
+        #hrslide {
+            border-top: 1px solid #b8b2ac !important;
+        }
 
-    .slide-whatsapp {
-        color: #025f06 !important;
-    }
-    .slide-phone {
-        color: #008ff8 !important;
-    }
-    .slide-instagram {
-        color: #9f12a4 !important;
-    }
-    .slide-fb {
-        color: #003aeb !important;
-    }
-            #mobile {
-                display: none;
+        .category {
+            margin-bottom: 0px !important;
+        }
+
+        @keyframes tilt-shaking {
+            0% {
+                transform: rotate(0deg);
             }
+
+            25% {
+                transform: rotate(5deg);
+            }
+
+            50% {
+                transform: rotate(0eg);
+            }
+
+            75% {
+                transform: rotate(-5deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes skew-y-shakeing {
+            0% {
+                transform: skewY(-15deg);
+            }
+
+            5% {
+                transform: skewY(15deg);
+            }
+
+            10% {
+                transform: skewY(-15deg);
+            }
+
+            15% {
+                transform: skewY(15deg);
+            }
+
+            20% {
+                transform: skewY(0deg);
+            }
+
+            100% {
+                transform: skewY(0deg);
+            }
+        }
+
+        .slide-whatsapp {
+            color: #025f06 !important;
+        }
+
+        .slide-phone {
+            color: #008ff8 !important;
+        }
+
+        .slide-instagram {
+            color: #9f12a4 !important;
+        }
+
+        .slide-fb {
+            color: #003aeb !important;
+        }
+
+        #mobile {
+            display: none;
+        }
+        .notification {
+            background-color: #f8f5f2;
+            color: black;
+            text-decoration: none;
+            padding: 5px 14px;
+            position: relative;
+            display: inline;
+            border-radius: 9px;
+            /* height: 20px; */
+            top: -6px;
+        }
+
+        .notification .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background: red;
+            color: white;
+        }
     </style>
 </head>
 
 <body class="menu">
     <div class="header">
-        <div id="navigationopenbutton" class="menubutton"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
+        <div id="navigationopenbutton" class="menubutton"><a href="#" class="notification"><span><i class="fa-solid fa-user"></i> Compte</span><span class="badge">1</span></a> </div>
+        <div id="navigationopenbutton" class="menubutton"><a href="/ar" class="notification"><span> العربية <i class="fa-solid fa-earth-americas"></i></span></a> </div>
         <div class="nav">
             <div id="navigationclosebutton" class="menubutton"><i class="fa fa-close fa-2x" aria-hidden="true"></i>
             </div>
             <div class="nav-wrapper">
                 <ul>
-                    <li class='active'><a href="/" ><i class="fa-regular fa-square-caret-down" id="icon"></i> Menu</a></li>
-                    <li><a href="tel:{{str_replace(' ','',str_replace(' ','',$setting->phone))}}"><i class="fa-solid fa-phone-volume" id="icon"></i> Appeler</a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=212{{str_replace('07','7',str_replace('06','6',str_replace(' ','',$setting->whatsapp)))}}" target="_blank"><i class="fa-brands fa-whatsapp" id="icon"></i> Whatsapp</a></li>
-                    <li><a href="{{$setting->instagram}}" target="_blank"><i class="fa-brands fa-instagram" id="icon"></i> Instagram</a></li>
-                    <li><a href="{{$setting->facebook}}" target="_blank"><i class="fa-brands fa-facebook" id="icon"></i>Facebook</a></li>
-                    <li><a href="{{$setting->tiktok}}" target="_blank"><i class="fa-brands fa-tiktok" id="icon"></i> TikTok</a></li>
+                    <li class='active'><a href="/"><i class="fa-regular fa-square-caret-down" id="icon"></i>
+                            Compte</a></li>
+                    <li><a href="tel:{{ str_replace(' ', '', str_replace(' ', '', $setting->phone)) }}"><i
+                                class="fa-solid fa-phone-volume" id="icon"></i> Appeler</a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=212{{ str_replace('07', '7', str_replace('06', '6', str_replace(' ', '', $setting->whatsapp))) }}"
+                            target="_blank"><i class="fa-brands fa-whatsapp" id="icon"></i> Whatsapp</a></li>
+                    <li><a href="{{ $setting->instagram }}" target="_blank"><i class="fa-brands fa-instagram"
+                                id="icon"></i> Instagram</a></li>
+                    <li><a href="{{ $setting->facebook }}" target="_blank"><i class="fa-brands fa-facebook"
+                                id="icon"></i>Facebook</a></li>
                 </ul>
             </div>
         </div>
@@ -146,19 +216,28 @@
                             <div class="menu-category-list">
                                 <div class="swiper-container js-swiper">
                                     <div class="swiper-wrapper">
-                                        
-                                        <a style="text-decoration:none; font-size:16px" id="contactnous" >Langue 
-                                            :</a>
-                                        <a style="text-decoration:none;" 
-                                        href="/ar" ><img src="{{asset('ar_lang.png')}}"   style="width:25px !important"></a>
-                                        <a style="text-decoration:none; font-size:16px" id="contactnous">Contactez-nous :
-                                        </a>
+                                        <a style="text-decoration:none; font-size:16px"></a>
+                                        <a style="text-decoration:none; font-size:20px; animation: skew-y-shakeing 1.2s infinite;"
+                                            class="slide-phone"
+                                            href="tel:{{ str_replace(' ', '', str_replace(' ', '', $setting->phone)) }}"><i
+                                                class="fa-solid fa-phone-volume" id="icon"></i></a>
+                                        <a style="text-decoration:none; font-size:20px; " class="slide-whatsapp"
+                                            href="https://api.whatsapp.com/send?phone=212{{ str_replace('07', '7', str_replace('06', '6', str_replace(' ', '', $setting->whatsapp))) }}"
+                                            target="_blank"><i class="fa-brands fa-whatsapp" id="icon"></i></a>
+                                        <a style="text-decoration:none; font-size:20px"
+                                            href="{{ $setting->instagram }}" class="slide-instagram"
+                                            target="_blank"><i class="fa-brands fa-instagram" id="icon"></i></a>
+                                        <a style="text-decoration:none; font-size:20px"
+                                            href="{{ $setting->facebook }}" class="slide-fb" target="_blank"><i
+                                                class="fa-brands fa-facebook" id="icon"></i></a>
+                                        <a style="text-decoration:none; font-size:20px" href="{{ $setting->tiktok }}"
+                                            target="_blank"><i class="fa-brands fa-tiktok"></i></a>
 
-
-                                        <a style="text-decoration:none; font-size:20px; animation: skew-y-shakeing 1.2s infinite;" class="slide-phone" href="tel:{{str_replace(' ','',str_replace(' ','',$setting->phone))}}"><i class="fa-solid fa-phone-volume" id="icon"></i></a>
-                                        <a style="text-decoration:none; font-size:20px; " class="slide-whatsapp" href="https://api.whatsapp.com/send?phone=212{{str_replace('07','7',str_replace('06','6',str_replace(' ','',$setting->whatsapp)))}}" target="_blank"><i class="fa-brands fa-whatsapp" id="icon"></i></a>
-                                        <a style="text-decoration:none; font-size:20px" href="{{$setting->instagram}}" class="slide-instagram" target="_blank"><i class="fa-brands fa-instagram" id="icon"></i></a>
-                                        <a style="text-decoration:none; font-size:20px" href="{{$setting->facebook}}" class="slide-fb" target="_blank"><i class="fa-brands fa-facebook" id="icon"></i></a>
+                                            <div id="contactnous">
+                                                <a style="text-decoration:none; font-size:16px" id="contactnous"
+                                                class="ar">Changer la langue :</a>
+                                                <a href="/ar" class="notification" style="top: 0 !important;"><span> العربية <i class="fa-solid fa-earth-americas"></i></span></a>
+                                            </div>
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +251,8 @@
                     <div class="menucard-container ">
                         @foreach ($categories as $cat)
                             <div class="menucat menucard__meals-group" anchor-id="cat{{ $cat->id }}"
-                                id="cat{{ $cat->id }}" data-name="{{ $cat->name }}" style="cursor: pointer">
+                                id="cat{{ $cat->id }}" data-name="{{ $cat->name }}"
+                                style="cursor: pointer">
                                 @if (isset($cat->image['url']))
                                     <div class="menucard__category-image-container"
                                         style="background-image: url('{{ $cat->image['url'] }}');">
@@ -180,17 +260,19 @@
                                 @endif
                                 <div class="category">
                                     <div class="category-name">
-                                        {{ $cat->name }} 
+                                        {{ $cat->name }}
                                         @if (collect($discounts)->where('category_id', $cat->id)->first() != null)
-                                            <span class="float-right discount bg-danger">-{{ round(collect($discounts)->where('category_id', $cat->id)->first()->discount)}}%</span> 
+                                            <span
+                                                class="float-right discount bg-danger">-{{ round(collect($discounts)->where('category_id', $cat->id)->first()->discount) }}%</span>
                                         @endif
                                         <div style="float:right">
                                             <i class="icon-ta-next-v2 swipe-next-button"></i>
                                         </div>
                                     </div>
                                     <div class="category-description">
-                                        Plus de {{ \App\Models\Product::where('category_id',$cat->id)->count() }} produits dans cette categorie
-                                        {!! $cat->description !!} 
+                                        Plus de {{ \App\Models\Product::where('category_id', $cat->id)->count() }}
+                                        produits dans cette categorie
+                                        {!! $cat->description !!}
                                     </div>
                                 </div>
                                 <!-- product-container -->
@@ -267,17 +349,22 @@
                                     <span class="cart-sum-price"><span class="total-p"></span> DH</span>
                                 </div>
                                 <div class="cart-row chcolor">
-                                    <span class="cart-sum-name">Livraison gratuite à partir de {{$setting->free_shipping}} DH</span>
-                                    <input type="hidden" value="{{$setting->free_shipping}} " id="free_shipping">
-                                    <input type="hidden" value="{{$setting->shipping}} " id="shipping">
-                                    <input type="hidden" value="{{$setting->min_order}} " id="min_order">
-                                    <input type="hidden" value="{{$setting->end_time}} " data-text="{{$setting->nom}} est actuellement fermé. <br> Les horaires d'ouverture sont entre <br> {{$setting->start_time}} et {{$setting->end_time}}" id="end_time">
-                                    <input type="hidden" value="{{$setting->start_time}} " id="start_time">
-                                    <input type="hidden" value="Ce produit n'est pas disponible pour le moment" id="oos_text">
-                                    
+                                    <span class="cart-sum-name">Livraison gratuite à partir de
+                                        {{ $setting->free_shipping }} DH</span>
+                                    <input type="hidden" value="{{ $setting->free_shipping }} " id="free_shipping">
+                                    <input type="hidden" value="{{ $setting->shipping }} " id="shipping">
+                                    <input type="hidden" value="{{ $setting->min_order }} " id="min_order">
+                                    <input type="hidden" value="{{ $setting->end_time }} "
+                                        data-text="{{ $setting->nom }} est actuellement fermé. <br> Les horaires d'ouverture sont entre <br> {{ $setting->start_time }} et {{ $setting->end_time }}"
+                                        id="end_time">
+                                    <input type="hidden" value="{{ $setting->start_time }} " id="start_time">
+                                    <input type="hidden" value="Ce produit n'est pas disponible pour le moment"
+                                        id="oos_text">
+
                                 </div>
                                 <div class="cart-row remining">
-                                    <span class="cart-sum-name row-green chcolor2">Montant nécessaire pour commander ({{$setting->min_order}} DH)</span>
+                                    <span class="cart-sum-name row-green chcolor2">Montant nécessaire pour commander
+                                        ({{ $setting->min_order }} DH)</span>
                                     <span class="cart-sum-price row-green chcolor2"><span class="total-r"></span>
                                         DH</span>
                                 </div>
@@ -336,16 +423,15 @@
                     <div itemscope itemtype="http://schema.org/Restaurant">
                         <h2 itemprop="name">{{ $setting->nom }}</h2>
                         <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span
-                                itemprop="streetAddress">{{str_replace(' ','',str_replace(' ','',$setting->phone))}}
-                                </span><br /><span
-                                itemprop="postalCode">40000</span>&nbsp;<span
+                                itemprop="streetAddress">{{ str_replace(' ', '', str_replace(' ', '', $setting->phone)) }}
+                            </span><br /><span itemprop="postalCode">40000</span>&nbsp;<span
                                 itemprop="addressLocality">Marrakech</span></div>
                         <div><br /></div>
                         <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
                             <meta itemprop="latitude" content="50.9247977" />
                             <meta itemprop="longitude" content="6.9587405" />
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

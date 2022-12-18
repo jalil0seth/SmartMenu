@@ -10,8 +10,8 @@
     <meta name="theme-color" content="#55ADDE" />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <link rel="shortcut icon" href="{{ $setting->logo['thumbnail'] }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('style/style22_ar.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/takeaway22.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/style23_ar.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/takeaway23_ar.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('font-awesome/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -20,17 +20,21 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('basket/css/sidedishes.css') }}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
-    <style> @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300&display=swap'); </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300&display=swap');
+    </style>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
-        <style>
+    <style>
         .cart-meal-name {
             word-break: normal !important;
         }
+
         @media (min-width:600px) {
             ul {
                 height: 30px !important;
             }
         }
+
         .badge {
             display: inline-block;
             min-width: 10px;
@@ -87,10 +91,10 @@
         }
 
         .category {
-            margin-bottom: 0px !important; 
+            margin-bottom: 0px !important;
         }
 
-        .oldprice{
+        .oldprice {
             text-decoration: line-through;
             color: #f86600;
             font-size: 13px;
@@ -185,34 +189,65 @@
             margin-right: 0px !important;
         }
 
-        .ar{
+        .ar {
             font-family: 'IBM Plex Sans Arabic', sans-serif !important;
         }
+
         .cart-single-meal .cart-row .cart-meal-amount {
             padding-left: 6px !important;
             padding-right: 0px !important;
         }
+
         .icon-ta-next-v2:before {
             content: "\e993" !important;
         }
 
         #mobile {
+            display: none;
+        }
+
+        @media (max-width:600px) {
+            #contactnous {
                 display: none;
             }
+        }
+        .notification {
+            background-color: #f8f5f2;
+            color: black;
+            text-decoration: none;
+            padding: 5px 14px;
+            position: relative;
+            display: inline;
+            border-radius: 9px;
+            /* height: 20px; */
+            top: -6px;
+        }
+
+        .notification .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background: red;
+            color: white;
+        }
     </style>
     </style>
 </head>
 
 <body class="menu" dir="rtl" lang="ar">
     <div class="header">
-        <div id="navigationopenbutton" class="menubutton"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
+        <div id="navigationopenbutton" class="menubutton"><a href="#" class="notification"><span><i class="fa-solid fa-user"></i> حسابي</span><span class="badge">1</span></a> </div>
+        <div id="navigationopenbutton" class="menubutton"><a href="/fr" class="notification"><span><i class="fa-solid fa-earth-americas"></i> Français</span></a> </div>
         <div class="nav">
             <div id="navigationclosebutton" class="menubutton"><i class="fa fa-close fa-2x" aria-hidden="true"></i>
             </div>
             <div class="nav-wrapper">
                 <ul>
-                    <li class='active ar'><a href="/"> القَائمة <i class="fa-regular fa-square-caret-down" id="icon"></i>
-                         </a></li>
+                    <li class='active ar'><a href="/"> حسابي <i class="fa-regular fa-square-caret-down"
+                                id="icon"></i>
+                        </a></li>
                     <li><a href="tel:{{ str_replace(' ', '', str_replace(' ', '', $setting->phone)) }}"><i
                                 class="fa-solid fa-phone-volume" id="icon"></i> اتصل بنا</a></li>
                     <li><a href="https://api.whatsapp.com/send?phone=212{{ str_replace('07', '7', str_replace('06', '6', str_replace(' ', '', $setting->whatsapp))) }}"
@@ -256,7 +291,8 @@
                     </div>
                     <div class="basket-title-open baskettitle">
                         <div class="basket-title-text">
-                            <span id="command" style="margin-right: -15px !important;" class="ar"><b>طلبيتك</b></span>
+                            <span id="command" style="margin-right: -15px !important;"
+                                class="ar"><b>طلبيتك</b></span>
                             <span><i style="float: right !important;margin-top: 20px !important;margin-right: 15px !important;font-size: 20px !important;"
                                     class="fa fa-times" id="close" aria-hidden="true"></i> </span>
                         </div>
@@ -304,7 +340,7 @@
                                     <span class="cart-sum-price"><span class="total-p"></span> دم</span>
                                 </div>
                                 <div class="cart-row chcolor">
-                                    <span class="cart-sum-name">توصيل مجاني ابتدأ من 
+                                    <span class="cart-sum-name">توصيل مجاني ابتدأ من
                                         {{ $setting->free_shipping }} دم</span>
                                     <input type="hidden" value="{{ $setting->free_shipping }} " id="free_shipping">
                                     <input type="hidden" value="{{ $setting->shipping }} " id="shipping">
@@ -339,7 +375,7 @@
 
                             <div id="empty" class="jig-cart-empty-state visible">
                                 <div class="jig-cart-empty-state-icon"></div>
-                                <h3>Choisissez de délicieux plats dans le menu et commandez votre menu.</h3>
+                                <h3>اختر الأطباق اللذيذة من القائمة واطلب قائمتك</h3>
                                 <br>
                             </div>
                             <div class="cart-row" id="cart-exclusive" style="display: none">
@@ -368,29 +404,29 @@
                             <div class="menu-category-list">
                                 <div class="swiper-container js-swiper">
                                     <div class="swiper-wrapper">
-                                        <a style="text-decoration:none; font-size:16px" id="contactnous" class="ar">اللغة 
-                                            :</a>
-                                        <a style="text-decoration:none;" 
-                                        href="/fr" ><img src="{{asset('fr_lang.png')}}"   style="width:25px !important"></a>
-                                        <a style="text-decoration:none; font-size:16px" id="contactnous" class="ar">اتصل بنا
-                                            :</a>
-    
+                                        <a style="text-decoration:none; font-size:16px"></a>
                                         <a style="text-decoration:none; font-size:20px; animation: skew-y-shakeing 1.2s infinite;"
                                             class="slide-phone"
                                             href="tel:{{ str_replace(' ', '', str_replace(' ', '', $setting->phone)) }}"><i
-                                                class="fa-solid fa-phone-volume" ></i></a>
+                                                class="fa-solid fa-phone-volume"></i></a>
                                         <a style="text-decoration:none; font-size:20px; " class="slide-whatsapp"
                                             href="https://api.whatsapp.com/send?phone=212{{ str_replace('07', '7', str_replace('06', '6', str_replace(' ', '', $setting->whatsapp))) }}"
-                                            target="_blank"><i class="fa-brands fa-whatsapp" ></i></a>
-                                            
+                                            target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
                                         <a style="text-decoration:none; font-size:20px"
                                             href="{{ $setting->instagram }}" class="slide-instagram"
-                                            target="_blank"><i class="fa-brands fa-instagram" ></i></a>
+                                            target="_blank"><i class="fa-brands fa-instagram"></i></a>
                                         <a style="text-decoration:none; font-size:20px"
                                             href="{{ $setting->facebook }}" class="slide-fb" target="_blank"><i
-                                                class="fa-brands fa-facebook" ></i></a>
+                                                class="fa-brands fa-facebook"></i></a>
                                         <a style="text-decoration:none; font-size:20px" href="{{ $setting->tiktok }}"
-                                            target="_blank"><i class="fa-brands fa-tiktok" ></i></a>
+                                            target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                                        <div id="contactnous">
+                                            <a style="text-decoration:none; font-size:16px" id="contactnous"
+                                                class="ar">تغير اللغة
+                                                :</a>
+                                                <a href="/fr" class="notification" style="top: 0 !important;"><span><i class="fa-solid fa-earth-americas"></i> Français</span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -424,8 +460,10 @@
                                     </div>
                                     <div class="category-description ar">
                                         أكثر من {{ \App\Models\Product::where('category_id', $cat->id)->count() }}
-                                        منتجات في هذه المجموعة 
-                                        @if (isset($cat->description))<hr id="hrdesc">@endif
+                                        منتجات في هذه المجموعة
+                                        @if (isset($cat->description))
+                                            <hr id="hrdesc">
+                                        @endif
                                         {!! $cat->description_ar ? $cat->description_ar : $cat->description !!}
                                     </div>
                                 </div>

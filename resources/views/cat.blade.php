@@ -10,10 +10,12 @@
     <meta name="theme-color" content="#55ADDE" />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <link rel="shortcut icon" href="{{ $setting->logo['thumbnail'] }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('style/style22.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/takeaway22.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/style23.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/takeaway23.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('font-awesome/css/font-awesome.min.css') }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="{{ asset('tpl/template1/additives.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('basket/css/sidedishes.css') }}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
@@ -23,6 +25,7 @@
         .cart-meal-name {
             word-break: normal !important;
         }
+
         .badge {
             display: inline-block;
             min-width: 10px;
@@ -37,17 +40,19 @@
             background-color: rgba(220, 149, 149, 0.56);
             border-radius: 10px;
         }
+
         #icon {
             margin-right: 6px;
         }
-        @media (max-width:600px)  {
-        .nav li.active a {
-            padding: 15px;
-            font-size: 20px;
-        }
-    }
 
-    .discount {
+        @media (max-width:600px) {
+            .nav li.active a {
+                padding: 15px;
+                font-size: 20px;
+            }
+        }
+
+        .discount {
             display: inline-block;
             min-width: 10px;
             padding: 3px 7px;
@@ -62,43 +67,76 @@
             border-radius: 5px;
         }
 
-    .category-description {
-        color: #545454 !important;
-    }
-    #hrslide{
-        border-top: 1px solid #b8b2ac !important;
-    }
+        .category-description {
+            color: #545454 !important;
+        }
 
-    .category {
-         margin-bottom: 0px !important; 
-    }
+        #hrslide {
+            border-top: 1px solid #b8b2ac !important;
+        }
 
-    .oldprice{
-        text-decoration: line-through;
-        color: #f86600;
-        font-size: 13px;
-    }
+        .category {
+            margin-bottom: 0px !important;
+        }
 
-    #mobile{
-        display: none;
-    }
+        .oldprice {
+            text-decoration: line-through;
+            color: #f86600;
+            font-size: 13px;
+        }
+
+        #mobile {
+            display: none;
+        }
+
+        @media (max-width:600px) {
+            #contactnous {
+                display: none;
+            }
+        }
+        .notification {
+            background-color: #f8f5f2;
+            color: black;
+            text-decoration: none;
+            padding: 5px 14px;
+            position: relative;
+            display: inline;
+            border-radius: 9px;
+            /* height: 20px; */
+            top: -6px;
+        }
+
+        .notification .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background: red;
+            color: white;
+        }
     </style>
 </head>
 
 <body class="menu">
     <div class="header">
-        <div id="navigationopenbutton" class="menubutton"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
+        <div id="navigationopenbutton" class="menubutton"><a href="#" class="notification"><span><i class="fa-solid fa-user"></i> Compte</span><span class="badge">1</span></a> </div>
+        <div id="navigationopenbutton" class="menubutton"><a href="/ar-cat{{ $cat->id }}-{{ str_replace(' ', '-', $cat->name) }}" class="notification"><span> العربية <i class="fa-solid fa-earth-americas"></i></span></a> </div>
         <div class="nav">
             <div id="navigationclosebutton" class="menubutton"><i class="fa fa-close fa-2x" aria-hidden="true"></i>
             </div>
             <div class="nav-wrapper">
                 <ul>
-                    <li class='active'><a href="/" ><i class="fa-regular fa-square-caret-down" id="icon"></i> Menu</a></li>
-                    <li><a href="tel:{{str_replace(' ','',str_replace(' ','',$setting->phone))}}"><i class="fa-solid fa-phone-volume" id="icon"></i> Appeler</a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=212{{str_replace('07','7',str_replace('06','6',str_replace(' ','',$setting->whatsapp)))}}" target="_blank"><i class="fa-brands fa-whatsapp" id="icon"></i> Whatsapp</a></li>
-                    <li><a href="{{$setting->instagram}}" target="_blank"><i class="fa-brands fa-instagram" id="icon"></i> Instagram</a></li>
-                    <li><a href="{{$setting->facebook}}" target="_blank"><i class="fa-brands fa-facebook" id="icon"></i>Facebook</a></li>
-                    <li><a href="{{$setting->tiktok}}" target="_blank"><i class="fa-brands fa-tiktok" id="icon"></i> TikTok</a></li>
+                    <li class='active'><a href="/"><i class="fa-regular fa-square-caret-down" id="icon"></i>
+                            Compte</a></li>
+                    <li><a href="tel:{{ str_replace(' ', '', str_replace(' ', '', $setting->phone)) }}"><i
+                                class="fa-solid fa-phone-volume" id="icon"></i> Appeler</a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=212{{ str_replace('07', '7', str_replace('06', '6', str_replace(' ', '', $setting->whatsapp))) }}"
+                            target="_blank"><i class="fa-brands fa-whatsapp" id="icon"></i> Whatsapp</a></li>
+                    <li><a href="{{ $setting->instagram }}" target="_blank"><i class="fa-brands fa-instagram"
+                                id="icon"></i> Instagram</a></li>
+                    <li><a href="{{ $setting->facebook }}" target="_blank"><i class="fa-brands fa-facebook"
+                                id="icon"></i>Facebook</a></li>
                 </ul>
             </div>
         </div>
@@ -122,8 +160,17 @@
                             <div class="menu-category-list">
                                 <div class="swiper-container js-swiper">
                                     <div class="swiper-wrapper">
-                                        <a href="/" class="swiper-slide wiper-slide-next"> <img src="{{ asset('left-arrow.svg') }}" style="width:14px;margin-right:2px" > Tous les categories</a>
-                                        <a href="#" class="slide-active" style="text-decoration:none"><img src="{{ asset('bookmark.svg') }}" style="width:12px;margin-right:4px" >{{ $cat->name }}</a>
+                                        <a href="/" class="swiper-slide wiper-slide-next"> <img
+                                                src="{{ asset('left-arrow.svg') }}"
+                                                style="width:14px;margin-right:2px"> Tous les categories</a>
+                                        <a href="#" class="slide-active" style="text-decoration:none"><img
+                                                src="{{ asset('bookmark.svg') }}"
+                                                style="width:12px;margin-right:4px">{{ $cat->name }}</a>
+                                        <div id="contactnous">
+                                            <a style="text-decoration:none; font-size:16px" id="contactnous"
+                                            class="ar">Changer la langue :</a>
+                                            <a href="/ar-cat{{ $cat->id }}-{{ str_replace(' ', '-', $cat->name) }}"class="notification" style="top: 0 !important;"><span> العربية <i class="fa-solid fa-earth-americas"></i></span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -135,76 +182,76 @@
                 </div>
                 <div class="widget menucard-listing" id="menu">
                     <div class="menucard-container ">
-                            <div class="menucat menucard__meals-group" anchor-id="cat{{ $cat->id }}"
-                                id="cat{{ $cat->id }}">
-                                @if (isset($cat->image['url']))
-                                    <div class="menucard__category-image-container"
-                                        style="background-image: url('{{ $cat->image['url'] }}');">
-                                    </div>
-                                @endif
-                                <div class="category">
-                                    <div class="category-name">
-                                        {{ $cat->name }}
-                                        @if (collect($discounts)->where('category_id', $cat->id)->first() != null)
-                                            <span class="float-right discount bg-danger">-{{ round(collect($discounts)->where('category_id', $cat->id)->first()->discount)}}%</span> 
-                                        @endif
-                                    </div>
-                                    <div class="category-description">
-                                        {!! $cat->description !!} 
-                                    </div>
+                        <div class="menucat menucard__meals-group" anchor-id="cat{{ $cat->id }}"
+                            id="cat{{ $cat->id }}">
+                            @if (isset($cat->image['url']))
+                                <div class="menucard__category-image-container"
+                                    style="background-image: url('{{ $cat->image['url'] }}');">
                                 </div>
-                                <div class="product-container">
-                                    @foreach (\App\Models\Product::where('category_id', $cat->id)->orderBy('rank','asc')->get() as $p)
-                                        <div itemscope itemtype="http://schema.org/Product">
-                                            <div class="add-to-cart addtobasket" data-name="{{ $p->name }}"
-                                                data-price="{{ $p->price }}"
-                                                data-imgproduct="{{ $p->image[0]['url'] }}"
-                                                data-productid="{{ $p->id }}"
-                                                data-oos="{{ $p->oos }}">
-                                                <div class="meal-wrapper">
-                                                    <div class="product-name" itemprop="name">
-                                                        {{ $p->name }} 
-                                                        @if ($p->old_price != '' and $p->old_price>$p->price)
-                                                        <span class="float-right discount bg-danger">-{{round(($p->old_price-$p->price)*100/$p->old_price)}}%</span>
-                                                        @endif
-                                                        @if ($p->oos == 1)
-                                                            <span class="float-right badge bg-danger">Non disponible</span>
-                                                        @endif
-                                                    </div>
-                                                    <!-- product-name -->
-                                                    @isset($p->notes)
-                                                        <div class="product-description" itemprop="description">
-                                                            <ul class='notes'>
-                                                                @foreach (preg_split("/\r\n|\n|\r/", $p->notes) as $notes)
-                                                                    <li>• {{ $notes }}</li>
-                                                                @endforeach
-                                                            </ul>
-                                                        </div>
-                                                    @endisset
-
-                                                    <div itemprop="offers" itemscope
-                                                        itemtype="http://schema.org/Offer">
-                                                        <div class="product-price" itemprop="price">
-                                                            {{ $p->price }} DH 
-                                                        </div>
-                                                        @if ($p->old_price != '' and $p->old_price>$p->price)
-                                                        <div class="oldprice">
-                                                            {{ $p->old_price }} DH 
-                                                        </div>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                                <div class="meal__product-image-container2"><img
-                                                        class="meal__product-image" src="{{ $p->image[0]['url'] }}"
-                                                        alt="{{ $p->name }}" border="0"></div>
-                                                <div class="product-order-button"></div>
-                                            </div>
-                                            <!-- add simple product div OR show sidedish div -->
-                                        </div>
-                                    @endforeach
+                            @endif
+                            <div class="category">
+                                <div class="category-name">
+                                    {{ $cat->name }}
+                                    @if (collect($discounts)->where('category_id', $cat->id)->first() != null)
+                                        <span
+                                            class="float-right discount bg-danger">-{{ round(collect($discounts)->where('category_id', $cat->id)->first()->discount) }}%</span>
+                                    @endif
                                 </div>
-                                <!-- product-container -->
+                                <div class="category-description">
+                                    {!! $cat->description !!}
+                                </div>
                             </div>
+                            <div class="product-container">
+                                @foreach (\App\Models\Product::where('category_id', $cat->id)->orderBy('rank', 'asc')->get() as $p)
+                                    <div itemscope itemtype="http://schema.org/Product">
+                                        <div class="add-to-cart addtobasket" data-name="{{ $p->name }}"
+                                            data-price="{{ $p->price }}"
+                                            data-imgproduct="{{ $p->image[0]['url'] }}"
+                                            data-productid="{{ $p->id }}" data-oos="{{ $p->oos }}">
+                                            <div class="meal-wrapper">
+                                                <div class="product-name" itemprop="name">
+                                                    {{ $p->name }}
+                                                    @if ($p->old_price != '' and $p->old_price > $p->price)
+                                                        <span
+                                                            class="float-right discount bg-danger">-{{ round((($p->old_price - $p->price) * 100) / $p->old_price) }}%</span>
+                                                    @endif
+                                                    @if ($p->oos == 1)
+                                                        <span class="float-right badge bg-danger">Non disponible</span>
+                                                    @endif
+                                                </div>
+                                                <!-- product-name -->
+                                                @isset($p->notes)
+                                                    <div class="product-description" itemprop="description">
+                                                        <ul class='notes'>
+                                                            @foreach (preg_split("/\r\n|\n|\r/", $p->notes) as $notes)
+                                                                <li>• {{ $notes }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
+                                                @endisset
+
+                                                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                                    <div class="product-price" itemprop="price">
+                                                        {{ $p->price }} DH
+                                                    </div>
+                                                    @if ($p->old_price != '' and $p->old_price > $p->price)
+                                                        <div class="oldprice">
+                                                            {{ $p->old_price }} DH
+                                                        </div>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="meal__product-image-container2"><img
+                                                    class="meal__product-image" src="{{ $p->image[0]['url'] }}"
+                                                    alt="{{ $p->name }}" border="0"></div>
+                                            <div class="product-order-button"></div>
+                                        </div>
+                                        <!-- add simple product div OR show sidedish div -->
+                                    </div>
+                                @endforeach
+                            </div>
+                            <!-- product-container -->
+                        </div>
                     </div>
                     <!-- menucard-container -->
                 </div>
@@ -275,17 +322,22 @@
                                     <span class="cart-sum-price"><span class="total-p"></span> DH</span>
                                 </div>
                                 <div class="cart-row chcolor">
-                                    <span class="cart-sum-name">Livraison gratuite à partir de {{$setting->free_shipping}} DH</span>
-                                    <input type="hidden" value="{{$setting->free_shipping}} " id="free_shipping">
-                                    <input type="hidden" value="{{$setting->shipping}} " id="shipping">
-                                    <input type="hidden" value="{{$setting->min_order}} " id="min_order">
-                                    <input type="hidden" value="{{$setting->end_time}} " data-text="{{$setting->nom}} est actuellement fermé. <br> Les horaires d'ouverture sont entre <br> {{$setting->start_time}} et {{$setting->end_time}}" id="end_time">
-                                    <input type="hidden" value="{{$setting->start_time}} " id="start_time">
-                                    <input type="hidden" value="Ce produit n'est pas disponible pour le moment" id="oos_text">
-                                    
+                                    <span class="cart-sum-name">Livraison gratuite à partir de
+                                        {{ $setting->free_shipping }} DH</span>
+                                    <input type="hidden" value="{{ $setting->free_shipping }} " id="free_shipping">
+                                    <input type="hidden" value="{{ $setting->shipping }} " id="shipping">
+                                    <input type="hidden" value="{{ $setting->min_order }} " id="min_order">
+                                    <input type="hidden" value="{{ $setting->end_time }} "
+                                        data-text="{{ $setting->nom }} est actuellement fermé. <br> Les horaires d'ouverture sont entre <br> {{ $setting->start_time }} et {{ $setting->end_time }}"
+                                        id="end_time">
+                                    <input type="hidden" value="{{ $setting->start_time }} " id="start_time">
+                                    <input type="hidden" value="Ce produit n'est pas disponible pour le moment"
+                                        id="oos_text">
+
                                 </div>
                                 <div class="cart-row remining">
-                                    <span class="cart-sum-name row-green chcolor2">Montant nécessaire pour commander ({{$setting->min_order}} DH)</span>
+                                    <span class="cart-sum-name row-green chcolor2">Montant nécessaire pour commander
+                                        ({{ $setting->min_order }} DH)</span>
                                     <span class="cart-sum-price row-green chcolor2"><span class="total-r"></span>
                                         DH</span>
                                 </div>
@@ -344,16 +396,15 @@
                     <div itemscope itemtype="http://schema.org/Restaurant">
                         <h2 itemprop="name">{{ $setting->nom }}</h2>
                         <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span
-                                itemprop="streetAddress">{{str_replace(' ','',str_replace(' ','',$setting->phone))}}
-                                </span><br /><span
-                                itemprop="postalCode">40000</span>&nbsp;<span
+                                itemprop="streetAddress">{{ str_replace(' ', '', str_replace(' ', '', $setting->phone)) }}
+                            </span><br /><span itemprop="postalCode">40000</span>&nbsp;<span
                                 itemprop="addressLocality">Marrakech</span></div>
                         <div><br /></div>
                         <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
                             <meta itemprop="latitude" content="50.9247977" />
                             <meta itemprop="longitude" content="6.9587405" />
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
