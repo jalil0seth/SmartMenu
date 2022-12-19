@@ -152,7 +152,7 @@
                                                     Total
                                                 </th>
                                                 <td>
-                                                    {{ $order->total ?? '' }} DH
+                                                    {{ $order->total + floatval($order->livraison) ?? '' }} DH
                                                 </td>
                                             </tr>
                                         </tbody>

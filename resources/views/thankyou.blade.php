@@ -185,7 +185,7 @@ div#counter {
                <div class="widget">
                   <div id="basket">
                      <div class="baskettitle">
-                        <h2 class="basket-title-closed">Votre commande ({{$order->total+floatval($order->shipping)}} DH)</h2>
+                        <h2 class="basket-title-closed">Votre commande ({{$order->total+floatval($order->livraison)}} DH)</h2>
                         <h2 class="basket-title-open">Votre commande</h2>
                      </div>
                     <div id="cartcontent">
