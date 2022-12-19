@@ -176,7 +176,7 @@
 
 <body class="menu">
     <div class="header">
-        <div id="navigationopenbutton" class="menubutton"><a href="#" class="notification"><span><i class="fa-solid fa-user"></i> Menu</span><span class="badge">1</span></a> </div>
+        <div id="navigationopenbutton" class="menubutton"><a href="#" class="notification"><span><i class="fa-solid fa-bars"></i> Menu</span><span class="badge">1</span></a> </div>
         <div id="navigationopenbutton" class="menubutton" style="display:none"><a href="/ar" class="notification"><span> العربية <i class="fa-solid fa-earth-americas"></i></span></a> </div>
         <div class="nav">
             <div id="navigationclosebutton" class="menubutton"><i class="fa fa-close fa-2x" aria-hidden="true"></i>
