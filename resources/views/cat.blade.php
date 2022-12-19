@@ -120,7 +120,7 @@
 
 <body class="menu">
     <div class="header">
-        <div id="navigationopenbutton" class="menubutton"><a href="#" class="notification"><span><i class="fa-solid fa-user"></i> Compte</span><span class="badge">1</span></a> </div>
+        <div id="navigationopenbutton" class="menubutton" style="display: none"><a href="#" class="notification"><span><i class="fa-solid fa-user"></i> Menu</span><span class="badge">1</span></a> </div>
         <div id="navigationopenbutton" class="menubutton"><a href="/ar-cat{{ $cat->id }}-{{ str_replace(' ', '-', $cat->name) }}" class="notification"><span> العربية <i class="fa-solid fa-earth-americas"></i></span></a> </div>
         <div class="nav">
             <div id="navigationclosebutton" class="menubutton"><i class="fa fa-close fa-2x" aria-hidden="true"></i>
@@ -128,7 +128,7 @@
             <div class="nav-wrapper">
                 <ul>
                     <li class='active'><a href="/"><i class="fa-regular fa-square-caret-down" id="icon"></i>
-                            Compte</a></li>
+                            Menu</a></li>
                     <li><a href="tel:{{ str_replace(' ', '', str_replace(' ', '', $setting->phone)) }}"><i
                                 class="fa-solid fa-phone-volume" id="icon"></i> Appeler</a></li>
                     <li><a href="https://api.whatsapp.com/send?phone=212{{ str_replace('+212', '', str_replace(' ', '', $setting->whatsapp)) }}"
