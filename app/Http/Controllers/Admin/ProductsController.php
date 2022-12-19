@@ -25,7 +25,7 @@ class ProductsController extends Controller
 
         $products = Product::with(['category', 'media'])->get();
 
-        $categories = Category::get();
+        $categories = Category::orderBy('rank','desc')->get();
 
         return view('admin.products.index2', compact('categories', 'products'));
     }

@@ -77,6 +77,57 @@ div#counter {
             </h1>
          </div>
       </div>
+      <style>
+         .woocommerce-profile-wizard__header {
+            height: 60px;
+            border-bottom: 1px solid #dcdcde;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+         }
+         .woocommerce-stepper {
+            margin: 0 16px;
+            width: 100%;
+         }
+         .woocommerce-stepper__steps {
+            margin: 0;
+         }
+         .woocommerce-stepper__steps {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 24px;
+         }
+         .woocommerce-stepper__step {
+            padding: 8px;
+            font-weight: 400;
+            position: relative;
+         }
+         .woocommerce-stepper__step-label-wrapper {
+            display: flex;
+            text-align: left;
+            border: 0;
+            background-color: transparent;
+            padding: 0;
+         }
+         .woocommerce-stepper .woocommerce-stepper__step-icon {
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            margin-right: 12px;
+            background: #f0f0f0;
+            color: #757575;
+            border-radius: 50%;
+         }
+         .woocommerce-stepper__step-icon {
+            background: #007cba;
+            color: #fff;
+         }
+      </style>
       <div class="full">
          <div class="checkoutpage clearfix">
             <div class="checkoutform">
