@@ -131,7 +131,7 @@
                             Compte</a></li>
                     <li><a href="tel:{{ str_replace(' ', '', str_replace(' ', '', $setting->phone)) }}"><i
                                 class="fa-solid fa-phone-volume" id="icon"></i> Appeler</a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=212{{ str_replace('07', '7', str_replace('06', '6', str_replace(' ', '', $setting->whatsapp))) }}"
+                    <li><a href="https://api.whatsapp.com/send?phone=212{{ str_replace('+212', '', str_replace(' ', '', $setting->whatsapp)) }}"
                             target="_blank"><i class="fa-brands fa-whatsapp" id="icon"></i> Whatsapp</a></li>
                     <li><a href="{{ $setting->instagram }}" target="_blank"><i class="fa-brands fa-instagram"
                                 id="icon"></i> Instagram</a></li>

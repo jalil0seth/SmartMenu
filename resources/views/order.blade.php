@@ -153,7 +153,7 @@
                <div class="widget">
                   <div id="basket">
                      <div class="baskettitle">
-                        <h2 class="basket-title-closed">Votre commande (<span class="total-cart"></span> DH)</h2>
+                        <h2 class="basket-title-closed">Votre commande (<span class="total-p"></span> DH)</h2>
                         <h2 class="basket-title-open">Votre commande</h2>
                      </div>
                     <div id="cartcontent">
