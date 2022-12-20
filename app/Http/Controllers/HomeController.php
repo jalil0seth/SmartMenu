@@ -37,12 +37,13 @@ class HomeController extends Controller
 
     public function fr(Request $request)
     {
-            return $request->getHttpHost();
+            $host =  $request->getHttpHost();
+
             $products = Product::orderBy('rank','asc')->get();
             $categories = Category::orderBy('rank','asc')->get();
             $discounts = DB::select("select category_id,max((old_price-price)*100/old_price) as discount from products where old_price is not null and old_price-price>0 group by category_id"); 
             $setting = Setting::first();
-            return view('style'.$setting->style,compact('products','categories','setting','discounts'));
+            return view('style'.$setting->style,compact('products','categories','setting','discounts','host'));
     }
 
 
@@ -55,7 +56,7 @@ class HomeController extends Controller
             return view('ar.style'.$setting->style,compact('products','categories','setting','discounts'));
     }
 
-    public function cat($lang, $id, $name)
+    public function cat($lang, $id, $name,Request $request)
     {
             $products = Product::where('category_id',$id)->orderBy('rank','asc')->get();
             $cat = Category::where('id',$id)->first();
@@ -67,8 +68,9 @@ class HomeController extends Controller
             } else {
                 $lang = '';
             }
-        
-            return view($lang.'cat',compact('products','cat','setting','discounts'));
+            $host =  $request->getHttpHost();
+            
+            return view($lang.'cat',compact('products','cat','setting','discounts','host'));
     }
 
     public function order()
