@@ -10,6 +10,8 @@
     <meta name="theme-color" content="#55ADDE" />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <link rel="shortcut icon" href="{{ $setting->logo['thumbnail'] }}" />
+    <meta property="og:image" content="{{ $setting->logo['thumbnail'] }}" />
+
     <link rel="stylesheet" type="text/css" href="{{ asset('style/style23.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/takeaway23.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('font-awesome/css/font-awesome.min.css') }}" />

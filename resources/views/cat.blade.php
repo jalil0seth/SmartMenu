@@ -21,6 +21,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+    <meta property="og:image" content="{{ $setting->logo['thumbnail'] }}" />
     <style>
         .cart-meal-name {
             word-break: normal !important;
