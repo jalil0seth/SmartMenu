@@ -79,7 +79,6 @@
       <div class="full">
          <div class="checkoutpage clearfix">
             <div class="checkoutform">
-               <h1 class="title">Finaliser votre commande</h1>
                <div class="widget">
                   <div id="checkout">
                      <form action="/sendorder" method="post" id="passercommade_form">
@@ -115,11 +114,11 @@
                            </div>
                         </div>
                         <div class="checkoutstep step2">
-                          Ajouter des remarques sur votre commande
+                           Commande personnalisée :
                         </div>
                         <div class="items remarks">
                            <label for="remarks">
-                            Vos remarques
+                              Ajouter des notes à votre commande
                            </label>
                            <textarea id="notes" name="notes"></textarea>
                         </div>
@@ -127,7 +126,7 @@
                            <div class="items paymenticons clearfix">
                               <div class="payments">
                                  <input type="radio" name="paymentmethod" id="ipaymentmethod0" class="offline" value="0" checked/></td>
-                                 <label for="ipaymentmethod0" class=""><img src="tpl/template1/images/paymenticons/payment_0.png"/>Payement a la livraison</label>
+                                 <label for="ipaymentmethod0" class=""><img src="tpl/template1/images/paymenticons/payment_0.png"/>Paiement à la livraison</label>
                               </div>
                               <div class="payments" style="display: none;">
                                  <input type="radio" name="paymentmethod" id="ipaymentmethod15" class="online" value="15" /></td>
