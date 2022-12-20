@@ -26,7 +26,7 @@
                             <div class="col-md-6">
                                 <div class="form-group {{ $errors->has('name_ar') ? 'has-error' : '' }}">
                                     <label for=name_ar>{{ trans('cruds.category.fields.name') }} (AR)</label>
-                                    <input class="form-control" type="text" @if ($host == 'v2.toptopdonuts.ma') name="name_ar" @endif  id="name_ar" value="{{ old('name_ar', $category->name_ar) }}">
+                                    <input class="form-control" type="text" @if($host == 'toptopdonuts.ma') @else name="name_ar" @endif  id="name_ar" value="{{ old('name_ar', $category->name_ar) }}">
                                     @if($errors->has('name_ar'))
                                         <span class="help-block" role="alert">{{ $errors->first('name_ar') }}</span>
                                     @endif
@@ -51,7 +51,7 @@
 
                                 <div class="form-group {{ $errors->has('description_ar') ? 'has-error' : '' }}">
                                     <label for="description_ar">Description (AR)</label>
-                                    <textarea class="form-control ckeditor" @if ($host == 'v2.toptopdonuts.ma') name="description_ar" @endif >{!! old('description_ar', $category->description_ar) !!}</textarea>
+                                    <textarea class="form-control ckeditor" @if($host == 'toptopdonuts.ma') @else  name="description_ar" @endif >{!! old('description_ar', $category->description_ar) !!}</textarea>
                                     @if($errors->has('description_ar'))
                                         <span class="help-block" role="alert">{{ $errors->first('description_ar') }}</span>
                                     @endif
