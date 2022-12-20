@@ -26,7 +26,7 @@
                         <div class="col-md-6">
                           <div class="form-group {{ $errors->has('name_ar') ? 'has-error' : '' }}">
                             <label for="name_ar">Nom (AR)</label>
-                            <input class="form-control" type="text" name2="name_ar" id="name_ar" value="{{ old('name_ar', $product->name_ar) }}">
+                            <input class="form-control" type="text" @if($host == 'v2.toptopdonuts.ma') name="name_ar" @endif  id="name_ar" value="{{ old('name_ar', $product->name_ar) }}">
                             @if($errors->has('name_ar'))
                                 <span class="help-block" role="alert">{{ $errors->first('name_ar') }}</span>
                             @endif

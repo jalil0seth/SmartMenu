@@ -176,8 +176,8 @@
 
 <body class="menu">
     <div class="header">
-        <div id="navigationopenbutton" class="menubutton"><a href="#" class="notification"><span><i class="fa-solid fa-bars"></i> Menu</span><span class="badge" style="display: none">>1</span></a> </div>
-        <div id="navigationopenbutton" class="menubutton" style="display:none"><a href="/ar" class="notification"><span> العربية <i class="fa-solid fa-earth-americas"></i></span></a> </div>
+        <div id="navigationopenbutton" class="menubutton"><a href="#" class="notification"><span><i class="fa-solid fa-bars"></i> Menu</span><span class="badge" @if ($host != 'v2.toptopdonuts.ma') style="display: none" @endif>1</span></a> </div>
+        <div id="navigationopenbutton" class="menubutton" @if ($host != 'v2.toptopdonuts.ma') style="display: none" @endif><a href="/ar" class="notification"><span> العربية <i class="fa-solid fa-earth-americas"></i></span></a> </div>
         <div class="nav">
             <div id="navigationclosebutton" class="menubutton"><i class="fa fa-close fa-2x" aria-hidden="true"></i>
             </div>
