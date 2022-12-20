@@ -304,7 +304,7 @@
     var uploadedBannersMap = {}
 Dropzone.options.bannersDropzone = {
     url: '{{ route('admin.settings.storeMedia') }}',
-    maxFilesize: 10, // MB
+    maxFilesize: 100, // MB
     acceptedFiles: '.jpeg,.jpg,.png,.gif',
     addRemoveLinks: true,
     headers: {
