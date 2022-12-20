@@ -32,12 +32,12 @@ class HomeController extends Controller
 
     public function index()
     {
-        return Request::getHttpHost();
         return redirect('fr');
     }
 
-    public function fr()
+    public function fr(Request $request)
     {
+            return $request->getHttpHost();
             $products = Product::orderBy('rank','asc')->get();
             $categories = Category::orderBy('rank','asc')->get();
             $discounts = DB::select("select category_id,max((old_price-price)*100/old_price) as discount from products where old_price is not null and old_price-price>0 group by category_id"); 
