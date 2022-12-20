@@ -117,7 +117,7 @@
         }
     </style>
 </head>
-<h1>{{Request::getHttpHost()}}</h1>
+
 <body class="menu">
     <div class="header">
         <div id="navigationopenbutton" class="menubutton" ><a href="#" class="notification"><span><i class="fa-solid fa-bars"></i> Menu</span><span class="badge" @if (Request::getHttpHost() == 'toptopdonuts.ma')     @endif style="display: none">1</span></a> </div>
