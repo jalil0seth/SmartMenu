@@ -49,11 +49,12 @@ class CategoriesController extends Controller
         return redirect()->route('admin.categories.index');
     }
 
-    public function edit(Category $category)
+    public function edit(Category $category,Request $request)
     {
         abort_if(Gate::denies('category_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.categories.edit', compact('category'));
+        $host =  $request->getHttpHost();
+        return view('admin.categories.edit', compact('category','host'));
     }
 
     public function update(UpdateCategoryRequest $request, Category $category)

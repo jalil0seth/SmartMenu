@@ -54,15 +54,15 @@ class ProductsController extends Controller
         return redirect()->route('admin.products.index');
     }
 
-    public function edit(Product $product)
+    public function edit(Product $product,Request $request)
     {
         abort_if(Gate::denies('product_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $categories = Category::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $product->load('category');
-
-        return view('admin.products.edit', compact('categories', 'product'));
+        $host =  $request->getHttpHost();
+        return view('admin.products.edit', compact('categories', 'product','host'));
     }
 
     public function update(UpdateProductRequest $request, Product $product)
