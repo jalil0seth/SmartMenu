@@ -233,7 +233,7 @@
                                         <a style="text-decoration:none; font-size:20px" href="{{ $setting->tiktok }}"
                                             target="_blank"><i class="fa-brands fa-tiktok"></i></a>
 
-                                            <div id="contactnous" style="display: none">
+                                            <div id="contactnous" @if ($host == 'www.toptopdonuts.ma') style="display: none" @endif>
                                                 <a style="text-decoration:none; font-size:16px" id="contactnous"
                                                 class="ar">Changer la langue :</a>
                                                 <a href="/ar" class="notification" style="top: 0 !important;"><span> العربية <i class="fa-solid fa-earth-americas"></i></span></a>

@@ -166,7 +166,7 @@
                                         <a href="#" class="slide-active" style="text-decoration:none"><img
                                                 src="{{ asset('bookmark.svg') }}"
                                                 style="width:12px;margin-right:4px">{{ $cat->name }}</a>
-                                        <div id="contactnous" style="display: none">
+                                        <div id="contactnous" @if ($host == 'www.toptopdonuts.ma') style="display: none" @endif>
                                             <a style="text-decoration:none; font-size:16px" id="contactnous"
                                             class="ar">Changer la langue :</a>
                                             <a href="/ar-cat{{ $cat->id }}-{{ str_replace(' ', '-', $cat->name) }}"class="notification" style="top: 0 !important;"><span> العربية <i class="fa-solid fa-earth-americas"></i></span></a>
