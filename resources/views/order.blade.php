@@ -70,30 +70,43 @@
             height: 56px;
             line-height: 56px;
             text-align: center;
-            border-bottom: 1px solid #f8f5d2;
+            border-bottom: 1px solid #d0cfc2;
         }
-        h2::after .basket-title-closed{
-            font: normal normal normal 14px/1 FontAwesome;
-            content: "\f077";
-            position: absolute;
-            top: 20px;
-            right: 10px;
-            font-size: 18px;
-            transform: rotate(0deg);
-            transition: all 0.5s ease-in-out;
-         }
-         h2::after .basket-title-open{
-            font: normal normal normal 14px/1 FontAwesome;
-            content: "\f078";
-            position: absolute;
-            top: 20px;
-            right: 10px;
-            font-size: 18px;
-            transform: rotate(0deg);
-            transition: all 0.5s ease-in-out;
-         }
 
-         
+        .shoppingcart .baskettitle h2::after {
+         content: "" !important;
+         position: absolute;
+         top: 20px;
+         left: 32px;
+         font-size: 24px;
+      }
+               
+        .faicon{
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            font-size: 18px;
+            transform: rotate(0deg);
+            transition: all .5s ease-in-out;
+         }
+         .btnsmart {
+            font-family: Takeaway Sans, Avant Garde, Century Gothic, Helvetica, Arial, sans-serif;
+            font-weight: 600;
+            position: relative;
+            padding: 0 16px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            appearance: none;
+            color: #fff;
+            background-color: #125fca;
+            line-height: 50px;
+            width: 100%;
+            user-select: none;
+            font-size: 18px;
+            margin-top: 32px;
+            border: 1px;
+         }
     </style>
 </head>
 
@@ -216,8 +229,8 @@
                 <div class="widget">
                     <div id="basket">
                         <div class="baskettitle">
-                            <h2 class="basket-title-closed">Votre commande (<span class="total-p" style="padding-left: 5px;"></span> DH )</h2>
-                            <h2 class="basket-title-open">Votre commande</h2>
+                            <h2 class="basket-title-closed">Votre commande (<span class="total-p" style="padding-left: 5px;"></span> DH ) <i class="faicon fa-solid fa-chevron-up"></i></h2>
+                            <h2 class="basket-title-open">Votre commande <i class="faicon fa-sharp fa-solid fa-xmark"></i></h2>
                         </div>
                         <div id="cartcontent">
                             <div class="listproduct"></div>
@@ -246,6 +259,7 @@
                                 <input type="hidden" value="{{ $setting->shipping }} " id="shipping">
                                 <input type="hidden" value="{{ $setting->min_order }} " id="min_order">
                             </div>
+                            <button class="checkoutform btnsmart">Finaliser la commande</button>
                         </div>
                     </div>
                 </div>
@@ -290,10 +304,12 @@
     <script src="{{ asset('basket/js/shake.js') }}"></script>
     <script src="{{ asset('basket/js/shopping42.js') }}"></script>
     <script>
-      $('.shoppingcart').click(function(){
+      $('.shoppingcart').after().click(function(){
          console.log('ok');
          $('.shoppingcart').toggleClass('opened') ;
          $('.basket-title-closed').toggle() ;
+         $('.shoppingcart .baskettitle h2::after').css('content','\f078') ;
+         
       })
     </script>
 </body>
