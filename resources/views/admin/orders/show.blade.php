@@ -64,8 +64,10 @@
                                                     Selectionner un livreur
                                                 </th>
                                                 <td>
-                                                    @if ($order->livreur_id != '')
+                                                    @if ($order->livreur_id != '' and isset(\App\Models\Livreur::find($order->livreur_id)->photo))
                                                         <img src="{{\App\Models\Livreur::find($order->livreur_id)->photo->getUrl('thumb')}}" width="40px" class="img-circle elevation-2" srcset="">
+                                                    @else
+                                                        <img src="{{asset('noimg.jpeg')}}" width="40px" class="img-circle elevation-2" srcset="">
                                                     @endif
                                                     <select name="livreur" id="livreur" class="custom-select rounded-0" @can('Livreur') disabled @endcan>
                                                         <option value="">Selectionner un livreur</option>
