@@ -567,7 +567,7 @@
 
         <script src="{{ asset('basket/js/main22.js') }}"></script>
         <script src="{{ asset('basket/js/shake.js') }}"></script>
-        <script src="{{ asset('basket/js/shopping42_ar.js') }}"></script>
+        <script src="{{ asset('basket/js/shopping43_ar.js') }}"></script>
 
 </body>
 

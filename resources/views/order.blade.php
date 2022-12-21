@@ -307,7 +307,7 @@
     <script type="text/javascript" src="{{ asset('tpl/template1/default1.js') }}"></script>
     <div class="background" style="background-image: url('{{ $setting->banners[0]['url'] }}');"></div>
     <script src="{{ asset('basket/js/shake.js') }}"></script>
-    <script src="{{ asset('basket/js/shopping42.js') }}"></script>
+    <script src="{{ asset('basket/js/shopping43.js') }}"></script>
     <script>
       $('.shoppingcart').after().click(function(){
          console.log('ok');
