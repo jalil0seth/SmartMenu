@@ -55,7 +55,7 @@
 
         @media (max-width:400px){
             .menucard-container .meal__product-image-container2 {
-               height: 300px !important;
+               height: 100% !important;
             }
         }
 
