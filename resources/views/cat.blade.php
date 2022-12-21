@@ -54,7 +54,7 @@
         }
 
         @media (max-width:400px){
-            .menucard-container .meal__product-image-container2 {
+            .m2enucard-container .meal__product-image-container2 {
                height: 100% !important;
             }
         }
