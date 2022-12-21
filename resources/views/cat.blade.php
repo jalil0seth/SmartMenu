@@ -53,6 +53,12 @@
             }
         }
 
+        @media (max-width:400px){
+            .menucard-container .meal__product-image-container2 {
+               height: 300px !important;
+            }
+        }
+
         .discount {
             display: inline-block;
             min-width: 10px;

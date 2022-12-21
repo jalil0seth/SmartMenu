@@ -70,7 +70,7 @@
             height: 56px;
             line-height: 56px;
             text-align: center;
-            border-bottom: 1px solid #d0cfc2;
+            border-bottom: 1px solid #f8f5d2;
         }
 
         .shoppingcart .baskettitle h2::after {
