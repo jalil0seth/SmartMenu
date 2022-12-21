@@ -107,6 +107,12 @@
             margin-top: 32px;
             border: 1px;
          }
+         .shoppingcart .productrow {
+            margin: auto;
+         }
+                  .shoppingcart .prodprice {
+            margin-top: 10px !important;
+         }
     </style>
 </head>
 

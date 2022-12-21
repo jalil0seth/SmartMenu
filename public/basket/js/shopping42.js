@@ -270,7 +270,7 @@ var shoppingCart = (function() {
         +  "</tr>";
 
         output_final += "<div class='productrow'><div class='prodname'>"
-        + "<span style='display: flex;align-items:center;'>" + cartArray[i].count + " x <img src='" + cartArray[i].imgproduct + "' width='40px'/>" + cartArray[i].name + "</span></div>"
+        + "<span style='display: flex;align-items:center;padding-left:10px'>" + cartArray[i].count + " x <img src='" + cartArray[i].imgproduct + "' width='40px'/>" + cartArray[i].name + "</span></div>"
         + "<div class='prodprice'>" + cartArray[i].price + " DH</div></div>";
     }
     
