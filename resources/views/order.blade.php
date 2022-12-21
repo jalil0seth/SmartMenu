@@ -113,6 +113,10 @@
                   .shoppingcart .prodprice {
             margin-top: 10px !important;
          }
+
+         .prodname img {
+            margin: 0px 10px;
+         }
     </style>
 </head>
 
