@@ -259,7 +259,6 @@
                                 <input type="hidden" value="{{ $setting->shipping }} " id="shipping">
                                 <input type="hidden" value="{{ $setting->min_order }} " id="min_order">
                             </div>
-                            <button class="checkoutform btnsmart">Finaliser la commande</button>
                         </div>
                     </div>
                 </div>
