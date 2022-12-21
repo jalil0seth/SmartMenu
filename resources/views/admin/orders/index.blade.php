@@ -46,7 +46,7 @@
                                         </td>
                                         <td>    
                                             <a href="{{ route('admin.orders.show', $order->id) }}">
-                                            @if ($order->livreur_id  != '')
+                                            @if ($order->livreur_id  != '' and isset(\App\Models\Livreur::find($order->livreur_id)->photo))
                                                 <img src="{{\App\Models\Livreur::find($order->livreur_id)->photo->getUrl('thumb')}}" class="img-circle elevation-2" width="40px" srcset="">
                                                 @else
                                                 <img src="{{asset('noimg.jpeg')}}" width="40px" class="img-circle elevation-2" srcset="">

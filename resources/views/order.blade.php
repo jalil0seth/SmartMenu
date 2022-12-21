@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#55ADDE" />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <link rel="shortcut icon" href="{{ $setting->logo['thumbnail'] }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('style/style23.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/style42.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/takeaway23.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('font-awesome/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -120,28 +120,56 @@
          .mt10 {
             margin-top: 10px;
          }
+         #mobile {
+            display: none;
+        }
+        .notification {
+            background-color: #f8f5f2;
+            color: black;
+            text-decoration: none;
+            padding: 5px 14px;
+            position: relative;
+            display: inline;
+            border-radius: 9px;
+            /* height: 20px; */
+            top: -6px;
+        }
+        .notification .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 6px 8px;
+            border-radius: 100%;
+            background: red;
+            color: white;
+            font-size: 11px;
+        }
     </style>
 </head>
 
 <body class="checkout">
-    <div class="header">
-        <div id="navigationopenbutton" class="menubutton"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
-        <div class="nav">
-            <div id="navigationclosebutton" class="menubutton"><i class="fa fa-close fa-2x" aria-hidden="true"></i>
-            </div>
-            <div class="nav-wrapper">
-                <ul>
-                    <li class='active'><a href="/">Menu</a></li>
-                    <li><a href="tel:{{ str_replace(' ', '', str_replace(' ', '', $setting->phone)) }}">Appeler</a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=212{{ str_replace('07', '7', str_replace('06', '6', str_replace(' ', '', $setting->whatsapp))) }}"
-                            target="_blank">Whatsapp</a></li>
-                    <li><a href="{{ $setting->instagram }}" target="_blank">Instagram</a></li>
-                    <li><a href="{{ $setting->facebook }}" target="_blank">Facebook</a></li>
-                    <li><a href="{{ $setting->tiktok }}" target="_blank">TikTok</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+   <div class="header">
+      <div id="navigationopenbutton" class="menubutton"><a href="#" class="notification"><span><i class="fa-solid fa-bars"></i> Menu</span><span class="badge" @if ($host == 'toptopdonuts.ma') style="display: none" @endif>1</span></a> </div>
+      <div id="navigationopenbutton" class="menubutton" @if ($host == 'toptopdonuts.ma') style="display: none" @endif><a href="/ar" class="notification"><span> العربية <i class="fa-solid fa-earth-americas"></i></span></a> </div>
+      <div class="nav">
+          <div id="navigationclosebutton" class="menubutton"><i class="fa fa-close fa-2x" aria-hidden="true"></i>
+          </div>
+          <div class="nav-wrapper">
+              <ul>
+                  <li class='active'><a href="/"><i class="fa-regular fa-square-caret-down" id="icon"></i>
+                          Menu</a></li>
+                  <li><a href="tel:{{ str_replace(' ', '', str_replace(' ', '', $setting->phone)) }}"><i
+                              class="fa-solid fa-phone-volume" id="icon"></i> Appeler</a></li>
+                  <li><a href="https://api.whatsapp.com/send?phone=212{{ str_replace('+212', '', str_replace(' ', '', $setting->whatsapp)) }}"
+                          target="_blank"><i class="fa-brands fa-whatsapp" id="icon"></i> Whatsapp</a></li>
+                  <li><a href="{{ $setting->instagram }}" target="_blank"><i class="fa-brands fa-instagram"
+                              id="icon"></i> Instagram</a></li>
+                  <li><a href="{{ $setting->facebook }}" target="_blank"><i class="fa-brands fa-facebook"
+                              id="icon"></i>Facebook</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
     <div class="templaterevamped-hero">
         <div class="templaterevamped-header">
             <div class="restaurantlogo">
