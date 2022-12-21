@@ -117,6 +117,9 @@
          .prodname img {
             margin: 0px 10px;
          }
+         .mt10 {
+            margin-top: 10px;
+         }
     </style>
 </head>
 
@@ -246,15 +249,15 @@
                             <div class="listproduct"></div>
                             <div class="productrow last"></div>
                             <div class="line delivery">
-                              <div class="prodname">Commande :</div>
+                              <div class="prodname mt10">Commande :</div>
                               <div class="prodprice"><span class="total-cart"></span> DH</div>
                           </div>
                             <div class="line delivery">
-                                <div class="prodname">Livraison:</div>
+                                <div class="prodname mt10">Livraison:</div>
                                 <div class="prodprice"><span class="total-shipping"></span> DH</div>
                             </div>
                             <div class="totals line">
-                                <div class="prodname">Total :</div>
+                                <div class="prodname mt10">Total :</div>
                                 <div class="prodprice"><span class="total-p"></span> DH</div>
                             </div>
                             <div>
@@ -263,7 +266,7 @@
                             <div>
                                 <div class="prodactionbtn"></div>
                                 <div class="prodnumber"></div>
-                                <div class="prodname">Livraison gratuite à partir de :</div>
+                                <div class="prodname mt10">Livraison gratuite à partir de :</div>
                                 <div class="prodprice">{{ $setting->free_shipping }} DH</div>
                                 <input type="hidden" value="{{ $setting->free_shipping }} " id="free_shipping">
                                 <input type="hidden" value="{{ $setting->shipping }} " id="shipping">
