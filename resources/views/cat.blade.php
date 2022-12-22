@@ -122,6 +122,14 @@
             color: white;
             font-size: 11px;
         }
+        .menucard-container .meal__product-image-container2 {
+            height: 230px;
+        }
+        @media (max-width:600px) {
+            .menucard-container .meal__product-image-container2 {
+                height: 100%;
+            }
+        }
     </style>
 </head>
 
