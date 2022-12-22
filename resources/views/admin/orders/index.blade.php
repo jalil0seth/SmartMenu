@@ -240,8 +240,7 @@
             }
 
             sendRequest();
-            $('#audio2').get(0).play();
-            
+
             function sendRequest() {
                 $.ajax({
                     headers: {
@@ -250,8 +249,8 @@
                     url: "/last_order",
                     success: function(data) {
                         if (data['last_order'] != $('#last_order').val()) {
-                            play_notif();
                             console.log('yes');
+                            play_notif();
                             window.setTimeout(function() {
                                 window.location.reload();
                             }, 6 * 1000);
