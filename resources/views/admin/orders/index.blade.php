@@ -123,7 +123,7 @@
                                                             {{ $order->created_at->addHours(1)->format('H:i') }}
                                                         </a>
                                                         @if (intval(
-                                                            \Carbon\Carbon::now()->diff($order->created_at)->format('%H')) >
+                                                            \Carbon\Carbon::now()->diff($order->created_at)->format('%H')) >=
                                                             1 or
                                                             intval(
                                                                 \Carbon\Carbon::now()->diff($order->created_at)->format('%D')) >=
