@@ -104,11 +104,15 @@ class HomeController extends Controller
             return view('thankyou',compact('order','setting','orderd'));
     }
 
-    public function send_mail()
+    public function send_mail(Reqeust $request)
     {
+        $host =  $request->getHttpHost();
+
         $mailData = [
             "name" => "Test NAME",
-            "dob" => "12/12/1990"
+            "dob" => "12/12/1990",
+            "subject" => "Votre commande est bien reçu",
+            "from" => $host
         ];
     
         Mail::to("jalilosum@gmail.com")->send(new TestEmail($mailData));
