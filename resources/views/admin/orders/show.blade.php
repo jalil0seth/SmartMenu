@@ -130,10 +130,10 @@
                                                 </th>
                                                 <td>
                                                     <a href="tel:{{ str_replace(' ', '', str_replace(' ', '', $order->client->phone)) }}"><i
-                                                        class="fa-solid fa-2x fa-phone-volume slide-phone"></i> </a> |
+                                                        class="fa-solid fa-2x fa-phone-volume slide-phone"></i> Appeler</a> |
                                                     {{ $order->client->phone ?? '' }} | 
                                                     <a href="https://api.whatsapp.com/send?phone=212{{ ltrim($order->client->phone, 'g') }}"
-                                                            target="_blank"><i class="fa-brands fa-2x  fa-whatsapp  slide-whatsapp"></i> </a>
+                                                            target="_blank"><i class="fa-brands fa-2x  fa-whatsapp  slide-whatsapp"></i> Whatsapp</a>
                                                 </td>
                                             </tr>
                                             <tr>
