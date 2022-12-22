@@ -70,7 +70,7 @@
             height: 56px;
             line-height: 56px;
             text-align: center;
-            border-bottom: 1px solid #f8f5d2;
+            border-bottom: 1px solid #f0f0ec;
         }
 
         .shoppingcart .baskettitle h2::after {
@@ -144,13 +144,44 @@
             color: white;
             font-size: 11px;
         }
+        .badge {
+         display: inline-block;
+         min-width: 10px;
+         padding: 3px 7px;
+         font-size: 10px;
+         font-weight: bold;
+         color: #fff;
+         line-height: 1;
+         vertical-align: middle;
+         white-space: nowrap;
+         text-align: center;
+         background-color: rgba(220, 149, 149, 0.56);
+         border-radius: 10px;
+      }
+      .cart-meal-name {
+            word-break: normal !important;
+        }
+        #icon {
+            margin-right: 6px;
+        }
+
+        @media (max-width:600px) {
+            .nav li.active a {
+                padding: 15px;
+                font-size: 20px;
+            }
+
+            #contactnous {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body class="checkout">
    <div class="header">
-      <div id="navigationopenbutton" class="menubutton"><a href="#" class="notification"><span><i class="fa-solid fa-bars"></i> Menu</span><span class="badge" @if ($host == 'toptopdonuts.ma') style="display: none" @endif>1</span></a> </div>
-      <div id="navigationopenbutton" class="menubutton" @if ($host == 'toptopdonuts.ma') style="display: none" @endif><a href="/ar" class="notification"><span> العربية <i class="fa-solid fa-earth-americas"></i></span></a> </div>
+      <div id="navigationopenbutton" class="menubutton"><a href="#" class="notification"><span><i class="fa-solid fa-bars"></i> Menu</span></a> </div>
+      <div id="navigationopenbutton" class="menubutton" @if ($host == 'toptopdonuts.ma') style="display: none" @endif><a href="#" class="notification"><span> العربية <i class="fa-solid fa-earth-americas"></i></span></a> </div>
       <div class="nav">
           <div id="navigationclosebutton" class="menubutton"><i class="fa fa-close fa-2x" aria-hidden="true"></i>
           </div>

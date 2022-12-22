@@ -73,13 +73,25 @@ class HomeController extends Controller
             return view($lang.'cat',compact('products','cat','setting','discounts','host'));
     }
 
-    public function order()
+    public function last_order()
+    {
+        $last_order = Order::orderBy('id', 'desc')->first()->id;
+            
+        return response()->json([
+            'last_order' => $last_order
+        ]);
+    }
+
+    public function order(Request $request)
     {
             $products = Product::all();
             $categories = Category::all();
             $setting = Setting::first();
             $regions = Region::orderBy('regions','asc')->get();
-            return view('order',compact('products','categories','setting','regions'));
+
+            $host =  $request->getHttpHost();
+
+            return view('order',compact('products','categories','setting','regions','host'));
     }
 
     public function track($id)

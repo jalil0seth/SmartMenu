@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#55ADDE" />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <link rel="shortcut icon" href="{{ $setting->logo['thumbnail'] }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('style/style23_ar.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('style/style42_ar.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/takeaway23_ar.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('font-awesome/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"

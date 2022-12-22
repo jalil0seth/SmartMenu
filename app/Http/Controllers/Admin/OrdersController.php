@@ -33,7 +33,7 @@ class OrdersController extends Controller
     {
         abort_if(Gate::denies('order_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $orders = Order::with(['client'])->where('status', 'like', '%' . strtolower($status) . '%')->orderBy('id', 'DESC')->get();
+        $orders = Order::with(['client'])->where('status', 'like', '%' . strtolower($status) . '%')->orderBy('id', 'DESC')->paginate(10);
 
         $new = Order::with(['client'])->where('status', 'like', '%nouveau%')->orderBy('id', 'DESC')->count();
         $prep = Order::with(['client'])->where('status', 'like', '%preparation%')->orderBy('id', 'DESC')->count();
@@ -41,9 +41,17 @@ class OrdersController extends Controller
         $liv = Order::with(['client'])->where('status', 'like', '%Livré%')->orderBy('id', 'DESC')->count();
         $annulle = Order::with(['client'])->where('status', 'like', '%Annulée%')->orderBy('id', 'DESC')->count();
 
+        $date_orders = array();
+        foreach($orders as $order){
+            array_push($date_orders,$order->created_at->format('d-m-Y'));
+        }
+        $date_orders = array_unique($date_orders);
+
+        $last_order = Order::orderBy('id', 'desc')->first()->id;
+
         $clients = Client::get();
 
-        return view('admin.orders.index', compact('clients', 'orders','new','prep','enliv','liv','annulle'));
+        return view('admin.orders.index', compact('clients', 'orders','new','prep','enliv','liv','annulle','date_orders','status','last_order'));
     }
 
     public function livreur($status)

@@ -47,6 +47,14 @@
                                             </tr>
                                             <tr>
                                                 <th>
+                                                    Temps de commande
+                                                </th>
+                                                <td>
+                                                    {{ $order->created_at }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
                                                     Region
                                                 </th>
                                                 <td>
@@ -133,14 +141,17 @@
 
                                     <table class="table table-bordered table-striped">
                                         <tbody>
-                                            <tr>
-                                                <th>
+                                            @if ($order->notes)
+                                            <tr   style="background-color: rgb(248, 255, 215)">
+                                                <th >
                                                     Notes
                                                 </th>
                                                 <td>
                                                     {{ $order->notes ?? '' }}
                                                 </td>
                                             </tr>
+                                            @endif
+
                                             <tr>
                                                 <th>
                                                     {{ trans('cruds.order.fields.livraison') }}
@@ -195,6 +206,30 @@
                                                             </td>
                                                         <tr>
                                                     @endforeach
+                                                    <tr style="background-color: #fff">
+                                                        <td colspan="2">
+                                                            <b>Commande</b>
+                                                        </td>
+                                                        <td>
+                                                            <b>{{ $order->total }} DH</b>
+                                                        </td>
+                                                     </tr>
+                                                     <tr style="background-color: #fff">
+                                                        <td colspan="2">
+                                                            <b>Livraison</b>
+                                                        </td>
+                                                        <td>
+                                                            <b>{{ $order->livraison }} DH</h3
+                                                        </td>
+                                                     </tr>
+                                                     <tr style="background-color: #fff">
+                                                        <td colspan="2">
+                                                            <b>Total</b>
+                                                        </td>
+                                                        <td>
+                                                            <b>{{ $order->total + floatval($order->livraison) ?? '' }} DH</b>
+                                                        </td>
+                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>

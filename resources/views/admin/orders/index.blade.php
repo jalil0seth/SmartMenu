@@ -37,45 +37,74 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($date_orders as $key => $date_order)
+                                @if (\Carbon\Carbon::now()->format('d-m-Y') == $date_order)
+                                <tr style="background-color: #d1527e;;color:#fff">
+                                    <td colspan="3">Aujourd'hui :  <b>{{$date_order }}</b></td>
+                                @else
+                                <tr style="background-color: #394860;color:#fff">
+                                    <td colspan="3"><b>{{$date_order }}</b></td>
+                                @endif
+                                </tr>
                                 @foreach($orders as $key => $order)
-                                    <tr data-entry-id="{{ $order->id }}" >
-                                        <td>
-                                            <a class="btn btn-xs btn-primary" href="{{ route('admin.orders.show', $order->id) }}">
-                                                {{ $order->ref ?? '' }}
-                                            </a> 
-                                        </td>
-                                        <td>    
-                                            <a href="{{ route('admin.orders.show', $order->id) }}">
-                                            @if ($order->livreur_id  != '' and isset(\App\Models\Livreur::find($order->livreur_id)->photo))
-                                                <img src="{{\App\Models\Livreur::find($order->livreur_id)->photo->getUrl('thumb')}}" class="img-circle elevation-2" width="40px" srcset="">
-                                                @else
-                                                <img src="{{asset('noimg.jpeg')}}" width="40px" class="img-circle elevation-2" srcset="">
-                                            @endif
-                                            </a>
-                                            
-                                            <a class="btn btn-xs btn-info" href="{{ route('admin.orders.show', $order->id) }}">
-                                                {{ \App\Models\Region::where('id',\App\Models\Client::where('id',$order->client_id)->pluck('region_id')->first())->pluck('regions')->first()?? '' }}
+                                    @if ($date_order  == $order->created_at->format('d-m-Y') )
+                                        <tr data-entry-id="{{ $order->id }}" >
+                                            <td>
+                                                <a class="btn btn-xs btn-primary" href="{{ route('admin.orders.show', $order->id) }}">
+                                                    {{ $order->ref ?? '' }}
+                                                </a> 
+                                            </td>
+                                            <td>    
+                                                <a href="{{ route('admin.orders.show', $order->id) }}">
+                                                @if ($order->livreur_id  != '' and isset(\App\Models\Livreur::find($order->livreur_id)->photo))
+                                                    <img src="{{\App\Models\Livreur::find($order->livreur_id)->photo->getUrl('thumb')}}" class="img-circle elevation-2" width="40px" srcset="">
+                                                    @else
+                                                    <img src="{{asset('noimg.jpeg')}}" width="40px" class="img-circle elevation-2" srcset="">
+                                                @endif
                                                 </a>
-                                            @if (intval(\Carbon\Carbon::now()->diff($order->created_at)->format('%H')) > 1 or intval(\Carbon\Carbon::now()->diff($order->created_at)->format('%D')) >=1)
-                                            <a class="btn btn-xs btn-warning" href="{{ route('admin.orders.show', $order->id) }}">
-                                            > 1h
-                                            </a>
-                                            @else 
-                                            <a class="btn btn-xs btn-success" href="{{ route('admin.orders.show', $order->id) }}">
-                                                {{\Carbon\Carbon::now()->diff($order->created_at)->format('%Im:%Ss')}}
-                                            </a>
-                                            @endif
+                                                <a class="btn btn-xs btn-info" href="{{ route('admin.orders.show', $order->id) }}">
+                                                    {{$order->created_at->format('H:i')}}
+                                                </a>
+                                                @if (intval(\Carbon\Carbon::now()->diff($order->created_at)->format('%H')) > 1 or intval(\Carbon\Carbon::now()->diff($order->created_at)->format('%D')) >=1)
+                                                <a class="btn btn-xs btn-warning" href="{{ route('admin.orders.show', $order->id) }}">
+                                                > 1h
+                                                </a>
+                                                @else 
+                                                <a class="btn btn-xs btn-success" href="{{ route('admin.orders.show', $order->id) }}">
+                                                    {{\Carbon\Carbon::now()->diff($order->created_at)->format('%Im:%Ss')}}
+                                                </a>
+                                                @endif
 
 
-                                            <a class="btn btn-xs btn-info" href="{{ route('admin.orders.show', $order->id) }}">
-                                                {{ $order->total }} DH
-                                            </a>
+                                                <a class="btn btn-xs btn-info" href="{{ route('admin.orders.show', $order->id) }}">
+                                                    {{ $order->total }} DH
+                                                </a>
+                                                <a class="btn btn-xs btn-info" href="{{ route('admin.orders.show', $order->id) }}">
+                                                    {{ \App\Models\Region::where('id',\App\Models\Client::where('id',$order->client_id)->pluck('region_id')->first())->pluck('regions')->first()?? '' }}
+                                                </a>
+                                                @if ($status == 'nouveau')
+                                                |
+                                                    @can('category_delete')
+                                                        <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                            <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
+                                                        </form>
+                                                    @endcan
+                                                @endif
 
-                                        </td>
-                                    </tr>
+
+                                            </td>
+                                        </tr>
+                                        @endif
+                                    @endforeach
                                 @endforeach
                             </tbody>
                         </table>
+                        {{$orders->links()}}
+                        <input type="hidden" id='notif' value="{{asset('notif.mp3')}}">
+                        <input type="hidden" id='last_order' value="{{$last_order}}">
+                        <audio title="audio2" id="audio2" src="{{asset('notif.mp3')}}" autoplay="true" muted="muted"></audio>
                     </div>
                 </div>
             </div>
@@ -155,5 +184,34 @@ table.on('column-visibility.dt', function(e, settings, column, state) {
   })
 })
 
+
+$(document).ready(function() {
+    function play_notif(){
+        $("#audio2").prop('muted', false);
+        $('#audio2').get(0).play();
+    }
+
+        sendRequest();
+        function sendRequest(){
+            $.ajax({
+                headers: {'x-csrf-token': _token},
+                url: "/last_order",
+                success: 
+                    function(data){
+                        if(data['last_order'] != $('#last_order').val()){
+                            console.log('yes');
+                            play_notif();
+                            window.setTimeout( function() {
+                                window.location.reload();
+                                }, 5*1000);
+                        }
+                    },
+                complete: function() {
+            // Schedule the next request when the current one's complete
+            setInterval(sendRequest, 8000); // The interval set to 5 seconds
+            }
+            });
+        };
+});
 </script>
 @endsection
