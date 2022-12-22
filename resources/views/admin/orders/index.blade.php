@@ -278,7 +278,6 @@
         }
         function notif(e) {
             $(e).hide();
-            play_notif();
         }
     </script>
 @endsection
