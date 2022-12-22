@@ -6,11 +6,36 @@
         border-color: #d73925;
         color: #fff;
     }
+    @keyframes skew-y-shakeing {
+    0% {
+        transform: skewY(-15deg);
+    }
+
+    5% {
+        transform: skewY(15deg);
+    }
+
+    10% {
+        transform: skewY(-15deg);
+    }
+
+    15% {
+        transform: skewY(15deg);
+    }
+
+    20% {
+        transform: skewY(0deg);
+    }
+
+    100% {
+        transform: skewY(0deg);
+    }
+}
 </style>
     <div class="content">
         <div class="row">
             <div class="col-lg-12">
-                <button class="btn btn-success" style="margin:5px" onclick="notif(this)"><i class="fa-solid fa-bell"></i> Réactiver le son pour les notifications </button>
+                <button class="btn btn-success" style="margin:5px; animation: skew-y-shakeing 1.2s infinite;" onclick="notif(this)"><i class="fa-solid fa-bell"></i> Réactiver le son pour les notifications </button>
 
 
                 <div class="panel panel-default">
