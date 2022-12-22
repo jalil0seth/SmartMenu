@@ -203,7 +203,7 @@ $(document).ready(function() {
                             console.log('yes');
                             window.setTimeout( function() {
                                 window.location.reload();
-                                }, 5*1000);
+                                }, 6*1000);
                         }
                     },
                 complete: function() {
