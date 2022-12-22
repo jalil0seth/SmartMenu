@@ -154,7 +154,7 @@
                                                         target="_blank"><i
                                                             class="fa-brands fa-2x  fa-whatsapp  slide-whatsapp"></i>
                                                         Whatsapp ( avec contenu ) <i
-                                                            class="fa-sharp fa-2x fa-solid fa-envelope-open-text"></i></a>
+                                                            class="fa-sharp fa-2x fa-solid fa-envelope-open-text slide-whatsapp"></i></a>
                                                 </td>
                                             </tr>
                                             <tr>
