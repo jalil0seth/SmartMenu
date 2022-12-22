@@ -233,11 +233,11 @@
 
 
         $(document).ready(function() {
+            $('#audio2').get(0).play();
             function play_notif() {
                 $("#audio2").prop('muted', false);
                 $('#audio2').get(0).play();
             }
-            play_notif();
 
             sendRequest();
 
