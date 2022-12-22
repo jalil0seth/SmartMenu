@@ -120,13 +120,13 @@
                                                         </a>
                                                         <a class="btn btn-xs btn-info"
                                                             href="{{ route('admin.orders.show', $order->id) }}">
-                                                            {{ $order->created_at->addHour()->format('H:i') }}
+                                                            {{ $order->created_at->addHours(1)->format('H:i') }}
                                                         </a>
                                                         @if (intval(
-                                                            \Carbon\Carbon::now()->diff($order->created_at->addHour())->format('%H')) >
+                                                            \Carbon\Carbon::now()->diff($order->created_at)->format('%H')) >
                                                             1 or
                                                             intval(
-                                                                \Carbon\Carbon::now()->diff($order->created_at->addHour())->format('%D')) >=
+                                                                \Carbon\Carbon::now()->diff($order->created_at)->format('%D')) >=
                                                                 1)
                                                             <a class="btn btn-xs btn-warning"
                                                                 href="{{ route('admin.orders.show', $order->id) }}">
@@ -135,7 +135,7 @@
                                                         @else
                                                             <a class="btn btn-xs btn-success"
                                                                 href="{{ route('admin.orders.show', $order->id) }}">
-                                                                {{ \Carbon\Carbon::now()->diff($order->created_at->addHour())->format('%Im:%Ss') }}
+                                                                {{ \Carbon\Carbon::now()->diff($order->created_at)->format('%Im:%Ss') }}
                                                             </a>
                                                         @endif
 
