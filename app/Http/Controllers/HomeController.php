@@ -112,7 +112,7 @@ class HomeController extends Controller
             "name" => "Test NAME",
             "dob" => "12/12/1990",
             "subject" => "Votre commande est bien reçu",
-            "from" => $host
+            "from" => Setting::first()->nom
         ];
     
         Mail::to("jalilosum@gmail.com")->send(new TestEmail($mailData));
