@@ -243,6 +243,7 @@
             }
 
             sendRequest();
+            play_notif();
 
             function sendRequest() {
                 $.ajax({
@@ -252,11 +253,10 @@
                     url: "/last_order",
                     success: function(data) {
                         if (data['last_order'] != $('#last_order').val()) {
-                            console.log('yes');
                             play_notif();
                             window.setTimeout(function() {
                                 window.location.reload();
-                            }, 8 * 1000);
+                            }, 4 * 1000);
                         }
                     },
                     complete: function() {
