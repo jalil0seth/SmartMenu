@@ -132,7 +132,7 @@
                                                     <a href="tel:{{ str_replace(' ', '', str_replace(' ', '', $order->client->phone)) }}"><i
                                                         class="fa-solid fa-2x fa-phone-volume slide-phone"></i> Appeler</a> |
                                                     {{ $order->client->phone ?? '' }} | 
-                                                    <a href="https://api.whatsapp.com/send?phone=212{{ ltrim($order->client->phone, 'g') }}&text=Bonjour, vous avez effectuez une commande chez TopTopDonuts.ma de {{ $order->total + floatval($order->livraison) ?? '' }} DH"
+                                                    <a href="https://api.whatsapp.com/send?phone=212{{ ltrim($order->client->phone, 'g') }}&text=Bonjour, vous avez effectuez une commande chez TopTopDonuts.ma de {{ $order->total + floatval($order->livraison) ?? '' }} DH, Reference de la commande : ( {{$order->ref}} )"
                                                             target="_blank"><i class="fa-brands fa-2x  fa-whatsapp  slide-whatsapp"></i> Contacter via Whatsapp</a>
                                                 </td>
                                             </tr>
