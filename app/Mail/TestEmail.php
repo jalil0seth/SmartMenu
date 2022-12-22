@@ -27,8 +27,8 @@ class TestEmail extends Mailable
      *
      * @return $this
      */
-    public function build($mailData)
+    public function build()
     {
-        return $this->from($mailData['from'])->subject($mailData['subject'])->view('email.test');
+        return $this->from($this->mailData['from'])->subject($this->mailData['subject'])->view('email.test');
     }
 }
