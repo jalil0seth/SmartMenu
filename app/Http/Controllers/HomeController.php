@@ -100,8 +100,13 @@ class HomeController extends Controller
     {
             $setting = Setting::first();
             $order = Order::where('ref',$id)->first();
-            $orderd = Orderdetail::where('order_id',$order->id)->get();
-            return view('thankyou',compact('order','setting','orderd'));
+            if($order != ''){
+                $orderd = Orderdetail::where('order_id',$order->id)->get();
+                return view('thankyou',compact('order','setting','orderd'));
+            }else{
+                return redirect('fr');
+            }
+
     }
 
     public function send_mail(Request $request)
@@ -167,6 +172,7 @@ class HomeController extends Controller
               "image" => Setting::first()->logo['url'],
               "subject" => $request->nom.", votre commande est bien reçu",
               "store_name" => Setting::first()->nom,
+              "store_url" => $request->getHttpHost(),
           ];
       
           try {
