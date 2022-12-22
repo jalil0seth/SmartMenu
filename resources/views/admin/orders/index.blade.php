@@ -10,8 +10,7 @@
     <div class="content">
         <div class="row">
             <div class="col-lg-12">
-                <button class="btn btn-info" id="newOrder"><i class="fa-solid fa-sack-dollar"></i> Une nouvelle commande</button>
-                <button class="btn btn-lg btn-success" onclick="notif(this)"><i class="fa-solid fa-bell"></i> Activer le son </button>
+                <button class="btn btn-lg btn-success" onclick="notif(this)"><i class="fa-solid fa-bell"></i> Réactiver le son </button>
 
 
                 <div class="panel panel-default">
@@ -262,8 +261,6 @@
                     success: function(data) {
                         if (data['last_order'] != $('#last_order').val()) {
                             play_notif();
-                            $('#newOrder').show();
-                            $(e).val('Réactiver le son');
                             window.setTimeout(function() {
                                 window.location.reload();
                             }, 4 * 1000);
@@ -282,7 +279,6 @@
         }
         function notif(e) {
             $(e).hide();
-            $('#newOrder').hide();
         }
     </script>
 @endsection
