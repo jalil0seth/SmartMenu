@@ -3,7 +3,7 @@
     <div class="content">
         <div class="row">
             <div class="col-lg-12">
-                <button class="btn btn-lg btn-success" onclick="$(this).hide()">Activer le son des notifications</button>
+                <button class="btn btn-lg btn-success" onclick="$(this).hide()"><i class="fa-solid fa-bell"></i> Activer le son pour les nouvelles commandes</button>
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
