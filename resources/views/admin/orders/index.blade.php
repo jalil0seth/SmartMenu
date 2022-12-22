@@ -1,9 +1,16 @@
 @extends('layouts.admin')
 @section('content')
+<style>
+    .btn-danger2 {
+        background-color: #dd4b39;
+        border-color: #d73925;
+        color: #fff;
+    }
+</style>
     <div class="content">
         <div class="row">
             <div class="col-lg-12">
-                <button class="btn btn-lg btn-success" onclick="$(this).hide()"><i class="fa-solid fa-bells"></i> Activer le son </button>
+                <button class="btn btn-lg btn-success" onclick="notif(this)"><i class="fa-solid fa-bell"></i> Activer le son </button>
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -113,7 +120,8 @@
                                                         </a>
                                                         @if ($status == 'nouveau')
                                                             |
-                                                            @can('category_delete')
+                                                                @can('category_delete')
+   
                                                                 <form action="{{ route('admin.orders.destroy', $order->id) }}"
                                                                     method="POST"
                                                                     onsubmit="return confirm('{{ trans('global.areYouSure') }}');"
@@ -121,8 +129,9 @@
                                                                     <input type="hidden" name="_method" value="DELETE">
                                                                     <input type="hidden" name="_token"
                                                                         value="{{ csrf_token() }}">
-                                                                    <input type="submit" class="btn btn-xs btn-danger"
-                                                                        value="{{ trans('global.delete') }}">
+                                                                    <button type="submit" class="btn btn-xs btn-danger2">
+                                                                        <i class="fa-solid fa-trash"></i>
+                                                                    </button>
                                                                 </form>
                                                             @endcan
                                                         @endif
@@ -241,7 +250,6 @@
             }
 
             sendRequest();
-            play_notif();
 
             function sendRequest() {
                 $.ajax({
@@ -264,5 +272,13 @@
                 });
             };
         });
+        function play_notif() {
+            $("#audio2").prop('muted', false);
+            $('#audio2').get(0).play();
+        }
+        function notif(e) {
+            $(e).hide();
+            play_notif();
+        }
     </script>
 @endsection
