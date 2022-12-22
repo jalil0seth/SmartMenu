@@ -199,11 +199,11 @@ $(document).ready(function() {
                 success: 
                     function(data){
                         if(data['last_order'] != $('#last_order').val()){
-                            console.log('yes');
                             play_notif();
+                            console.log('yes');
                             window.setTimeout( function() {
                                 window.location.reload();
-                                }, 2*1000);
+                                }, 5*1000);
                         }
                     },
                 complete: function() {
