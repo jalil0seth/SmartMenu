@@ -48,7 +48,7 @@ class OrdersController extends Controller
         $date_orders = array_unique($date_orders);
 
 
-        if(isset($last_order = Order::orderBy('id', 'desc')->first())){
+        if(isset(Order::orderBy('id', 'desc')->first())){
             $last_order = Order::orderBy('id', 'desc')->first()->id;
         }else{
             $last_order = 0;
