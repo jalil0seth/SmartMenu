@@ -175,6 +175,9 @@
                 display: none;
             }
         }
+        .shoppingcart .prodname {
+            width: 75% !important;
+        }
     </style>
 </head>
 
