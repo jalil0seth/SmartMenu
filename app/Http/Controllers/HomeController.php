@@ -104,7 +104,7 @@ class HomeController extends Controller
             return view('thankyou',compact('order','setting','orderd'));
     }
 
-    public function send_mail(Reqeust $request)
+    public function send_mail(Request $request)
     {
         $host =  $request->getHttpHost();
 
