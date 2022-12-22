@@ -174,7 +174,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="panel-body">
+                                    <div >
                                         <div class="table-responsive">
                                             <table
                                                 class=" table table-bordered table-striped table-hover datatable datatable-Order">
