@@ -136,7 +136,7 @@
                                                             target="_blank"><i class="fa-brands fa-2x  fa-whatsapp  slide-whatsapp"></i> Whatsapp ( avec contenu )</a>
                                                             | 
                                                     <a href="https://api.whatsapp.com/send?phone=212{{ ltrim($order->client->phone, 'g') }}"
-                                                            target="_blank"><i class="fa-brands fa-2x  fa-whatsapp  slide-whatsapp"></i> Whatsapp ( sans contenu )</a>
+                                                            target="_blank"><i class="fa-brands fa-2x  fa-whatsapp  slide-whatsapp"></i> Whatsapp normale</a>
                                                 </td>
                                             </tr>
                                             <tr>
