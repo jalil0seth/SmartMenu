@@ -3,6 +3,8 @@
     <div class="content">
         <div class="row">
             <div class="col-lg-12">
+                <button class="btn btn-lg btn-success" onclick="$(this).hide()">Activer le son des notifications</button>
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
