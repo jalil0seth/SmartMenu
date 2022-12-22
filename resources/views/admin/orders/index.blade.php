@@ -256,7 +256,7 @@
                             play_notif();
                             window.setTimeout(function() {
                                 window.location.reload();
-                            }, 6 * 1000);
+                            }, 8 * 1000);
                         }
                     },
                     complete: function() {
