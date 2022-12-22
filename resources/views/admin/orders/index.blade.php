@@ -234,12 +234,14 @@
 
         $(document).ready(function() {
 
-            function play_notif() {
-                $("#audio2").prop('muted', false);
+            function play_notif(status) {
+                $("#audio2").prop('muted', status);
                 $('#audio2').get(0).play();
             }
 
             sendRequest();
+            play_notif(true);
+            play_notif(false);
 
             function sendRequest() {
                 $.ajax({
