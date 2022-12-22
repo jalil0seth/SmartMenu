@@ -10,7 +10,7 @@
     <div class="content">
         <div class="row">
             <div class="col-lg-12">
-                <button class="btn btn-success" onclick="notif(this)"><i class="fa-solid fa-bell"></i> Réactiver le son pour les notifications </button>
+                <button class="btn btn-success" style="margin:5px" onclick="notif(this)"><i class="fa-solid fa-bell"></i> Réactiver le son pour les notifications </button>
 
 
                 <div class="panel panel-default">
