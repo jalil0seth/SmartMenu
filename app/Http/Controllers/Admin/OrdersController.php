@@ -111,7 +111,7 @@ class OrdersController extends Controller
         return redirect()->route('admin.orders.index');
     }
 
-    public function show(Order $order)
+    public function show(Order $order, Request $request)
     {
         //abort_if(Gate::denies(['order_show','Livreur']), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
@@ -133,7 +133,8 @@ class OrdersController extends Controller
 
         $order->load('client');
 
-        return view('admin.orders.show', compact('order','status_orders','status_orders2','orderd','livreurs'));
+        $host =  $request->getHttpHost();
+        return view('admin.orders.show', compact('order','status_orders','status_orders2','orderd','livreurs','host'));
     }
 
 
