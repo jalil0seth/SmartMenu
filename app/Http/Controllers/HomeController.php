@@ -130,6 +130,7 @@ class HomeController extends Controller
             'adresse' => $request->address,
             'name' => $request->nom, 
             'region_id' => $request->region,
+            'email' => $request->email,
             'coordinates' => '', 
             'coordinates_map' => '',
         ]);
@@ -159,7 +160,22 @@ class HomeController extends Controller
             $orderd->discount = 0;
             $orderd->save();
           }
-        
+
+          $mailData = [
+              "order_ref" => $order->ref,
+              "name" => $request->nom,
+              "image" => Setting::first()->logo['url'],
+              "subject" => $request->nom.", votre commande est bien reçu",
+              "store_name" => Setting::first()->nom,
+          ];
+      
+          try {
+            Mail::to($request->email)->send(new TestEmail($mailData));
+          } catch (\Throwable $th) {
+
+          }
+          
+
         return redirect('track/'.$order->ref);;
 
 

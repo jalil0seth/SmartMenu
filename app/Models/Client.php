@@ -23,6 +23,7 @@ class Client extends Model
     protected $fillable = [
         'name',
         'adresse',
+        'email',
         'phone',
         'coordinates',
         'coordinates_map',

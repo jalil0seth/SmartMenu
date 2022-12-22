@@ -233,7 +233,7 @@
                                 <div class="items phonenumber">
                                     <label for="phonenumber">
                                         Numéro de téléphone </label>
-                                    <input type="tel" id="phone" name="phone" minlength="10" maxlength="10"
+                                    <input type="tel" id="phone" name="phone" minlength="10" maxlength="10" onkeypress="return isNumberKey(event)"
                                         value="" required />
                                 </div>
                                 <div class="items address">
@@ -385,6 +385,13 @@
          $('.shoppingcart .baskettitle h2::after').css('content','\f078') ;
          
       })
+
+      function isNumberKey(evt){
+            var charCode = (evt.which) ? evt.which : evt.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
     </script>
 </body>
 
