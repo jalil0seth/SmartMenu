@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Client;
 use App\Models\Region;
+use App\Mail\TestEmail;
 use App\Models\Product;
 use App\Models\Setting;
 use App\Models\Category;
 use App\Models\Orderdetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -102,16 +104,16 @@ class HomeController extends Controller
             return view('thankyou',compact('order','setting','orderd'));
     }
 
-    public function order_post_3(Request $request)
+    public function send_mail()
     {
-        $cart_data = json_decode($request->cartContent, true);
-
-        foreach ($cart_data as $cart) {
-            $cart['productid'];
-            $cart['count'];
-            $cart['name'];
-            $cart['price'];
-          }
+        $mailData = [
+            "name" => "Test NAME",
+            "dob" => "12/12/1990"
+        ];
+    
+        Mail::to("jalilosum@gmail.com")->send(new TestEmail($mailData));
+    
+        dd("Mail Sent Successfully!");
 
     }
 

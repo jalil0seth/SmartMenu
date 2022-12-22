@@ -3,9 +3,12 @@
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/fr', 'HomeController@fr')->name('fr');
 Route::get('/ar', 'HomeController@ar')->name('ar');
+
 Route::get('/last_order', 'HomeController@last_order')->name('last_order');
 
 Route::get('/{lang}-cat{id}-{name}', 'HomeController@cat')->name('cat');
+
+Route::get('/sendmail', 'HomeController@send_mail')->name('send_mail');
 
 Route::get('/order', 'HomeController@order')->name('order');
 
