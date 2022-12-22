@@ -230,18 +230,19 @@
                 });
             })
         })
-
+        function play_notif() {
+            $("#audio2").prop('muted', false);
+            $('#audio2').get(0).play();
+        }
 
         $(document).ready(function() {
 
-            function play_notif(status) {
-                $("#audio2").prop('muted', status);
+            function play_notif() {
+                $("#audio2").prop('muted', false);
                 $('#audio2').get(0).play();
             }
 
             sendRequest();
-            play_notif(true);
-            play_notif(false);
 
             function sendRequest() {
                 $.ajax({
