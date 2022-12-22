@@ -1,5 +1,17 @@
 @extends('layouts.admin')
 @section('content')
+<style>
+        .slide-whatsapp {
+            color: #025f06 !important;
+        }
+
+        .slide-phone {
+            color: #008ff8 !important;
+        }
+        #icon {
+            margin-right: 6px;
+        }
+</style>
     <div class="content">
 
         <div class="row">
@@ -117,7 +129,11 @@
                                                     Telephone
                                                 </th>
                                                 <td>
-                                                    {{ $order->client->phone ?? '' }}
+                                                    <a href="tel:{{ str_replace(' ', '', str_replace(' ', '', $order->client->phone)) }}"><i
+                                                        class="fa-solid fa-2x fa-phone-volume slide-phone"></i> </a> |
+                                                    {{ $order->client->phone ?? '' }} | 
+                                                    <a href="https://api.whatsapp.com/send?phone=212{{ ltrim($order->client->phone, 'g') }}"
+                                                            target="_blank"><i class="fa-brands fa-2x  fa-whatsapp  slide-whatsapp"></i> </a>
                                                 </td>
                                             </tr>
                                             <tr>
