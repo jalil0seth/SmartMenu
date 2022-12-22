@@ -135,7 +135,7 @@
                                                     <hr>
                                                     <a href="https://api.whatsapp.com/send?phone=212{{ ltrim($order->client->phone, 'g') }}&text=Bonjour, vous avez ef
                                                         fectuez une commande chez TopTopDonuts.ma de {{ $order->total + floatval($order->livraison) ?? '' }} DH, référence de la commande : ( {{$order->ref}} ), Merci de consulter le lien https://{{$host}}/track/{{$order->ref}} pour voir l'état de votre commande."
-                                                            target="_blank"><i class="fa-brands fa-2x  fa-whatsapp  slide-whatsapp"></i> Whatsapp ( <i class="fa-sharp fa-solid fa-envelope-open-text"></i> avec contenu )</a>
+                                                            target="_blank"><i class="fa-brands fa-2x  fa-whatsapp  slide-whatsapp"></i> Whatsapp ( avec contenu ) <i class="fa-sharp fa-2x fa-solid fa-envelope-open-text"></i></a>
                                                      <hr>
                                                     <a href="https://api.whatsapp.com/send?phone=212{{ ltrim($order->client->phone, 'g') }}"
                                                             target="_blank"><i class="fa-brands fa-2x  fa-whatsapp  slide-whatsapp"></i> Whatsapp ( sans contenu )</a>
