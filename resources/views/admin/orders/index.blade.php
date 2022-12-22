@@ -36,7 +36,10 @@
         <div class="row">
             <div class="col-lg-12">
                 <button class="btn btn-lg btn-success" style="margin:5px" onclick="notif(this)"><i class="fa-solid fa-bell" style="animation: skew-y-shakeing 1.5s infinite;""></i> Réactiver le son ( Notifications ) </button>
-                <small id="notiff">Vous allez recevoir un son en cas de nouvelles commandes & notifications</small>
+                <div id="notiff" class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <small>Vous allez recevoir un son en cas de nouvelles commandes & notifications</small>
+                </div>
 
 
                 <div class="panel panel-default">
