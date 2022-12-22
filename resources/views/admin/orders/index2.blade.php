@@ -11,11 +11,12 @@
                             @if ($livX != '' and isset(\App\Models\Livreur::find($livX)->photo))
                             <img src="{{ \App\Models\Livreur::find($livX)->photo->getUrl('thumb') }}"
                                     class="img-circle elevation-2" width="40px"
-                                    srcset="">
+                                    srcset=""> {{\App\Models\Livreur::find($livX)->name}} 
                             @else
                                 <img src="{{ asset('noimg.jpeg') }}" width="40px"
-                                    class="img-circle elevation-2" srcset="">
-                            @endif                        </div>
+                                    class="img-circle elevation-2" srcset=""> {{\App\Models\Livreur::find($livX)->name}} 
+                            @endif
+                        </div>
                         <hr>
                         </div>
                     <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
