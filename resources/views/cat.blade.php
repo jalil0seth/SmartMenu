@@ -23,8 +23,39 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
     <meta property="og:image" content="{{ $setting->logo['thumbnail'] }}" />
     <style>
+        .buttonX {
+            background-color: #1574f5;
+                border: none;
+                color: white;
+                padding: 8px 15px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 12px;
+                margin: 2px 2px;
+                cursor: pointer;
+                border: 1px solid #c1c1c1;
+        }
+        #discount {
+            border-radius: 2px;
+            /* height: 35px; */
+            /* padding: 3px; */
+            color: #555;
+            border: 1px solid #c1c1c1;
+            padding: 8px 15px;
+            margin: -4px 2px;
+        }
         .cart-meal-name {
             word-break: normal !important;
+        }
+
+        hr {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #919397;
+            margin: 1em 0;
+            padding: 0;
         }
 
         .badge {
@@ -332,9 +363,80 @@
                                     <span class="cart-sum-name grey">Livraison</span>
                                     <span class="cart-sum-price grey"><span class="total-shipping"></span> DH</span>
                                 </div>
+                                <div class="cart-row">
+                                    <input type="text" id="discount" name="discount"  placeholder="Entrer votre code promo"  />
+                                    <button class="buttonX button4" id="validate" >Valider</button>
+                                </div>
+                                <label id="hint" style="display:none; color:red;">Le code est incorrecte</label>
+                                <script>
+                                    function getCookie(name) {
+                                        const cookies = document.cookie.split(";");
+                                        for (let i = 0; i < cookies.length; i++) {
+                                        const cookie = cookies[i].trim();
+                                        if (cookie.startsWith(name + "=")) {
+                                            return cookie.substring((name + "=").length);
+                                        }
+                                        }
+                                        return "";
+                                    }
+
+                                     $(document).ready(function() {
+                                        const cookieValue = getCookie("discount");
+                                        //$("#discount").val(cookieValue);
+                                    });
+                                    document.querySelector("#validate").addEventListener("click", function() {
+
+                                      const discountCode = document.querySelector("#discount").value;
+                                      const csrfToken = '{{ csrf_token() }}';
+                                  
+                                      
+                                  
+                                      // Make a POST request to the server to check if the discount code exists
+                                      const xhr = new XMLHttpRequest();
+                                      xhr.open("POST", "/check-discount", true);
+                                      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                      xhr.setRequestHeader("X-CSRF-Token", csrfToken);
+                                      xhr.onreadystatechange = function() {
+                                        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                                          const response = JSON.parse(xhr.responseText);
+                                          if (response.exists) {
+                                            // Show the discount value
+                                            // Store the discount code in a cookie for 1 hour
+                                            console.log(response);
+                                            const expireDate = new Date();
+                                            expireDate.setTime(expireDate.getTime() + (60 * 60 * 1000));
+                                            document.cookie = "discount=" + response.code + "; expires=" + expireDate.toUTCString() + "; Max-Age=" + (60 * 60);
+                                            document.cookie = "dvalue=" + response.percentage + "; expires=" + expireDate.toUTCString() + "; Max-Age=" + (60 * 60);
+
+                                            $("#hint").hide();
+                                            $("#couponr").show();
+                                            $("#discount").css("border-color", "#91e348");
+                                            
+                                          } else {
+                                            // Show an error message
+                                            $("#couponr").hide();
+                                            $("#discount").css("border-color", "red");
+                                            $("#hint").show();
+                                          }
+                                        }
+                                      };
+                                      xhr.send("code=" + discountCode);
+                                    });
+                                  </script>
+                                <hr>
                                 <div class="cart-row row-sum">
                                     <span class="cart-sum-name">Total</span>
                                     <span class="cart-sum-price"><span class="total-p"></span> DH</span>
+                                </div>
+                                <div id="couponr" style="display:none;">
+                                    <div class="cart-row row-sum">
+                                        <span class="cart-sum-name">Reduction de <span class="reduction"></span>%</span>
+                                        <span class="cart-sum-price"><span class="total-reduction"></span> DH</span>
+                                    </div>
+                                    <div class="cart-row row-sum">
+                                        <span class="cart-sum-name">Total apres la reduction</span>
+                                        <span class="cart-sum-price"><span class="total-apres-reduction"></span> DH</span>
+                                    </div>
                                 </div>
                                 <div class="cart-row chcolor">
                                     <span class="cart-sum-name">Livraison gratuite à partir de
@@ -380,6 +482,7 @@
                                     commande</span>
                             </div>
                             <section class="cartbutton">
+                                
                                 <a class="cartbutton-button btn-disabled" href="">
                                     Commander
                                 </a>

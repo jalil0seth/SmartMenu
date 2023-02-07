@@ -66,6 +66,15 @@
 
                 </a>
             </li>
+            <li class="{{ request()->is("admin/coupons") || request()->is("admin/coupons/*") ? "active" : "" }}">
+                <a href="{{ route("admin.coupons.index") }}">
+                    <i class="fa-fw fab fa-microsoft">
+
+                    </i>
+                    <span>Coupons</span>
+
+                </a>
+            </li>
             @endcan
             @can('page_access')
                 <li class="{{ request()->is("admin/pages") || request()->is("admin/pages/*") ? "active" : "" }}" style="display:none">

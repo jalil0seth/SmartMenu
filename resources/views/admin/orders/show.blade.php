@@ -205,8 +205,41 @@
                                                     {{ $order->total + floatval($order->livraison) ?? '' }} DH
                                                 </td>
                                             </tr>
+                                            @if ($discount_value != -1)
+                                                <tr>
+                                                    <th>
+                                                        Total Apres Reduction
+                                                    </th>
+                                                    <td>
+                                                        {{ $order->total*(100-$discount_value)/100 + floatval($order->livraison) ?? '' }} DH
+                                                    </td>
+                                                </tr>
+                                            @endif
                                         </tbody>
                                     </table>
+                                    @if ($discount_value != -1)
+                                    <table class="table table-bordered table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <th>
+                                                    Code Promo
+                                                </th>
+                                                <td>
+                                                    {{ $order->discount ?? '' }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    Reduction de
+                                                </th>
+                                                <td>
+                                                    {{ $discount_value ?? '' }}%
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                    @endif
                                 </div>
                             </div>
                             <div class="row">

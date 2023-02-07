@@ -230,6 +230,7 @@
                                         Nom complet </label>
                                     <input type="text" id="nom" name="nom" value="" required />
                                 </div>
+                                <input type="hidden" id="discount" name="discount" value="" />
                                 <div class="items phonenumber">
                                     <label for="phonenumber">
                                         Numéro de téléphone </label>
@@ -378,6 +379,11 @@
     <script src="{{ asset('basket/js/shake.js') }}"></script>
     <script src="{{ asset('basket/js/shopping43.js') }}"></script>
     <script>
+    $(document).ready(function() {
+        const cookieValue = getCookie("discount");
+        $("#discount").val(cookieValue);
+    });
+
       $('.shoppingcart').after().click(function(){
          console.log('ok');
          $('.shoppingcart').toggleClass('opened') ;

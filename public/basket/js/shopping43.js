@@ -1,6 +1,16 @@
 // ************************************************
 // Shopping Cart API
 // ************************************************
+function getCookie(name) {
+  const cookies = document.cookie.split(";");
+  for (let i = 0; i < cookies.length; i++) {
+  const cookie = cookies[i].trim();
+  if (cookie.startsWith(name + "=")) {
+      return cookie.substring((name + "=").length);
+  }
+  }
+  return "";
+}
 
 var shoppingCart = (function() {
     // =============================
@@ -274,6 +284,15 @@ var shoppingCart = (function() {
         + "<div class='prodprice'>" + cartArray[i].price + " DH</div></div>";
     }
     
+    const cookieValue = getCookie("discount");
+    const dvalue = getCookie("dvalue");
+
+    if(cookieValue == ""){
+      var discount = 1;
+    }else{
+      var discount = dvalue;
+    }
+
     $('.listproduct').html(output_final);
     $('.show-cart').html(output);
     $('.total-cart').html(shoppingCart.totalCart());
@@ -281,6 +300,10 @@ var shoppingCart = (function() {
     $('.total-shipping').html(totalS());
     $('.total-p').html(totalP());
     $('.total-r').html(totalR());
+    $('.reduction').html(dvalue);
+    $('.total-reduction').html(-totalP()*dvalue/100);
+    $('.total-apres-reduction').html(totalP()*(100-dvalue)/100);
+
     $('.total-count').html(shoppingCart.totalCount());
 
     var min_order = parseFloat($('#min_order').val());

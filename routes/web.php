@@ -15,6 +15,8 @@ Route::get('/order', 'HomeController@order')->name('order');
 Route::get('/track/{id}', 'HomeController@track')->name('track');
 Route::post('/sendorder', 'HomeController@order_post')->name('order_post');
 
+Route::post('/check-discount', 'HomeController@checkDiscount')->name('coupon');
+
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
@@ -95,6 +97,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Orderdetails
     Route::delete('orderdetails/destroy', 'OrderdetailsController@massDestroy')->name('orderdetails.massDestroy');
     Route::resource('orderdetails', 'OrderdetailsController');
+
+    // Coupon
+    Route::delete('coupons/destroy', 'CouponController@massDestroy')->name('coupons.massDestroy');
+    Route::resource('coupons', 'CouponController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password

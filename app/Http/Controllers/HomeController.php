@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Client;
+use App\Models\Coupon;
 use App\Models\Region;
 use App\Mail\TestEmail;
 use App\Models\Product;
@@ -74,6 +75,24 @@ class HomeController extends Controller
             
             return view($lang.'cat',compact('products','cat','setting','discounts','host'));
     }
+
+    public function checkDiscount(Request $request)
+    {
+        $discountCode = $request->input('code');
+        $coupon = Coupon::whereCode($discountCode)->whereValid(1)->first();
+        if ($coupon) {
+            return response()->json([
+                'exists' => true,
+                'percentage' => $coupon->percentage,
+                'code' => $coupon->code,
+            ]);
+        } else {
+            return response()->json([
+                'exists' => false,
+            ]);
+        }
+    }
+    
 
     public function last_order()
     {
@@ -147,6 +166,7 @@ class HomeController extends Controller
         $order->status = 'nouveau';
         $order->ref = 'A'.rand(10000,100000);
         $order->notes = $request->notes;
+        $order->discount = $request->discount;
         $order->total = $request->total;
         $order->livraison = strval($request->livraison);
         $order->save();

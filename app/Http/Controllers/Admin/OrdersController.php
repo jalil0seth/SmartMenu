@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Gate;
 use App\Models\Order;
 use App\Models\Client;
+use App\Models\Coupon;
 use App\Models\Livreur;
 use App\Models\Orderdetail;
 use Illuminate\Http\Request;
@@ -121,6 +122,13 @@ class OrdersController extends Controller
 
         $livreurs = Livreur::get();
 
+
+        if(Coupon::where('code', $order->discount)->count() > 0){
+            $discount_value = Coupon::where('code', $order->discount)->first()->percentage;
+        }else{
+            $discount_value = -1;
+        }
+
         $orderd= Orderdetail::where('order_id',$order->id)->get();
 
         if(Livreur::where('user_id',Auth::user()->id)->count() != 0){
@@ -134,7 +142,9 @@ class OrdersController extends Controller
         $order->load('client');
 
         $host =  $request->getHttpHost();
-        return view('admin.orders.show', compact('order','status_orders','status_orders2','orderd','livreurs','host'));
+
+        
+        return view('admin.orders.show', compact('discount_value','order','status_orders','status_orders2','orderd','livreurs','host'));
     }
 
 
