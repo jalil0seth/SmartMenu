@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('basket/css/sidedishes.css') }}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style2.css') }}" />
     <meta property="og:image" content="{{ $setting->logo['thumbnail'] }}" />
     <style>
         .buttonX {
@@ -153,14 +153,7 @@
             color: white;
             font-size: 11px;
         }
-        .menucard-container .meal__product-image-container2 {
-            height: 230px;
-        }
-        @media (max-width:600px) {
-            .menucard-container .meal__product-image-container2 {
-                height: 100%;
-            }
-        }
+
     </style>
 </head>
 
@@ -402,7 +395,7 @@
                                           if (response.exists) {
                                             // Show the discount value
                                             // Store the discount code in a cookie for 1 hour
-                                            console.log(response);
+                                            console.log(response)
                                             const expireDate = new Date();
                                             expireDate.setTime(expireDate.getTime() + (60 * 60 * 1000));
                                             document.cookie = "discount=" + response.code + "; expires=" + expireDate.toUTCString() + "; Max-Age=" + (60 * 60);
@@ -571,7 +564,7 @@
 
         <script src="{{ asset('basket/js/main22.js') }}"></script>
         <script src="{{ asset('basket/js/shake.js') }}"></script>
-        <script src="{{ asset('basket/js/shopping43.js') }}"></script>
+        <script src="{{ asset('basket/js/shopping44.js') }}"></script>
 
 </body>
 
