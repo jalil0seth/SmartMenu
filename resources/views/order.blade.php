@@ -305,7 +305,7 @@
                 <div class="widget">
                     <div id="basket">
                         <div class="baskettitle">
-                            <h2 class="basket-title-closed">Votre commande (<span class="total-p" style="padding-left: 5px;"></span> DH ) <i class="faicon fa-solid fa-chevron-up"></i></h2>
+                            <h2 class="basket-title-closed">Votre commande (<span class="total-apres-reduction" style="padding-left: 5px;"></span> DH ) <i class="faicon fa-solid fa-chevron-up"></i></h2>
                             <h2 class="basket-title-open">Votre commande <i class="faicon fa-sharp fa-solid fa-xmark"></i></h2>
                         </div>
                         <div id="cartcontent">
@@ -322,6 +322,16 @@
                             <div class="totals line">
                                 <div class="prodname mt10">Total :</div>
                                 <div class="prodprice"><span class="total-p"></span> DH</div>
+                            </div>
+                            <div class="reductiondiv" style="display: none">
+                                <div class="totals line">
+                                    <div class="prodname mt10">Reduction:</div>
+                                    <div class="prodprice"><span class="total-reduction"></span> DH</div>
+                                </div>
+                                <div class="totals line">
+                                    <div class="prodname mt10">Total Apres Reduction:</div>
+                                    <div class="prodprice"><span class="total-apres-reduction"></span> DH</div>
+                                </div>
                             </div>
                             <div>
                                 <div colspan="4">&nbsp;</div>

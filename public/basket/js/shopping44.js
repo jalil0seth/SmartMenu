@@ -291,6 +291,7 @@ var shoppingCart = (function() {
       var discount = 1;
     }else{
       var discount = dvalue;
+      $('.reductiondiv').show();
     }
 
     $('.listproduct').html(output_final);

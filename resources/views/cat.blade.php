@@ -357,7 +357,7 @@
                                     <span class="cart-sum-price grey"><span class="total-shipping"></span> DH</span>
                                 </div>
                                 <div class="cart-row">
-                                    <input type="text" id="discount" name="discount"  placeholder="Entrer votre code promo"  />
+                                    <input type="text" id="discount" name="discount"  placeholder="Entrer votre code promo" />
                                     <button class="buttonX button4" id="validate" >Valider</button>
                                 </div>
                                 <label id="hint" style="display:none; color:red;">Le code est incorrecte</label>
@@ -400,7 +400,7 @@
                                             expireDate.setTime(expireDate.getTime() + (60 * 60 * 1000));
                                             document.cookie = "discount=" + response.code + "; expires=" + expireDate.toUTCString() + "; Max-Age=" + (60 * 60);
                                             document.cookie = "dvalue=" + response.percentage + "; expires=" + expireDate.toUTCString() + "; Max-Age=" + (60 * 60);
-
+                                            displayCart();
                                             $("#hint").hide();
                                             $("#couponr").show();
                                             $("#discount").css("border-color", "#91e348");
