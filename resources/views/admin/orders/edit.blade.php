@@ -16,7 +16,7 @@
                             <label for="client_id">{{ trans('cruds.order.fields.client') }}</label>
                             <select class="form-control select2" name="client_id" id="client_id">
                                 @foreach($clients as $id => $entry)
-                                    <option value="{{ $id }}" {{ (old('client_id') ? old('client_id') : $order->client->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                                <option value="{{ $id }}" {{ (old('client_id') ? old('client_id') : $order->client->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
                                 @endforeach
                             </select>
                             @if($errors->has('client'))
