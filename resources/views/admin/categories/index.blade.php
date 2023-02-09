@@ -38,10 +38,14 @@
                             <tbody>
                                 @foreach($categories as $key => $category)
                                     <tr data-entry-id="{{ $category->id }}">
-                                        <td>
+                                        <td >
 
                                         </td>
+                                        @if (isset($category->image))
                                         <td  style="background-image: url('{{ $category->image->getUrl() }}');height:100px;background-size: cover; border: 1px solid;">
+                                        @else
+                                        <td style="background-color:##ecf0f5;height:100px;background-size: cover; border: 1px solid;">
+                                        @endif
                                             <span style="color: #fff; background-color: rgb(52 66 88); padding: 4px">{{ $category->name ?? '' }}</span>
                                         </td>
                                         <td>
