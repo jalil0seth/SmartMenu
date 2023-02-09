@@ -387,7 +387,7 @@
     <script type="text/javascript" src="{{ asset('tpl/template1/default1.js') }}"></script>
     <div class="background" style="background-image: url('{{ $setting->banners[0]['url'] }}');"></div>
     <script src="{{ asset('basket/js/shake.js') }}"></script>
-    <script src="{{ asset('basket/js/shopping45.js') }}"></script>
+    <script src="{{ asset('basket/js/shopping46.js') }}"></script>
     <script>
     $(document).ready(function() {
         const cookieValue = getCookie("discount");

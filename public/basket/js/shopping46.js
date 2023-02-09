@@ -217,6 +217,20 @@ var shoppingCart = (function() {
     }
   }
 
+  function totalPR(dvalue){
+    var min_order = parseFloat($('#min_order').val());
+    var shipping = parseFloat($('#shipping').val());
+    var free_shipping = parseFloat($('#free_shipping').val());
+
+    var total = shoppingCart.totalCart()*(100-dvalue)/100
+
+    if (total  < free_shipping){
+      return total + shipping;
+    }else{
+      return total ;
+    }
+  }
+
   function totalR(){
     var min_order = parseFloat($('#min_order').val());
     var shipping = parseFloat($('#shipping').val());
@@ -302,8 +316,8 @@ var shoppingCart = (function() {
     $('.total-p').html(totalP());
     $('.total-r').html(totalR());
     $('.reduction').html(dvalue);
-    $('.total-reduction').html(-totalP()*dvalue/100);
-    $('.total-apres-reduction').html(totalP()*(100-dvalue)/100);
+    $('.total-reduction').html(totalP()-totalPR(dvalue));
+    $('.total-apres-reduction').html(totalPR(dvalue));
 
     $('.total-count').html(shoppingCart.totalCount());
 
