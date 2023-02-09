@@ -84,7 +84,9 @@
                         </div>
                         <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">
                             <label for="image">{{ trans('cruds.category.fields.image') }}</label>
-                            <img src="{{$category->image->getUrl() }}" width="100%" />
+                            @isset($category->image)
+                              <img src="{{$category->image->getUrl() }}" width="100%" />
+                            @endisset
                             <hr>
                             <div class="needsclick dropzone" id="image-dropzone">
                             </div>
