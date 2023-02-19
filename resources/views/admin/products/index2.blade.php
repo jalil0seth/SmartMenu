@@ -79,6 +79,8 @@
                                                     <div class="input-group">
                                                         @if (isset($product->image[0]))
                                                             <img width="50px" src="{{ $product->image[0]['preview_url'] }}" class="img-circle elevation-2">
+                                                        @else
+                                                            <h1>{{ $product->name ?? '' }}</h1>
                                                         @endif
                                                         {{ $product->name ?? '' }} @if($product->oos == 1) <span class="float-right badge bg-danger">Non disponible</span> @endif
                                                     </div>
