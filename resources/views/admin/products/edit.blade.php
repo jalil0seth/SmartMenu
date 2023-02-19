@@ -36,7 +36,7 @@
                       </div>
                         <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">
                             <label for="image">{{ trans('cruds.product.fields.image') }}</label>
-                            <div class="needsclick dropzone" id="image-dropzone">
+                            <div class="needsclick dropzone" id="image-dropzone" required>
                             </div>
                             @if($errors->has('image'))
                                 <span class="help-block" role="alert">{{ $errors->first('image') }}</span>
