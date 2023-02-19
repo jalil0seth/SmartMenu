@@ -77,7 +77,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="input-group">
-                                                        @if (is_array($product->image))
+                                                        @if (isset($product->image[0]))
                                                             <img width="50px" src="{{ $product->image[0]['preview_url'] }}" class="img-circle elevation-2">
                                                         @endif
                                                         {{ $product->name ?? '' }} @if($product->oos == 1) <span class="float-right badge bg-danger">Non disponible</span> @endif
